@@ -30,21 +30,21 @@
 		 */
 		public static function getText($textId, $params = null)
 		{
-			$locale = Library_Manage_I18nManager::getI18nData()->getLocale();
+			$locale = Library_Manage_ResourceManager::getI18nData()->getLocale();
 			
 			$textIdObj = new Library_I18n_Text_TextId($textId);
 			
 			if(Library_I18n_LocaleHelper::hasEnglishUSLocation($locale))
 			{
-				$text = self::getTextFromFile(Library_Manage_AppConfigManager::getVar("i18n.path") . Library_I18n_LocaleFileHelper::ENGLISH_LOCALE_FOLDER, $textIdObj);
+				$text = self::getTextFromFile(Library_Manage_ResourceManager::getAppConfig()->getVar("i18n.path") . Library_I18n_LocaleFileHelper::ENGLISH_LOCALE_FOLDER, $textIdObj);
 			}
 			elseif(Library_I18n_LocaleHelper::hasSpanishLocation($locale))
 			{
-				$text = self::getTextFromFile(Library_Manage_AppConfigManager::getVar("i18n.path") . Library_I18n_LocaleFileHelper::SPANISH_LOCALE_FOLDER, $textIdObj);
+				$text = self::getTextFromFile(Library_Manage_ResourceManager::getAppConfig()->getVar("i18n.path") . Library_I18n_LocaleFileHelper::SPANISH_LOCALE_FOLDER, $textIdObj);
 			}
 			else
 			{
-				throw new Exception("Language not recognized");
+				throw new Exception("Lenguaje no reconocido.");
 			}
 			
 			return Library_I18n_Text_TextPrinter::doPrint($text, $params);
@@ -93,8 +93,9 @@
 			
 			if(!$filePath)
 			{
-				$locale = Library_Manage_I18nManager::getI18nData()->getLocale();
-				$filePath = Library_Manage_AppConfigManager::getVar("i18n.path") . '/' . $locale . '/files/' . $name;
+				$locale = Library_Manage_ResourceManager::geti18nData()->getLocale();
+				
+				$filePath = Library_Manage_ResourceManager::getAppConfig()->getVar("i18n.path") . '/' . $locale . '/files/' . $name;
 			}
 			
 			return Library_File_FileUtil::getFileContent($filePath, $view);
@@ -103,6 +104,7 @@
 		private static function getTextFromFile($path, $textId)
 		{
 			$ifm = new Library_I18n_I18nFileManager($path, $textId);
+			
 			return $ifm->getText($textId);
 		}
 		

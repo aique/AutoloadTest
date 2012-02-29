@@ -51,7 +51,7 @@ class Library_Log_Logger
 	
 	private function printTraceMessage($message)
 	{
-		if(Library_Manage_AppConfigManager::getCurrentEnvironment() != Application_Consts_EnvironmentConst::PRODUCTION_ENV)
+		if(Library_Manage_ResourceManager::getAppConfig()->getCurrentEnvironment() != Application_Consts_EnvironmentConst::PRODUCTION_ENV)
 		{
 			$script_name = pathinfo($_SERVER['PHP_SELF'], PATHINFO_FILENAME);
 			$time = date('H:i:s');

@@ -1,5 +1,5 @@
 <?php 
 
-	include "configs/bootstrap.php";
+	include "bootstrap.php";
 
 ?>

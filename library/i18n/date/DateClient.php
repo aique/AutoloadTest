@@ -4,7 +4,7 @@
 	{
 		public static function getDate($date, $format)
 		{
-			$locale = Library_Manage_I18nManager::getI18nData()->getLocale();
+			$locale = Library_Manage_ResourceManager::getI18nData()->getLocale();
 			
 			if(Library_I18n_LocaleHelper::hasEnglishUSLocation($locale))
 			{
@@ -24,7 +24,7 @@
 		
 		public static function getMonthName($monthNumber)
 		{
-			$locale = Library_Manage_I18nManager::getI18nData()->getLocale();
+			$locale = Library_Manage_ResourceManager::getI18nData()->getLocale();
 				
 			if(LocaleHelper::hasEnglishUSLocation($locale))
 			{

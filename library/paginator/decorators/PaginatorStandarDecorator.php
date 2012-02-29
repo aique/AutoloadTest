@@ -29,6 +29,7 @@ class Library_Paginator_Decorators_PaginatorStandarDecorator
 			if(isset($collection[$i]))
 			{
 				$item = $collection[$i];
+				
 				$output .= $item->printItem();
 			}
 		}
@@ -44,7 +45,7 @@ class Library_Paginator_Decorators_PaginatorStandarDecorator
 			
 		for($i = 1 ; $i < $paginator->getPagesNumber() ; $i++)
 		{
-			$output .= '<li><a href="'.Library_Manage_URLManager::getURLData().'/page/'.$i.'">'.$i.'</a></li>';
+			$output .= '<li><a href="'.Library_Manage_ResourceManager::getURLData().'/page/'.$i.'">'.$i.'</a></li>';
 		}
 			
 		$output .= '</ul></div>';

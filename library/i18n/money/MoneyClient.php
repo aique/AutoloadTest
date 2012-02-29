@@ -4,7 +4,7 @@
 	{
 		public static function getMoney($money, $format)
 		{
-			$locale = Library_Manage_I18nManager::getI18nData()->getLocale();
+			$locale = Library_Manage_ResourceManager::getI18nData()->getLocale();
 			
 			if(Library_I18n_LocaleHelper::hasEnglishUSLocation($locale))
 			{
@@ -16,7 +16,7 @@
 			}
 			else
 			{
-				exit("Language not recognized");
+				exit("Lenguaje no reconocido.");
 			}
 			
 			return $money;

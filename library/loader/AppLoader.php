@@ -8,30 +8,21 @@ class Library_Loader_AppLoader
 	/**
 	 * Inicializa los objetos imprescindibles para el correcto funcionamiento de la
 	 * aplicación.
-	 * 
-	 * Comprueba si el entorno en el que se está ejecutando es de tipo 'testing'. De
-	 * ser así, no inicializa la clase que gestiona la URL de cada petición. Esto se
-	 * hace para impedir que se muestren alertas en las pruebas unitarias, ya que el
-	 * manejo de URLs no existe.
 	 */
 	public static function load()
 	{
-		Library_Manage_AppConfigManager::loadConfig();
-		Library_Manage_I18nManager::loadI18nData();
 		
-		if(Library_Manage_AppConfigManager::getCurrentEnvironment() != Application_Consts_EnvironmentConst::TESTING_ENV)
-		{
-			Library_Manage_URLManager::loadURLData();
-		}
 	}
 	
 	public static function dispatchRequest()
 	{
 		$view = array();
 		
-		$module = Library_Manage_URLManager::getURLData()->getModule();
-		$controller = Library_Manage_URLManager::getURLData()->getController();
-		$action = Library_Manage_URLManager::getURLData()->getAction();
+		$url = Library_Manage_ResourceManager::getURLData();
+		
+		$module = $url->getModule();
+		$controller = $url->getController();
+		$action = $url->getAction();
 		
 		if(empty($module))
 		{

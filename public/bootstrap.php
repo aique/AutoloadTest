@@ -7,6 +7,8 @@ require_once PROJECT_PATH . '/library/loader/Autoloader.php';
 Library_Loader_Autoloader::getInstance()->register();
 
 // Default environment
-defined('DEFAULT_ENVIRONMENT') || define('DEFAULT_ENVIRONMENT', Application_Consts_EnvironmentConst::TESTING_ENV);
+defined('DEFAULT_ENVIRONMENT') || define('DEFAULT_ENVIRONMENT', "development");
 
 Library_Loader_AppLoader::load();
+
+$content = Library_Loader_AppLoader::dispatchRequest();

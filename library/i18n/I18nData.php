@@ -8,8 +8,6 @@
 	{
 		private $locale;
 		private $supportedLocations = null;
-		private $spanishCountryNamesArray = null;
-		private $englishCountryNamesArray = null;
 		
 		private static $instance = null;
 		
@@ -58,25 +56,6 @@
 		public function getUniversalLocale()
 		{
 			return LocaleHelper::getUniversalLocation($this->locale);
-		}
-		
-		/**
-		 * 
-		 */
-		public function getCountryNamesArray()
-		{
-		    $countryNamesArray = null;
-		    
-		    if(LocaleHelper::hasEnglishUSLocation($this->locale))
-		    {
-		    	$countryNamesArray = $this->englishCountryNamesArray;
-		    }
-		    elseif(LocaleHelper::hasSpanishLocation($this->locale))
-		    {
-		    	$countryNamesArray = $this->spanishCountryNamesArray;
-		    }
-		    
-		    return $countryNamesArray;
 		}
 		
 		/**

@@ -5,12 +5,12 @@ class IndexTest extends PHPUnit_Extensions_SeleniumTestCase
 	protected function setUp()
 	{
 		$this->setBrowser("*firefox");
-		$this->setBrowserUrl("http://localhost/autoload_test/public/index.php");
+		$this->setBrowserUrl("http://autoload");
 	}
 
 	public function testTitle()
 	{
-		$this->open("http://localhost/autoload_test/public/index.php");
+		$this->open("http://autoload");
 		$this->assertTitle("Autoload Test");
 	}
 }

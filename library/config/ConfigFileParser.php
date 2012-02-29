@@ -10,15 +10,8 @@
  */
 class Library_Config_ConfigFileParser
 {
-	public static function parse($filePath, $appConfig)
+	public static function parse($filePath)
 	{		
-		$appConfig->setConfigVars(self::getConfigVars($filePath));
-		
-		return $appConfig;
-	}
-	
-	private static function getConfigVars($filePath)
-	{
 		$values = array();
 		
 		$currentEnvironment = null;

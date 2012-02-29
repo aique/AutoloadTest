@@ -14,10 +14,10 @@ class Library_Manage_DBManager
 	
 	private function __construct()
 	{
-		$this->mysqli = new mysqli(Library_Manage_AppConfigManager::getVar('db.hostname'),
- 								   Library_Manage_AppConfigManager::getVar('db.username'),
- 								   Library_Manage_AppConfigManager::getVar('db.password'),
- 								   Library_Manage_AppConfigManager::getVar('db.database'));
+		$this->mysqli = new mysqli(Library_Manage_ResourceManager::getAppConfig()->getVar('db.hostname'),
+ 								   Library_Manage_ResourceManager::getAppConfig()->getVar('db.username'),
+ 								   Library_Manage_ResourceManager::getAppConfig()->getVar('db.password'),
+ 								   Library_Manage_ResourceManager::getAppConfig()->getVar('db.database'));
 	}
 	
 	public function __destruct()

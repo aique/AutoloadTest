@@ -9,7 +9,7 @@ class UserTest extends PHPUnit_Framework_TestCase
 
 	public function testGetAllUsers()
 	{
-		$userModel = new Application_Model_User();
+		$userModel = new Application_Modules_Users_Model_User();
 		$users = $userModel->getAllUsers();
 		$this->assertEquals(3, 3);
 		$this->assertEquals(1, $users[0]->id);

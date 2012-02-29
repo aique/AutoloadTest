@@ -12,7 +12,7 @@ class Application_Modules_Users_Controllers_UserController
 	
 		$view["users"] = $users;
 		
-		$view["paginator"] = new Library_Paginator_Paginator($view["users"], Library_Manage_AppConfigManager::getVar("users.paginator.itemsPerPage"));
+		$view["paginator"] = new Library_Paginator_Paginator($view["users"], Library_Manage_ResourceManager::getAppConfig()->getVar("users.paginator.itemsPerPage"));
 	
 		return $view;
 	}
