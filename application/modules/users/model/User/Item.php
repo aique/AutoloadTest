@@ -5,12 +5,16 @@ class Application_Modules_Users_Model_User_Item
 	private $id;
 	private $name;
 	
+	private $printer;
+	
 	public function __construct(array $options = null)
 	{
 		if (is_array($options))
 		{
 			$this->setOptions($options);
 		}
+		
+		$this->printer = new Application_Modules_Users_Model_User_Printer();
 	}
 	
 	private function setOptions(array $options)
@@ -92,6 +96,11 @@ class Application_Modules_Users_Model_User_Item
 	public function setName($name)
 	{
 	    $this->name = $name;
+	}
+	
+	public function printItem()
+	{
+		return $this->printer->printHTMLFormat($this);
 	}
 	
 }

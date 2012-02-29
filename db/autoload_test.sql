@@ -4,7 +4,7 @@ Source Host: localhost
 Source Database: autoload_test
 Target Host: localhost
 Target Database: autoload_test
-Date: 29/02/2012 11:09:44
+Date: 23/02/2012 18:15:58
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -21,6 +21,6 @@ CREATE TABLE `user` (
 -- ----------------------------
 -- Records 
 -- ----------------------------
-INSERT INTO `user` VALUES ('1', 'ana');
-INSERT INTO `user` VALUES ('2', 'manuel');
-INSERT INTO `user` VALUES ('3', 'antonio');
+INSERT INTO `user` VALUES ('1', 'juan');
+INSERT INTO `user` VALUES ('2', 'paco');
+INSERT INTO `user` VALUES ('3', 'pedro');
