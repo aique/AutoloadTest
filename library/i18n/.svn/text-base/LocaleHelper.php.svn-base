@@ -1,0 +1,66 @@
+<?php
+
+	class LocaleHelper
+	{	
+		const SPANISH_LOCATION = "es-es";
+		const SPANISH_ABB_LOCATION = "es";
+		const ENGLISH_LOCATION = "en-us";
+		const ENGLISH_ABB_LOCATION = "en";
+		
+		const CATALUÑA_LOCATION = "ca-es";
+		const CATALUÑA_ABB_LOCATION = "ca";
+		const PAISVASCO_LOCATION = "eu-es";
+		const PAISVASCO_ABB_LOCATION = "eu";
+		const GALICIA_LOCATION = "gl-es";
+		const GALICIA_ABB_LOCATION = "gl";
+		
+		const SPAIN_UNI_LOCATION = "ES";
+		const US_UNI_LOCATION = "US";
+		const ENGLAND_UNI_LOCATION = "EN";
+		
+		const DEFAULT_UNI_LOCATION = "ES";
+
+		public static function hasEnglishUSLocation($location)
+		{
+			return $location == self::ENGLISH_LOCATION ||
+				   $location == self::ENGLISH_ABB_LOCATION ||
+				   $location == self::ENGLAND_UNI_LOCATION ||
+				   $location == self::US_UNI_LOCATION;
+		}
+		
+		public static function hasSpanishLocation($location)
+		{
+			return $location == self::SPANISH_LOCATION ||
+				   $location == self::SPANISH_ABB_LOCATION ||
+				   $location == self::SPAIN_UNI_LOCATION ||
+				   $location == self::CATALUÑA_LOCATION ||
+				   $location == self::CATALUÑA_ABB_LOCATION ||
+				   $location == self::PAISVASCO_LOCATION ||
+				   $location == self::PAISVASCO_ABB_LOCATION ||
+				   $location == self::GALICIA_LOCATION ||
+				   $location == self::GALICIA_ABB_LOCATION;
+		}
+		
+		public static function validateLocation($location)
+		{
+			return $location == self::SPANISH_ABB_LOCATION || $location == self::ENGLISH_ABB_LOCATION;
+		}
+		
+		public static function getUniversalLocation($location)
+		{
+			switch($location)
+			{
+				case(self::ENGLISH_ABB_LOCATION):
+					return self::US_UNI_LOCATION;
+				break;
+				case(self::SPANISH_ABB_LOCATION):
+					return self::SPAIN_UNI_LOCATION;
+				break;
+				default:
+					return DEFAULT_UNI_LOCATION;
+			}
+		}
+		
+	}
+
+?>

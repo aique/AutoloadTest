@@ -1,0 +1,113 @@
+<?php
+
+	class I18nManager
+	{
+		private $locale;
+		private $supportedLocations = null;
+		private $spanishCountryNamesArray = null;
+		private $englishCountryNamesArray = null;
+		private static $instance = null;
+		
+		private function __construct()
+		{
+			$this->supportedLocations = array();
+			
+			array_push($this->supportedLocations, new Locale(LocaleHelper::SPANISH_LOCATION,
+															 LocaleHelper::SPANISH_ABB_LOCATION,
+															 LocaleHelper::SPAIN_UNI_LOCATION));
+			
+			array_push($this->supportedLocations, new Locale(LocaleHelper::ENGLISH_LOCATION,
+															 LocaleHelper::ENGLISH_ABB_LOCATION,
+															 LocaleHelper::ENGLAND_UNI_LOCATION));
+			
+			$this->spanishCountryNamesArray = CountryLogic::getCountryNamesArray(LocaleHelper::SPAIN_UNI_LOCATION);
+			$this->englishCountryNamesArray = CountryLogic::getCountryNamesArray(LocaleHelper::ENGLAND_UNI_LOCATION);
+						
+			$this->locale = self::recognizeLanguage();
+		}
+		
+		public static function getInstance()
+		{
+			if(!self::$instance)
+			{
+				self::$instance = new I18nManager();
+			}
+			
+			return self::$instance;
+		}
+		
+		public function getLocale()
+		{
+			return $this->locale;
+		}
+		
+		public function setLocale($locale)
+		{
+			$this->locale = $locale;
+		}
+		
+		public function getSupportedLocations()
+		{
+			return $this->supportedLocations;
+		}
+		
+		public function getUniversalLocale()
+		{
+			return LocaleHelper::getUniversalLocation($this->locale);
+		}
+		
+		public function getCountryNamesArray()
+		{
+		    $countryNamesArray = null;
+		    
+		    if(LocaleHelper::hasEnglishUSLocation($this->locale))
+		    {
+		    	$countryNamesArray = $this->englishCountryNamesArray;
+		    }
+		    elseif(LocaleHelper::hasSpanishLocation($this->locale))
+		    {
+		    	$countryNamesArray = $this->spanishCountryNamesArray;
+		    }
+		    
+		    return $countryNamesArray;
+		}
+		
+		private static function recognizeLanguage()
+		{
+			$user = SessionManager::getVariable(SessionManager::USER);
+			
+			if($user)
+			{
+				$accountConfiguration = AccountConfigurationLogic::getAccountConfiguration($user->getId());
+				
+				return $accountConfiguration->getLanguage();
+			}
+			else
+			{
+				if(isset($_SERVER['HTTP_ACCEPT_LANGUAGE']))
+				{
+					$language = explode(",", $_SERVER['HTTP_ACCEPT_LANGUAGE']);
+					
+					$language = strtolower($language[0]);
+				
+					if(LocaleHelper::hasEnglishUSLocation($language))
+					{
+						return LocaleHelper::ENGLISH_ABB_LOCATION;
+					}
+					elseif(LocaleHelper::hasSpanishLocation($language))
+					{
+						return LocaleHelper::SPANISH_ABB_LOCATION;
+					}
+					else
+					{
+						return DEFAULT_LANGUAGE;
+					}
+				}
+				else
+				{
+					return DEFAULT_LANGUAGE;
+				}
+			}
+		}
+	}
+?>

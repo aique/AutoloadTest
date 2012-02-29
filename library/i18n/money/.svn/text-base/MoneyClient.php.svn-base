@@ -1,0 +1,33 @@
+<?php
+
+	require_once 'printers/MoneyPrinter_enUS.php';
+	require_once 'printers/MoneyPrinter_esES.php';
+
+	class MoneyClient
+	{
+		public static function getMoney($money, $format, $locale)
+		{
+			$userSessionState = SessionManager::getVariable(SessionManager::USER_SESSION_STATE);
+// 			$browserSessionState = SessionManager::getVariable(SessionManager::BROWSER_SESSION_STATE);
+			
+// 			$locale = $browserSessionState->getI18nManager()->getLocale();
+			
+			if(LocaleHelper::hasEnglishUSLocation($locale))
+			{
+				$money = MoneyPrinter_enUS::doPrint($money, $userSessionState, $format);
+			}
+			elseif(LocaleHelper::hasSpanishLocation($locale))
+			{
+				$money = MoneyPrinter_esES::doPrint($money, $userSessionState, $format);
+			}
+			else
+			{
+				exit("Language not recognized");
+			}
+			
+			return $money;
+		}
+		
+	}
+
+?>

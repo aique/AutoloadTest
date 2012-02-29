@@ -1,0 +1,53 @@
+<?php
+
+	require_once 'printers/DatePrinter_enUS.php';
+	require_once 'printers/DatePrinter_esES.php';
+	require_once 'DateFormat.php';
+	
+	class DateClient
+	{
+		public static function getDate($date, $format)
+		{
+			$browserSessionState = SessionManager::getVariable(SessionManager::BROWSER_SESSION_STATE);
+			
+			$locale = $browserSessionState->getI18nManager()->getLocale();
+			
+			if(LocaleHelper::hasEnglishUSLocation($locale))
+			{
+				$date = DatePrinter_enUS::doPrint($date, $format);
+			}
+			elseif(LocaleHelper::hasSpanishLocation($locale))
+			{
+				$date = DatePrinter_esES::doPrint($date, $format);
+			}
+			else
+			{
+				exit("Language not recognized");
+			}
+			
+			return $date;
+		}
+		
+		public static function getMonthName($monthNumber)
+		{
+			$locale = I18nManager::getInstance()->getLocale();
+				
+			if(LocaleHelper::hasEnglishUSLocation($locale))
+			{
+				$monthName = DatePrinter_enUS::getMonthName($monthNumber);
+			}
+			elseif(LocaleHelper::hasSpanishLocation($locale))
+			{
+				$monthName = DatePrinter_esES::getMonthName($monthNumber);
+			}
+			else
+			{
+				exit("Language not recognized");
+			}
+				
+			return $monthName;
+		}
+		
+	}
+
+?>

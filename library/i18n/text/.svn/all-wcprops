@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/!svn/ver/4095/web/modules/util/i18n/text
+END
+TextId.php
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/!svn/ver/3951/web/modules/util/i18n/text/TextId.php
+END
+TextClient.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/!svn/ver/4095/web/modules/util/i18n/text/TextClient.php
+END
+TextPrinter.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/!svn/ver/46/web/modules/util/i18n/text/TextPrinter.php
+END

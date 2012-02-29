@@ -1,0 +1,1 @@
+screen_layout_index_title = "Autoload test - Esqueleto del proyecto MP"

@@ -1,0 +1,33 @@
+<?php
+
+	class LocaleFileHelper
+	{
+		const TEXT_TYPE_ID_LABEL = "ltext";
+		
+		const TEXT_ENGLISH_LOCALE_FOLDER = "/en";
+		const TEXT_SPANISH_LOCALE_FOLDER = "/es";
+		
+		const DATE_ENGLISH_LOCALE_FILE = "/en/date/date.txt";
+		const DATE_SPANISH_LOCALE_FILE = "/es/date/date.txt";
+		
+		public static function getPathDateFile()
+		{
+			$locale = I18nManager::getInstance()->getLocale();
+			
+			if(LocaleHelper::hasEnglishUSLocation($locale))
+			{
+				return INTERNALIZATION_LOCAL_FILES_PATH . self::$DATE_ENGLISH_LOCALE_FILE;
+			}
+			elseif(LocaleHelper::hasSpanishLocation($locale))
+			{
+				return INTERNALIZATION_LOCAL_FILES_PATH . self::$DATE_SPANISH_LOCALE_FILE;
+			}
+			else
+			{
+				exit("Language not recognized");
+			}
+		}
+		
+	}
+
+?>
