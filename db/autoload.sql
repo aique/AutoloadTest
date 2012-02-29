@@ -1,10 +1,10 @@
 /*
 MySQL Data Transfer
 Source Host: localhost
-Source Database: autoload_test
+Source Database: autoload
 Target Host: localhost
-Target Database: autoload_test
-Date: 29/02/2012 11:09:44
+Target Database: autoload
+Date: 29/02/2012 11:09:38
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -21,6 +21,6 @@ CREATE TABLE `user` (
 -- ----------------------------
 -- Records 
 -- ----------------------------
-INSERT INTO `user` VALUES ('1', 'ana');
-INSERT INTO `user` VALUES ('2', 'manuel');
-INSERT INTO `user` VALUES ('3', 'antonio');
+INSERT INTO `user` VALUES ('1', 'juan');
+INSERT INTO `user` VALUES ('2', 'paco');
+INSERT INTO `user` VALUES ('3', 'pedro');

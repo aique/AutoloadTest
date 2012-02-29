@@ -1,0 +1,33 @@
+
+URLs
+----
+
+Las URLs para acceder a las secciones de la web son las siguientes:
+
+  - autoload
+  - autoload/users/user/list
+  
+BD
+--  
+  
+La base de datos se encuentra en la carpeta db.
+
+HOST
+----
+
+Debería configurarse un host virtual siguiendo como ejemplo:
+
+<VirtualHost *:80>
+   DocumentRoot "C:/wamp/www/autoload_test/public"
+   ServerName autoload
+
+   <Directory "C:/wamp/www/autoload_test/publicc">
+       Options Indexes MultiViews FollowSymLinks
+       AllowOverride All
+       Order allow,deny
+       Allow from all
+   </Directory>
+
+</VirtualHost>
+
+Ha de cambiarse la ruta física por la apropiada.
