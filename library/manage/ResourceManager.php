@@ -41,7 +41,7 @@ class Library_Manage_ResourceManager
 	
 		if(!$url)
 		{
-			$url = Library_URL_URLParser::parse($_SERVER['REQUEST_URI'], new Library_URL_URLData());
+			$url = Library_URL_URLParser::parse($_SERVER['REQUEST_URI'], new Library_URL_URL());
 	
 			Library_Manage_SessionManager::setVar(Application_Consts_AppConst::URL_DATA_SESSION_NAME, $url);
 		}

@@ -2,33 +2,72 @@
 	
 class Library_Manage_InputManager
 {
-	public static function getParamGET($name)
+	const GET = "GET";
+	const POST = "POST";
+	
+	public static function getParam($name, $method = self::POST)
 	{
-		$param = "";
-			
-		if(isset($_GET[$name]))
+		$param = false;
+		
+		if($method == self::GET)
 		{
-			$param = utf8_decode($_GET[$name]);
-			$param = strip_tags($param);
-			$param = htmlentities($param, ENT_COMPAT, 'UTF-8');
-			$param = stripslashes($param);			
+			if(isset($_GET[$name]))
+			{
+				$param = self::clean($_GET[$name]);
+			}
+		}
+		elseif($method == self::POST)
+		{
+			if(isset($_POST[$name]))
+			{
+				$param = self::clean($_POST[$name]);
+			}
+		}
+		else
+		{
+			throw new Exception("Se intenta acceder a una variable con entrada " . $method . ". Sólo GET y POST están permitidas.");
 		}
 			
 		return $param;
 	}
-		
-	public static function getParamPOST($name)
+	
+	public static function getParams($method = self::POST)
 	{
-		$param = "";
+		$params = array();
 		
-		if(isset($_POST[$name]))
+		if($method == self::GET)
 		{
-			$param = utf8_decode($_POST[$name]);
-			$param = strip_tags($param);
-			$param = htmlentities($param, ENT_COMPAT, 'UTF-8');
-			$param = stripslashes($param);
+			$params = $_GET;
 		}
-			
+		elseif($method == self::POST)
+		{
+			$params = $_POST;
+		}
+		else
+		{
+			throw new Exception("Se intenta acceder a las variables con entrada " . $method . ". Sólo GET y POST están permitidas.");
+		}
+		
+		return $params;
+	}
+	
+	public static function isGET()
+	{
+		return count($_GET) > 0;
+	}
+	
+	public static function isPOST()
+	{
+		return count($_POST) > 0;
+	}
+	
+	private static function clean($param)
+	{
+		$param = utf8_decode($_GET[$name]);
+		$param = strip_tags($param);
+		$param = htmlentities($param, ENT_COMPAT, 'UTF-8');
+		$param = stripslashes($param);
+		
 		return $param;
 	}
 		

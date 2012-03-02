@@ -9,7 +9,7 @@ class Application_Modules_Users_Model_User_Item
 	
 	public function __construct(array $options = null)
 	{
-		if (is_array($options))
+		if(is_array($options))
 		{
 			$this->setOptions($options);
 		}
@@ -40,7 +40,7 @@ class Application_Modules_Users_Model_User_Item
 		 
 		if(!method_exists($this, $method))
 		{
-			throw new Exception('Invalid property');
+			throw new Exception('Se está accediendo a una propiedad no válida (' . $name . ') del objeto Application_Modules_Users_Model_User_Item.');
 		}
 		 
 		$this->$method($value);
@@ -52,7 +52,7 @@ class Application_Modules_Users_Model_User_Item
 		 
 		if(!method_exists($this, $method))
 		{
-			throw new Exception('Invalid property');
+			throw new Exception('Se está accediendo a una propiedad no válida (' . $name . ') del objeto Application_Modules_Users_Model_User_Item.');
 		}
 		 
 		return $this->$method();

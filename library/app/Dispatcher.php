@@ -5,13 +5,13 @@ class Library_App_Dispatcher
 	public static function dispatchRequest()
 	{
 		$view = array();
-	
+		
 		$url = Library_Manage_ResourceManager::getURLData();
-	
+		
 		$module = $url->getModule();
 		$controller = $url->getController();
 		$action = $url->getAction();
-	
+		
 		if(empty($module))
 		{
 			$constructor = "Application_Controllers_" . $controller . "Controller";
@@ -20,18 +20,18 @@ class Library_App_Dispatcher
 		{
 			$constructor = "Application_Modules_" . $module . "_Controllers_" . $controller . "Controller";
 		}
-	
+		
 		$controllerObj = new $constructor();
-	
+		
 		$method = $action . "Action";
-	
+		
 		if(!method_exists($controllerObj, $method))
 		{
 			throw new Exception('No se ha encontrado el método ' . $method . ' dentro del controlador ' . $constructor . '.');
 		}
-	
+		
 		$view = $controllerObj->$method($view);
-	
+		
 		if(empty($module))
 		{
 			$viewPath = PROJECT_PATH . "/application/views/scripts/" . $controller . "/" . $action . ".php";
@@ -40,9 +40,9 @@ class Library_App_Dispatcher
 		{
 			$viewPath = PROJECT_PATH . "/application/modules/" . $module . "/views/scripts/" . $controller . "/" . $action . ".php";
 		}
-	
+		
 		$content = Library_File_FileUtil::getFileContent($viewPath, $view);
-	
+		
 		include PROJECT_PATH . "/application/layouts/scripts/layout.php";
 	}
 }
