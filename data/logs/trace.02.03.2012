@@ -94,3 +94,40 @@
 09:12:46 ( index ) Llamando a la función indexAction del controlador Index
 09:12:46 ( index ) Llamando a la función listAction del controlador User
 09:12:49 ( index ) Llamando a la función indexAction del controlador Index
+09:16:16 ( index ) Llamando a la función indexAction del controlador Index
+09:16:16 ( index ) Llamando a la función listAction del controlador User
+09:16:17 ( index ) Llamando a la función listAction del controlador User
+09:16:18 ( index ) Llamando a la función listAction del controlador User
+09:16:19 ( index ) Llamando a la función indexAction del controlador Index
+09:16:20 ( index ) Llamando a la función listAction del controlador User
+09:16:21 ( index ) Llamando a la función indexAction del controlador Index
+09:16:23 ( index ) Llamando a la función indexAction del controlador Index
+10:05:55 ( index ) Llamando a la función indexAction del controlador Index
+10:05:56 ( index ) Llamando a la función indexAction del controlador Index
+10:06:28 ( index ) Llamando a la función listAction del controlador User
+10:09:19 ( index ) Llamando a la función indexAction del controlador Index
+10:12:45 ( index ) Llamando a la función indexAction del controlador Index
+10:14:56 ( index ) Llamando a la función indexAction del controlador Index
+10:15:03 ( index ) Llamando a la función indexAction del controlador Index
+10:15:05 ( index ) Llamando a la función indexAction del controlador Index
+10:15:05 ( index ) Llamando a la función listAction del controlador User
+10:40:41 ( index ) Llamando al action indexAction del controlador Application_Controllers_IndexController
+10:41:16 ( index ) Llamando al action indexAction del controlador Application_Controllers_IndexController
+10:41:34 ( index ) Llamando al action indexAction del controlador Application_Controllers_IndexController
+10:42:36 ( index ) Llamando al action indexAction del controlador Application_Controllers_IndexController
+10:42:53 ( index ) Llamando al action indexAction del controlador Application_Controllers_IndexController
+10:42:56 ( index ) Llamando al action indexAction del controlador Application_Controllers_IndexController
+10:43:16 ( index ) Llamando al action indexAction del controlador Application_Controllers_IndexController
+10:43:16 ( index ) Llamando al action listAction del controlador Application_Modules_Users_Controllers_UserController
+10:43:47 ( index ) Llamando al action listAction del controlador Application_Modules_Users_Controllers_UserController
+10:44:56 ( index ) Llamando al action listAction del controlador Application_Modules_Users_Controllers_UserController
+10:46:15 ( index ) Llamando al action indexAction del controlador Application_Controllers_IndexController
+10:46:18 ( index ) Llamando al action indexAction del controlador Application_Controllers_IndexController
+10:46:18 ( index ) Llamando al action listAction del controlador Application_Modules_Users_Controllers_UserController
+11:16:11 ( index ) Llamando al action indexAction del controlador Application_Controllers_IndexController
+11:17:50 ( index ) Llamando al action indexAction del controlador Application_Controllers_IndexController
+11:17:52 ( index ) Llamando al action indexAction del controlador Application_Controllers_IndexController
+11:17:53 ( index ) Llamando al action listAction del controlador Application_Modules_Users_Controllers_UserController
+11:17:54 ( index ) Llamando al action listAction del controlador Application_Modules_Users_Controllers_UserController
+11:17:55 ( index ) Llamando al action listAction del controlador Application_Modules_Users_Controllers_UserController
+11:17:57 ( index ) Llamando al action indexAction del controlador Application_Controllers_IndexController

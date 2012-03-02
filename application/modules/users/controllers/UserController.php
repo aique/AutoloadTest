@@ -1,11 +1,9 @@
 <?php
 
-class Application_Modules_Users_Controllers_UserController
+class Application_Modules_Users_Controllers_UserController extends Library_Controller_BaseController
 {
 	public function listAction($view)
 	{
-		Library_Log_Logger::getLogger()->log("Llamando a la función listAction del controlador User", Library_Log_LogMessageType::TRACE);
-		
 		$userModel = new Application_Modules_Users_Model_User();
 	
 		$users = $userModel->getAllUsers();
