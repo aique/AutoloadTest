@@ -25,7 +25,7 @@ class Library_Manage_DBManager
 		$this->mysqli->close();
 	}
 	
-	public static function getAppManage()
+	public static function getDbManager()
 	{
 		if(self::$dbManager == null)
 		{
@@ -35,8 +35,13 @@ class Library_Manage_DBManager
 		return self::$dbManager;
 	}
 	
-	public function getDb()
+	public function query($query)
 	{
-		return self::$dbManager->mysqli;
+		Library_Manage_ResourceManager::getLogger()->logQuerySQL($query);
+		
+		$result = self::$dbManager->mysqli->query($query);
+		
+		return $result;
 	}
+	
 }

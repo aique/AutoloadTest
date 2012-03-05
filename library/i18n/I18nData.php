@@ -63,39 +63,28 @@
 		 */
 		private static function recognizeLanguage()
 		{
-			$user = Library_Manage_SessionManager::getVar(Application_Consts_AppConst::USER_DATA_SESSION_NAME);
-			
-			if($user)
+			if(isset($_SERVER['HTTP_ACCEPT_LANGUAGE']))
 			{
-				$accountConfiguration = AccountConfigurationLogic::getAccountConfiguration($user->getId());
-				
-				return $accountConfiguration->getLanguage();
-			}
-			else
-			{
-				if(isset($_SERVER['HTTP_ACCEPT_LANGUAGE']))
-				{
-					$language = explode(",", $_SERVER['HTTP_ACCEPT_LANGUAGE']);
+				$language = explode(",", $_SERVER['HTTP_ACCEPT_LANGUAGE']);
 					
-					$language = strtolower($language[0]);
+				$language = strtolower($language[0]);
 				
-					if(Library_I18n_LocaleHelper::hasEnglishUSLocation($language))
-					{
-						return Library_I18n_LocaleConst::ENGLISH_ABB_LOCATION;
-					}
-					elseif(Library_I18n_LocaleHelper::hasSpanishLocation($language))
-					{
-						return Library_I18n_LocaleConst::SPANISH_ABB_LOCATION;
-					}
-					else
-					{
-						return Library_Manage_AppConfigManager::getVar("i18n.defaultLang");
-					}
+				if(Library_I18n_LocaleHelper::hasEnglishUSLocation($language))
+				{
+					return Library_I18n_LocaleConst::ENGLISH_ABB_LOCATION;
+				}
+				elseif(Library_I18n_LocaleHelper::hasSpanishLocation($language))
+				{
+					return Library_I18n_LocaleConst::SPANISH_ABB_LOCATION;
 				}
 				else
 				{
 					return Library_Manage_AppConfigManager::getVar("i18n.defaultLang");
 				}
+			}
+			else
+			{
+				return Library_Manage_AppConfigManager::getVar("i18n.defaultLang");
 			}
 		}
 	}

@@ -18,6 +18,8 @@ class Application_Controllers_IndexController extends Library_Controller_BaseCon
 		
 		$view["form"] = $form;
 		
+		// throw new Exception("Error previsto.");
+		
 		return $view;
 	}
 }

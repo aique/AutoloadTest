@@ -2,11 +2,16 @@
 
 class Library_App_Dispatcher
 {
-	public static function dispatchRequest()
+	public static function dispatchRequest($url)
 	{
-		$url = Library_Manage_ResourceManager::getURLData();
-		
+		$controller = self::getController($url);
+		$controller->dispatch();
+	}
+	
+	private static function getController($url)
+	{
 		$module = $url->getModule();
+		
 		$controller = $url->getController();
 		
 		if(empty($module))
@@ -18,8 +23,7 @@ class Library_App_Dispatcher
 			$constructor = "Application_Modules_" . $module . "_Controllers_" . $controller . "Controller";
 		}
 		
-		$controllerObj = new $constructor();
-		
-		$controllerObj->dispatch($url);
+		return new $constructor($url);
 	}
+	
 }

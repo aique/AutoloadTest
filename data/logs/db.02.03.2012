@@ -1,0 +1,104 @@
+Query
+-----
+SELECT * FROM user
+Result
+------
+Length: 2Keys: id name Values: 1 juan 
+
+Query
+-----
+SELECT * FROM user
+Result
+------
+Length: 1 Keys: id Values: 1 
+Length: 2 Keys: id name Values: 1 juan 
+
+
+Query
+-----
+SELECT * FROM user
+Result
+------
+Length: 2 Keys: id name Values: 1 juan 
+
+Query
+-----
+SELECT * FROM user
+Result
+------
+Length: 2 Keys: id name Values: 1 juan 
+
+Query
+-----
+SELECT * FROM user
+Result
+------
+Length: 2 Keys: id name Values: 1 juan 
+
+Query
+-----
+SELECT * FROM user
+Result
+------
+Length: 2 Keys: id name Values: 1 juan 
+
+Query
+-----
+SELECT * FROM user
+Result
+------
+Length: 2 Keys: id name Values: 1 juan 
+
+Query
+-----
+SELECT * FROM user
+Result
+------
+Length: 2 Keys: id name Values: 1 juan 
+
+Query
+-----
+SELECT * FROM user
+Query
+-----
+SELECT * FROM user
+Result
+------
+
+
+Query
+-----
+SELECT * FROM user
+Query
+-----
+SELECT * FROM user
+Result
+------
+Length: 2 Keys: id name Values: 1 juan 
+
+Query
+-----
+SELECT * FROM user
+Result
+------
+Length: 0 Keys: Values: 
+
+Query
+-----
+SELECT * FROM user
+Result
+------
+Length: 2 Keys: id name Values: 1 juan 
+
+Query
+-----
+SELECT * FROM user
+Query
+-----
+SELECT * FROM user
+Query
+-----
+SELECT * FROM user
+Query
+-----
+SELECT * FROM user

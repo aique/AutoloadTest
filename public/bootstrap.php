@@ -11,4 +11,4 @@ defined('DEFAULT_ENVIRONMENT') || define('DEFAULT_ENVIRONMENT', "development");
 
 Library_App_Loader::load();
 
-$content = Library_App_Dispatcher::dispatchRequest();
+$content = Library_App_Dispatcher::dispatchRequest(Library_Manage_ResourceManager::getURLData());

@@ -11,8 +11,12 @@
  */
 class Application_Consts_AppConst
 {
-	const APP_CONFIG_SESSION_NAME = "app_config";
-	const URL_DATA_SESSION_NAME = "url_data";
-	const I18N_DATA_SESSION_NAME = "i18n_data";
-	const USER_DATA_SESSION_NAME = "user";
+	const APP_CONFIG = "app_config";
+	
+	const USER = "user";
+	
+	const URL = "url_data";
+	const I18N = "i18n_data";
+	const LOGGER = "logger";
+	
 }

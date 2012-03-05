@@ -3,68 +3,61 @@
 class Library_Log_Logger
 {
 	private $traceFile;
+	private $dbFile;
 	private $errorFile;
-	private $traceFileHandler;
-	private $errorFileHandler;
-	
-	private static $logger;
 	
 	public function __construct()
 	{
 		$this->traceFile = PROJECT_PATH . '/data/logs/trace';
+		$this->dbFile = PROJECT_PATH . '/data/logs/db';
 		$this->errorFile = PROJECT_PATH . '/data/logs/error';
+	}
+	
+	public function logTrace($message)
+	{
+		$handler = fopen($this->traceFile . '.' . date("d.m.Y"), 'a');
 		
-		$this->traceFileHandler = fopen($this->traceFile . '.' . date("d.m.Y"), 'a');
-		$this->errorFileHandler = fopen($this->errorFile . '.' . date("d.m.Y"), 'a');
-	}
-	
-	public function __destruct()
-	{
-		fclose($this->traceFileHandler);
-		fclose($this->errorFileHandler);
-	}
-	
-	public static function getLogger()
-	{
-		if(self::$logger == null)
-		{
-			self::$logger = new Library_Log_Logger();
-		}
-	
-		return self::$logger;
-	}
-	
-	public function log($message, $messageType)
-	{
-		switch($messageType)
-		{
-			case(Library_Log_LogMessageType::TRACE):
-				$this->printTraceMessage($message);
-				break;
-			case(Library_Log_LogMessageType::ERROR):
-				$this->printErrorMessage($message);
-				break;
-			default:
-				throw new Exception("Tipo de mensaje inválido, se ha encontrado " . $messageType . ".");
-		}
-	}
-	
-	private function printTraceMessage($message)
-	{
 		if(Library_Manage_ResourceManager::getAppConfig()->getCurrentEnvironment() != Application_Consts_EnvironmentConst::PRODUCTION_ENV)
 		{
 			$script_name = pathinfo($_SERVER['PHP_SELF'], PATHINFO_FILENAME);
 			$time = date('H:i:s');
-			fwrite($this->traceFileHandler, $time .' ( ' . $script_name . ' ) ' . $message . "\n");
+			fwrite($handler, $time .' ( ' . $script_name . ' ) ' . $message . "\n");
+		}
+		
+		fclose($handler);
+	}
+	
+	public function logQuerySQL($query)
+	{
+		if(Library_Manage_ResourceManager::getAppConfig()->getCurrentEnvironment() != Application_Consts_EnvironmentConst::PRODUCTION_ENV)
+		{
+			$handler = fopen($this->dbFile . '.' . date("d.m.Y"), 'a');
+			fwrite($handler, "Query\n-----\n" . $query . "\n");
+			fclose($handler);
 		}
 	}
 	
-	private function printErrorMessage($message)
+	public function logQueryResult($result)
 	{
-		$script_name = pathinfo($_SERVER['PHP_SELF'], PATHINFO_FILENAME);
-		$time = date('H:i:s');
-		fwrite($this->errorFileHandler, $time .' ( ' . $script_name . ' ) ' . $message . "\n");
+		if(Library_Manage_ResourceManager::getAppConfig()->getCurrentEnvironment() != Application_Consts_EnvironmentConst::PRODUCTION_ENV)
+		{
+			$handler = fopen($this->dbFile . '.' . date("d.m.Y"), 'a');
+			fwrite($handler, "Result\n------\n" . $result . "\n\n");
+			fclose($handler);
+		}
 	}
 	
+	public function logError(Exception $exception)
+	{
+		$handler = fopen($this->errorFile . '.' . date("d.m.Y"), 'a');
+		
+		fwrite($handler, "Fatal error\n-----------\n\n");
+		fwrite($handler, "File: " . $exception->getFile()."\n");
+		fwrite($handler, "Line: " . $exception->getLine()."\n");
+		fwrite($handler, "Message: " . $exception->getMessage()."\n");
+		fwrite($handler, "Trace: " . $exception->getTraceAsString()."\n\n");
+		
+		fclose($handler);
+	}
 	
 }

@@ -4,9 +4,9 @@ class Application_Modules_Users_Model_User
 {
 	public function getAllUsers()
 	{
-		$querySQL = "SELECT * FROM user";
+		$query = "SELECT * FROM user";
 		
-		$result = Library_Manage_DBManager::getAppManage()->getDb()->query($querySQL);
+		$result = Library_Manage_DBManager::getDbManager()->query($query);
 		
 		$users = array();
 		

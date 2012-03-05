@@ -9,13 +9,13 @@ class Library_Manage_ResourceManager
 {
 	public static function getAppConfig()
 	{
-		$appConfig = Library_Manage_SessionManager::getVar(Application_Consts_AppConst::APP_CONFIG_SESSION_NAME);
+		$appConfig = Library_Manage_SessionManager::getVar(Application_Consts_AppConst::APP_CONFIG);
 		
 		if(!$appConfig)
 		{
 			$appConfig = new Library_Config_AppConfig();
 			
-			Library_Manage_SessionManager::setVar(Application_Consts_AppConst::APP_CONFIG_SESSION_NAME, $appConfig);
+			Library_Manage_SessionManager::setVar(Application_Consts_AppConst::APP_CONFIG, $appConfig);
 		}
 		
 		return $appConfig;
@@ -23,13 +23,13 @@ class Library_Manage_ResourceManager
 	
 	public static function getI18nData()
 	{
-		$i18n = Library_Manage_SessionManager::getVar(Application_Consts_AppConst::I18N_DATA_SESSION_NAME);
+		$i18n = Library_Manage_SessionManager::getVar(Application_Consts_AppConst::I18N);
 		
 		if(!$i18n)
 		{
 			$i18n = new Library_I18n_I18nData();
 	
-			Library_Manage_SessionManager::setVar(Application_Consts_AppConst::I18N_DATA_SESSION_NAME, $i18n);
+			Library_Manage_SessionManager::setVar(Application_Consts_AppConst::I18N, $i18n);
 		}
 		
 		return $i18n;
@@ -37,16 +37,30 @@ class Library_Manage_ResourceManager
 	
 	public static function getURLData()
 	{
-		$url = Library_Manage_SessionManager::getVar(Application_Consts_AppConst::URL_DATA_SESSION_NAME);
+		$url = Library_Manage_SessionManager::getVar(Application_Consts_AppConst::URL);
 	
 		if(!$url)
 		{
 			$url = Library_URL_URLParser::parse($_SERVER['REQUEST_URI'], new Library_URL_URL());
 	
-			Library_Manage_SessionManager::setVar(Application_Consts_AppConst::URL_DATA_SESSION_NAME, $url);
+			Library_Manage_SessionManager::setVar(Application_Consts_AppConst::URL, $url);
 		}
 	
 		return $url;
+	}
+	
+	public static function getLogger()
+	{
+		$logger = Library_Manage_SessionManager::getVar(Application_Consts_AppConst::LOGGER);
+	
+		if(!$logger)
+		{
+			$logger = new Library_Log_Logger();
+	
+			Library_Manage_SessionManager::setVar(Application_Consts_AppConst::LOGGER, $logger);
+		}
+	
+		return $logger;
 	}
 	
 }

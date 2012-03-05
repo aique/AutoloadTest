@@ -6,14 +6,19 @@
  */
 class Library_Controller_BaseController
 {
+	protected $view;
+	protected $url;
 	protected $layout;
 	protected $helper;
 	
 	const DEFAULT_LAYOUT = "layout";
 	
-	public function __construct($layout = self::DEFAULT_LAYOUT)
+	public function __construct($url, $layout = self::DEFAULT_LAYOUT)
 	{
+		$this->url = $url;
 		$this->layout = $layout;
+		
+		$view = array();
 		$this->helper = new Library_Controller_ControllerHelper();
 	}
 	
@@ -32,13 +37,22 @@ class Library_Controller_BaseController
 	 * 		Objeto de tipo Library_URL_URL que contiene la información
 	 * 		acerca de la URL introducida por el usuario en su petición.
 	 */
-	public function dispatch(Library_URL_URL $url)
+	public function dispatch()
 	{
-		$this->init();
-		
-		$this->applyLayout($this->applyView($url, $this->doAction($url)));
-		
-		$this->end();
+		try
+		{	
+			$this->init();
+			$this->applyLayout($this->applyView($this->doAction()));
+			$this->end();
+		}
+		catch(Exception $exception)
+		{
+			Library_Manage_ResourceManager::getLogger()->logError($exception);
+			
+			$this->view["error"] = $exception->getMessage();
+			
+			$this->helper->redirect(new Library_URL_URL(Library_URL_URL::MODULE_DEFAULT_VALUE, "error", "error"));
+		}
 	}
 	
 	/**
@@ -56,10 +70,6 @@ class Library_Controller_BaseController
 	 * Analiza la URL recibida en la petición y determina el action dentro
 	 * del controlador que debe encargarse de responder.
 	 * 
-	 * @param Library_URL_URL $url
-	 * 		Objeto de tipo Library_URL_URL que contiene la información
-	 * 		acerca de la URL introducida por el usuario en su petición.
-	 * 
 	 * @throws Exception
 	 * 		Lanza una excepción cuando no existe el action encargado de atender
 	 * 		la petición.
@@ -68,28 +78,25 @@ class Library_Controller_BaseController
 	 * 		Array recibido como parámetro con los valores definitivos que
 	 * 		recibirá la capa de la vista.
 	 */
-	private function doAction(Library_URL_URL $url)
+	private function doAction()
 	{
-		$view = array();
 		
-		$module = $url->getModule();
-		$controller = $url->getController();
-		$action = $url->getAction();
+		$module = $this->url->getModule();
+		$controller = $this->url->getController();
+		$action = $this->url->getAction();
 		
 		$method = $action . "Action";
 		
 		if(method_exists($this, $method))
 		{
-			Library_Log_Logger::getLogger()->log("Llamando al action " . $method . " del controlador " . get_class($this), Library_Log_LogMessageType::TRACE);
+			Library_Manage_ResourceManager::getLogger()->logTrace("Llamando al action " . $method . " del controlador " . get_class($this), Library_Log_LogMessageType::TRACE);
 			
-			$view = $this->$method($view);
+			$this->view = $this->$method($this->view);
 		}
 		else
 		{
 			throw new Exception('No se ha encontrado el método ' . $method . ' dentro del controlador ' . get_class($this) . '.');
 		}
-		
-		return $view;
 	}
 	
 	/**
@@ -108,11 +115,11 @@ class Library_Controller_BaseController
 	 * 		Lanza una excepción cuando no existe el fichero que renderiza
 	 * 		la capa de la vista.
 	 */
-	private function applyView(Library_URL_URL $url, array $view)
+	private function applyView()
 	{
-		$module = $url->getModule();
-		$controller = $url->getController();
-		$action = $url->getAction();
+		$module = $this->url->getModule();
+		$controller = $this->url->getController();
+		$action = $this->url->getAction();
 		
 		if(empty($module))
 		{
@@ -128,7 +135,7 @@ class Library_Controller_BaseController
 			throw new Exception("Se intenta aplicar una vista que no existe: " . $viewPath . ".");
 		}
 		
-		return Library_File_FileUtil::getFileContent($viewPath, $view);
+		return Library_File_FileUtil::getFileContent($viewPath, $this->view);
 	}
 	
 	/**
