@@ -1,9 +1,5 @@
 <?php
 
-/**
- * Clase que carga de forma dinámica el resto de clases utilizadas por la aplicación
- * a partir de la ruta descrita en el nombre de las mismas.
- */
 class Library_App_Autoloader
 {
 	private static $instance = null;

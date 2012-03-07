@@ -1,3 +1,3 @@
 <h2>Error encontrado</h2>
 
-<?php echo $view["error"]; ?>
+<p>Póngase en contacto con el administrador.</p>

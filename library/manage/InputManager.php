@@ -63,7 +63,7 @@ class Library_Manage_InputManager
 	
 	private static function clean($param)
 	{
-		$param = utf8_decode($_GET[$name]);
+		$param = utf8_decode($param);
 		$param = strip_tags($param);
 		$param = htmlentities($param, ENT_COMPAT, 'UTF-8');
 		$param = stripslashes($param);

@@ -2,17 +2,18 @@
 
 class Library_App_Dispatcher
 {
-	public static function dispatchRequest($url)
+	public static function dispatchRequest(Library_Request_Request $request)
 	{
-		$controller = self::getController($url);
+		$controller = self::getController($request);
+		
 		$controller->dispatch();
 	}
 	
-	private static function getController($url)
+	private static function getController(Library_Request_Request $request)
 	{
-		$module = $url->getModule();
+		$module = $request->getModule();
 		
-		$controller = $url->getController();
+		$controller = $request->getController();
 		
 		if(empty($module))
 		{
@@ -23,7 +24,7 @@ class Library_App_Dispatcher
 			$constructor = "Application_Modules_" . $module . "_Controllers_" . $controller . "Controller";
 		}
 		
-		return new $constructor($url);
+		return new $constructor($request);
 	}
 	
 }

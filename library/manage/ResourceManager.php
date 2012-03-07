@@ -9,16 +9,16 @@ class Library_Manage_ResourceManager
 {
 	public static function getAppConfig()
 	{
-		$appConfig = Library_Manage_SessionManager::getVar(Application_Consts_AppConst::APP_CONFIG);
+		$config = Library_Manage_SessionManager::getVar(Application_Consts_AppConst::APP_CONFIG);
 		
-		if(!$appConfig)
+		if(!$config)
 		{
-			$appConfig = new Library_Config_AppConfig();
+			$config = new Library_App_Config();
 			
-			Library_Manage_SessionManager::setVar(Application_Consts_AppConst::APP_CONFIG, $appConfig);
+			Library_Manage_SessionManager::setVar(Application_Consts_AppConst::APP_CONFIG, $config);
 		}
 		
-		return $appConfig;
+		return $config;
 	}
 	
 	public static function getI18nData()
@@ -35,18 +35,13 @@ class Library_Manage_ResourceManager
 		return $i18n;
 	}
 	
-	public static function getURLData()
+	public static function getRequestData()
 	{
-		$url = Library_Manage_SessionManager::getVar(Application_Consts_AppConst::URL);
-	
-		if(!$url)
-		{
-			$url = Library_URL_URLParser::parse($_SERVER['REQUEST_URI'], new Library_URL_URL());
-	
-			Library_Manage_SessionManager::setVar(Application_Consts_AppConst::URL, $url);
-		}
-	
-		return $url;
+		$request = Library_Request_URLParser::parse($_SERVER['REQUEST_URI']);
+		
+		Library_Manage_SessionManager::setVar(Application_Consts_AppConst::REQUEST, $request);
+		
+		return $request;
 	}
 	
 	public static function getLogger()

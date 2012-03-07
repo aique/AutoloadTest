@@ -2,10 +2,12 @@
 
 class Library_Controller_ControllerHelper
 {
-	public function redirect(Library_URL_URL $url)
+	public function redirect(Library_Request_Request $request)
 	{
-		Library_App_Dispatcher::dispatchRequest($url);
+		Library_Manage_SessionManager::setVar(Application_Consts_AppConst::REQUEST, $request);
 		
-		// header("Location: " . $url);
+		// Library_App_Dispatcher::dispatchRequest($url);
+		
+		header("Location: " . $request);
 	}
 }

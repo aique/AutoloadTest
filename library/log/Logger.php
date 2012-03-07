@@ -32,7 +32,7 @@ class Library_Log_Logger
 		if(Library_Manage_ResourceManager::getAppConfig()->getCurrentEnvironment() != Application_Consts_EnvironmentConst::PRODUCTION_ENV)
 		{
 			$handler = fopen($this->dbFile . '.' . date("d.m.Y"), 'a');
-			fwrite($handler, "Query\n-----\n" . $query . "\n");
+			fwrite($handler, "Query\n-----\n" . $query . "\n\n");
 			fclose($handler);
 		}
 	}

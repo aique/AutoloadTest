@@ -1,6 +1,6 @@
 <?php
 
-class Library_Form_Printer_DefaultInputPrinter extends Library_Form_Printer_BasePrinter
+class Library_Form_Printer_DefaultInputPrinter extends Library_Form_Printer_FormElementBasePrinter
 {
 	public function printHTML()
 	{

@@ -8,7 +8,7 @@ abstract class Library_Form_FormElement
 	
 	private $printer;
 	
-	public function __construct($name, array $attributes, array $validations = array(), Library_Printer_BaseDefaultPrinter $printer = null)
+	public function __construct($name, array $attributes, array $validations = array(), Library_Form_Printer_FormElementBasePrinter $printer = null)
 	{
 		$this->name = $name;
 		$this->attributes = $attributes;

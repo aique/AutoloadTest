@@ -13,10 +13,10 @@ class Application_Consts_AppConst
 {
 	const APP_CONFIG = "app_config";
 	
-	const USER = "user";
+	const LOGGED_USER = "logged_user";
 	
-	const URL = "url_data";
+	const REQUEST = "request_data";
 	const I18N = "i18n_data";
+	const ACL = "acl_data";
 	const LOGGER = "logger";
-	
 }

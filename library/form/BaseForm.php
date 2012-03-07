@@ -8,6 +8,10 @@ abstract class Library_Form_BaseForm
 	
 	private $elements;
 	
+	private $printer;
+	
+	private $error;
+	
 	const DEFAULT_ACTION = "#";
 	const DEFAULT_METHOD = "POST";
 	const DEFAULT_ENCTYPE = "application/x-www-form-urlencoded";
@@ -18,7 +22,11 @@ abstract class Library_Form_BaseForm
 		$this->method = $method;
 		$this->enctype = $enctype;
 		
+		$this->error = null;
+		
 		$this->init();
+		
+		$this->printer = new Library_Form_Printer_DefaultFormPrinter($this);
 	}
 	
 	/**
@@ -81,6 +89,46 @@ abstract class Library_Form_BaseForm
 	    $this->enctype = $enctype;
 	}
 	
+	/**
+	 * Devuelve el valor del atributo elements.
+	 *
+	 * @return array
+	 */
+	public function getElements()
+	{
+	    return $this->elements;
+	}
+	 
+	/**
+	 * Establece el valor del atributo elements.
+	 *
+	 * @param array $elements
+	 */
+	public function setElements($elements)
+	{
+	    $this->elements = $elements;
+	}
+	
+	/**
+	 * Devuelve el valor del atributo error.
+	 *
+	 * @return string
+	 */
+	public function getError()
+	{
+	    return $this->error;
+	}
+	 
+	/**
+	 * Establece el valor del atributo error.
+	 *
+	 * @param string $error
+	 */
+	public function setError($error)
+	{
+		$this->error = $error;
+	}
+	
 	public abstract function init();
 	
 	public function addElement(Library_Form_FormElement $element)
@@ -120,23 +168,7 @@ abstract class Library_Form_BaseForm
 	
 	public function __toString()
 	{
-		$action = $this->action;
-		
-		if($action == self::DEFAULT_ACTION)
-		{
-			$action = Library_Manage_ResourceManager::getURLData();
-		}
-		
-		$output = '<form action="'.$action.'" method="'.$this->method.'" enctype="'.$this->enctype.'">';
-		
-		foreach($this->elements as $element)
-		{
-			$output .= $element;
-		}
-		
-		$output .= '</form>';
-		
-		return $output;
+		return $this->printer->printHTML();
 	}
 	
 }

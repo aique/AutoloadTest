@@ -2,7 +2,12 @@
 
 class Application_Controllers_IndexController extends Library_Controller_BaseController
 {
-	public function indexAction($view)
+	public function init()
+	{
+		$this->addPlugin(new Application_Plugins_ACLPlugin());
+	}
+	
+	public function indexAction()
 	{
 		$form = new Application_Forms_LoginForm();
 		
@@ -12,14 +17,26 @@ class Application_Controllers_IndexController extends Library_Controller_BaseCon
 			
 			if($form->isValid())
 			{
-				$this->helper->redirect(new Library_URL_URL("users", "user", "list"));
+				$name = Library_Manage_InputManager::getParam("usuario", Library_Manage_InputManager::POST);
+				$pass = Library_Manage_InputManager::getParam("password", Library_Manage_InputManager::POST);
+				
+				$userModel = new Application_Model_User();
+				$user = $userModel->loginUser($name, $pass);
+				
+				if($user)
+				{
+					Library_Manage_SessionManager::setVar(Application_Consts_AppConst::LOGGED_USER, $user);
+ 					$this->helper->redirect(new Library_Request_Request("cms", "user", "list"));
+				}
+				else
+				{
+					$form->setError("Nombre o contraseña no válida");
+				}
 			}
 		}
 		
-		$view["form"] = $form;
+		$this->view["form"] = $form;
 		
 		// throw new Exception("Error previsto.");
-		
-		return $view;
 	}
 }

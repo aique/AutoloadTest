@@ -11,6 +11,9 @@ class Library_App_Loader
 	 */
 	public static function load()
 	{
-		
+		if(!isset($_SESSION))
+		{
+			session_start();
+		}
 	}
 }

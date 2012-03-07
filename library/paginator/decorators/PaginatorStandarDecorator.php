@@ -45,7 +45,7 @@ class Library_Paginator_Decorators_PaginatorStandarDecorator
 			
 		for($i = 1 ; $i < $paginator->getPagesNumber() ; $i++)
 		{
-			$output .= '<li><a href="'.Library_Manage_ResourceManager::getURLData().'/page/'.$i.'">'.$i.'</a></li>';
+			$output .= '<li><a href="'.Library_Manage_ResourceManager::getRequestData().'/page/'.$i.'">'.$i.'</a></li>';
 		}
 			
 		$output .= '</ul></div>';
