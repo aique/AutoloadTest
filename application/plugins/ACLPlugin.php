@@ -2,7 +2,7 @@
 
 class Application_Plugins_ACLPlugin extends Library_Plugin_BasePlugin
 {
-	public function preDispatch(Library_Controller_BaseController $controller)
+	public function preDispatch(Library_Request_Request $request)
 	{
 		$acl = $this->createAclObject();
 		
@@ -10,11 +10,11 @@ class Application_Plugins_ACLPlugin extends Library_Plugin_BasePlugin
 		
 		if($user)
 		{
- 			if(!$acl->isAllowed($user->getRole(), $controller->getRequest()->__toString()))
+ 			if(!$acl->isAllowed($user->getRole(), $request->__toString()))
  			{
- 				$controller->getHelper()->redirect(new Library_Request_Request(Library_Request_Request::MODULE_DEFAULT_VALUE,
- 																			   Library_Request_Request::CONTROLLER_DEFAULT_VALUE,
- 																			   Library_Request_Request::ACTION_DEFAULT_VALUE));
+ 				$request->setModule(Library_Request_Request::MODULE_DEFAULT_VALUE);
+ 				$request->setController(Library_Request_Request::CONTROLLER_DEFAULT_VALUE);
+ 				$request->setAction(Library_Request_Request::ACTION_DEFAULT_VALUE);
  			}
 		}
 	}

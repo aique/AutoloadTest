@@ -32,7 +32,7 @@ class Library_Parsers_ConfigFileParser
 				{
 					$value = self::getAttributeValue($line);
 		
-					if($value != null)
+					if(isset($value[0]) && isset($value[1]))
 					{
 						foreach($environments as $environment)
 						{

@@ -25,7 +25,7 @@
 		 */
 		public static function getText($textId, $params = null)
 		{
-			return Library_I18n_Text_TextClient::getText($textId, $params);
+			return Library_I18n_Text_TextClient::getInstance()->getText($textId, $params);
 		}
 		
 		/**

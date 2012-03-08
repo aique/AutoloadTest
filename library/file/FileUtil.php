@@ -2,6 +2,11 @@
 
 class Library_File_FileUtil
 {
+	public static function getFilesFromFolder($folder)
+	{
+		return array_diff(scandir($folder), array('..', '.'));
+	}
+	
 	public static function getFileContent($template, $view)
 	{
 		if(is_file($template))

@@ -25,9 +25,9 @@ class Library_Controller_ControllerDispatcher
 		try
 		{
 			$this->controller->init();
-			$this->preDispatch();
+			$this->preDispatch($this->controller->getRequest());
 			$this->applyLayout($this->applyView($this->doAction()));
-			$this->postDispatch();
+			$this->postDispatch($this->controller->getRequest());
 			$this->controller->end();
 		}
 		catch(Exception $exception)
@@ -38,20 +38,45 @@ class Library_Controller_ControllerDispatcher
 		}
 	}
 	
-	private function preDispatch()
+	private function preDispatch(Library_Request_Request $request)
 	{
+		$currentAction = $request->__toString(); 
+		
 		foreach($this->controller->getPlugins() as $plugin)
 		{
-			$plugin->preDispatch($this->controller);
+			$plugin->preDispatch($request);
+			
+			$this->checkPluginRedirection($request, $currentAction);
 		}
 	}
 	
-	private function postDispatch()
+	private function postDispatch(Library_Request_Request $request)
 	{
+		$currentAction = $request->__toString();
+		
 		foreach($this->controller->getPlugins() as $plugin)
 		{
-			$plugin->postDispatch($this->controller);
+			$plugin->postDispatch($request);
+			
+			$this->checkPluginRedirection($request, $currentAction);
 		}
+	}
+	
+	private function checkPluginRedirection($request, $currentAction)
+	{
+		$pluginActionRequested = $request->__toString();
+		
+		if($currentAction != $pluginActionRequested)
+		{
+			$this->controller->getHelper()->redirect($request);
+			
+			$this->endDispatch();
+		}
+	}
+	
+	public function endDispatch()
+	{
+		exit();
 	}
 	
 	/**

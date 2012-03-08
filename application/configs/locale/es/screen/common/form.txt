@@ -1,0 +1,1 @@
+screen_common_form_submit = "Enviar"

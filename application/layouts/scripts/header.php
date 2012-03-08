@@ -1,6 +1,6 @@
 <div id="header">
 
-	<h1><?php echo Library_I18n_I18n::getText("screen_layout_index_title"); ?></h1>
+	<h1><?php echo Library_I18n_I18n::getText("screen_common_layout_title"); ?></h1>
 	
 	<p>
 	

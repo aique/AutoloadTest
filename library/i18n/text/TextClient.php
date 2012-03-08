@@ -6,6 +6,45 @@
 	 */
 	class Library_I18n_Text_TextClient
 	{
+		private $fileManager;
+		
+		private static $instance = null;
+		
+		private function __construct()
+		{
+			$this->fileManager = new Library_I18n_I18nFileManager();
+		}
+		
+		public static function getInstance()
+		{
+			if(self::$instance == null)
+			{
+				self::$instance = new Library_I18n_Text_TextClient();
+			}
+			
+			return self::$instance;
+		}
+		
+		/**
+		 * Devuelve el valor del atributo fileManager.
+		 *
+		 * @return Library_I18n_I18nFileManager
+		 */
+		public function getFileManager()
+		{
+		    return $this->fileManager;
+		}
+		 
+		/**
+		 * Establece el valor del atributo fileManager.
+		 *
+		 * @param Library_I18n_I18nFileManager $fileManager
+		 */
+		public function setFileManager($fileManager)
+		{
+		    $this->fileManager = $fileManager;
+		}
+		
 		/**
 		 * Método que devuelve un texto contenido en los ficheros de internacionalización
 		 * a partir de la etiqueta asociada a él.
@@ -28,19 +67,17 @@
 		 * 		internacionalización no se ha podido resolver ni por tanto extraer el texto
 		 * 		solicitado.
 		 */
-		public static function getText($textId, $params = null)
+		public function getText($textId, $params = null)
 		{
 			$locale = Library_Manage_ResourceManager::getI18nData()->getLocale();
 			
-			$textIdObj = new Library_I18n_Text_TextId($textId);
-			
 			if(Library_I18n_LocaleHelper::hasEnglishUSLocation($locale))
 			{
-				$text = self::getTextFromFile(Library_Manage_ResourceManager::getConfig()->getVar("i18n.path") . $locale, $textIdObj);
+				$text = self::getTextFromFile($textId);
 			}
 			elseif(Library_I18n_LocaleHelper::hasSpanishLocation($locale))
 			{
-				$text = self::getTextFromFile(Library_Manage_ResourceManager::getConfig()->getVar("i18n.path") . $locale, $textIdObj);
+				$text = self::getTextFromFile($textId);
 			}
 			else
 			{
@@ -84,7 +121,7 @@
 		 * 		pueda operar correctamente no se ha recibido o bien su contenido es vacío. Se trata del
 		 * 		primer parámetro que especifica el nombre del fichero.
 		 */
-		public static function getFileContent($name, $filePath = null, $view = null)
+		public function getFileContent($name, $filePath = null, $view = null)
 		{
 			if(!isset($name) || empty($name))
 			{
@@ -101,11 +138,9 @@
 			return Library_File_FileUtil::getFileContent($filePath, $view);
 		}
 		
-		private static function getTextFromFile($path, $textId)
+		private static function getTextFromFile($textId)
 		{
-			$ifm = new Library_I18n_I18nFileManager($path, $textId);
-			
-			return $ifm->getText($textId);
+			return self::$instance->getFileManager()->getText($textId);
 		}
 		
 	}

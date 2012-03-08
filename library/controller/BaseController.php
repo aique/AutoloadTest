@@ -134,6 +134,28 @@ class Library_Controller_BaseController
 		$this->plugins[] = $plugin;
 	}
 	
+	/**
+	 * Devuelve el valor del atributo dispatcher.
+	 *
+	 * @return Library_Controller_ControllerDispatcher
+	 */
+	public function getDispatcher()
+	{
+	    return $this->dispatcher;
+	}
+	 
+	/**
+	 * Establece el valor del atributo dispatcher.
+	 *
+	 * @param Library_Controller_ControllerDispatcher $dispatcher
+	 */
+	public function setDispatcher($dispatcher)
+	{
+	    $this->dispatcher = $dispatcher;
+	}
+	
+	
+	
 	public function dispatch()
 	{
 		$this->dispatcher->dispatch();

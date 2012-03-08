@@ -318,3 +318,315 @@ Query
 -----
 SELECT id, name, role, email FROM user
 
+Query
+-----
+SELECT id, name, role, email FROM user
+
+Query
+-----
+SELECT id, name, role, email FROM user
+
+Query
+-----
+SELECT id, name, role, email FROM user
+
+Query
+-----
+SELECT id, name, role, email FROM user WHERE pass = 'juan'
+
+Query
+-----
+SELECT id, name, role, email FROM user
+
+Query
+-----
+SELECT id, name, role, email FROM user
+
+Query
+-----
+SELECT id, name, role, email FROM user
+
+Query
+-----
+SELECT id, name, role, email FROM user
+
+Query
+-----
+SELECT id, name, role, email FROM user
+
+Query
+-----
+SELECT id, name, role, email FROM user
+
+Query
+-----
+SELECT id, name, role, email FROM user
+
+Query
+-----
+SELECT id, name, role, email FROM user
+
+Query
+-----
+SELECT id, name, role, email FROM user
+
+Query
+-----
+SELECT id, name, role, email FROM user
+
+Query
+-----
+SELECT id, name, role, email FROM user
+
+Query
+-----
+SELECT id, name, role, email FROM user WHERE pass = 'juan'
+
+Query
+-----
+SELECT id, name, role, email FROM user
+
+Query
+-----
+SELECT id, name, role, email FROM user
+
+Query
+-----
+SELECT id, name, role, email FROM user
+
+Query
+-----
+SELECT id, name, role, email FROM user
+
+Query
+-----
+SELECT id, name, role, email FROM user
+
+Query
+-----
+SELECT id, name, role, email FROM user WHERE pass = 'pedro'
+
+Query
+-----
+SELECT id, name, role, email FROM user
+
+Query
+-----
+SELECT id, name, role, email FROM user WHERE pass = 'pedro'
+
+Query
+-----
+SELECT id, name, role, email FROM user
+
+Query
+-----
+SELECT id, name, role, email FROM user WHERE pass = 'pedro'
+
+Query
+-----
+SELECT id, name, role, email FROM user WHERE pass = 'pedro'
+
+Query
+-----
+SELECT id, name, role, email FROM user WHERE pass = 'pedro'
+
+Query
+-----
+SELECT id, name, role, email FROM user WHERE pass = 'pedro'
+
+Query
+-----
+SELECT id, name, role, email FROM user WHERE pass = 'pedro'
+
+Query
+-----
+SELECT id, name, role, email FROM user
+
+Query
+-----
+SELECT id, name, role, email FROM user WHERE pass = 'juan'
+
+Query
+-----
+SELECT id, name, role, email FROM user
+
+Query
+-----
+SELECT id, name, role, email FROM user WHERE pass = 'pedro'
+
+Query
+-----
+SELECT id, name, role, email FROM user WHERE pass = 'pedro'
+
+Query
+-----
+SELECT id, name, role, email FROM user WHERE pass = 'pedro'
+
+Query
+-----
+SELECT id, name, role, email FROM user WHERE pass = 'pedro'
+
+Query
+-----
+SELECT id, name, role, email FROM user WHERE pass = 'juan'
+
+Query
+-----
+SELECT id, name, role, email FROM user
+
+Query
+-----
+SELECT id, name, role, email FROM user
+
+Query
+-----
+SELECT id, name, role, email FROM user
+
+Query
+-----
+SELECT id, name, role, email FROM user
+
+Query
+-----
+SELECT id, name, role, email FROM user WHERE pass = 'pedro'
+
+Query
+-----
+SELECT id, name, role, email FROM user WHERE pass = 'pedro'
+
+Query
+-----
+SELECT id, name, role, email FROM user WHERE pass = 'pedro'
+
+Query
+-----
+SELECT id, name, role, email FROM user WHERE pass = 'pedro'
+
+Query
+-----
+SELECT id, name, role, email FROM user WHERE pass = 'pedro'
+
+Query
+-----
+SELECT id, name, role, email FROM user WHERE pass = 'pedro'
+
+Query
+-----
+SELECT id, name, role, email FROM user
+
+Query
+-----
+SELECT id, name, role, email FROM user
+
+Query
+-----
+SELECT id, name, role, email FROM user
+
+Query
+-----
+SELECT id, name, role, email FROM user
+
+Query
+-----
+SELECT id, name, role, email FROM user
+
+Query
+-----
+SELECT id, name, role, email FROM user WHERE pass = 'juan'
+
+Query
+-----
+SELECT id, name, role, email FROM user
+
+Query
+-----
+SELECT id, name, role, email FROM user
+
+Query
+-----
+SELECT id, name, role, email FROM user
+
+Query
+-----
+SELECT id, name, role, email FROM user WHERE pass = 'pedro'
+
+Query
+-----
+SELECT id, name, role, email FROM user WHERE pass = 'juan'
+
+Query
+-----
+SELECT id, name, role, email FROM user
+
+Query
+-----
+SELECT id, name, role, email FROM user
+
+Query
+-----
+SELECT id, name, role, email FROM user
+
+Query
+-----
+SELECT id, name, role, email FROM user
+
+Query
+-----
+SELECT id, name, role, email FROM user
+
+Query
+-----
+SELECT id, name, role, email FROM user
+
+Query
+-----
+SELECT id, name, role, email FROM user
+
+Query
+-----
+SELECT id, name, role, email FROM user WHERE pass = 'rty'
+
+Query
+-----
+SELECT id, name, role, email FROM user WHERE pass = 'juan'
+
+Query
+-----
+SELECT id, name, role, email FROM user
+
+Query
+-----
+SELECT id, name, role, email FROM user
+
+Query
+-----
+SELECT id, name, role, email FROM user WHERE pass = 'juan'
+
+Query
+-----
+SELECT id, name, role, email FROM user
+
+Query
+-----
+SELECT id, name, role, email FROM user
+
+Query
+-----
+SELECT id, name, role, email FROM user WHERE pass = 'juan'
+
+Query
+-----
+SELECT id, name, role, email FROM user
+
+Query
+-----
+SELECT id, name, role, email FROM user
+
+Query
+-----
+SELECT id, name, role, email FROM user WHERE pass = 'juan'
+
+Query
+-----
+SELECT id, name, role, email FROM user
+

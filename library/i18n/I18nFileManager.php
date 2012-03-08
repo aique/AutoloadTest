@@ -5,59 +5,37 @@
 	 */
 	class Library_I18n_I18nFileManager
 	{
-		private $fileContents;
+		private $translations;
 		
-		public function __construct($path = null, $textId = null)
+		public function __construct()
 		{
-			if($textId)
-			{
-				$file = $path . "/" . $textId->getMedia() . "/" . $textId->getController() . ".txt";
-			}
-			else
-			{
-				$file = $path;
-			}
+			$this->translations = array();
 			
-			if($path)
+			$locale = Library_Manage_ResourceManager::getI18nData()->getLocale();
+			$request = Library_Manage_ResourceManager::getRequestData();
+			$path = Library_Manage_ResourceManager::getConfig()->getVar("i18n.path") . $locale . "/screen";
+			
+			self::setTranslationsFromFolder($path . "/common/");
+			
+			self::setTranslationsFromFile($path . "/" . $request->getController() . "/" . $request->getAction() . ".txt");
+		}
+		
+		private function setTranslationsFromFolder($path)
+		{
+			foreach(Library_File_FileUtil::getFilesFromFolder($path) as $translationFile)
 			{
-				$handler = fopen($file, "r");
-				$this->fileContents = fread($handler, filesize($file));
-				fclose($handler);
+				$this->translations = array_merge($this->translations, Library_Parsers_TranslationsFileParser::parse($path . $translationFile)); 
 			}
 		}
 		
-		/**
-		 * 
-		 * @param unknown_type $textIdObj
-		 * @return mixed
-		 */
-		public function getText($textIdObj)
+		private function setTranslationsFromFile($translationFile)
 		{
-			$lines = explode("\n", $this->fileContents);
-			
-			$text = "";
-			
-			foreach($lines as $line)
-			{	
-				if(!empty($line))
-				{
-					$separatorPosition = stripos($line, "=");
-					
-					$textId = trim(substr($line, 0, $separatorPosition));
-					
-					$textInitContent = stripos($line, "\"") + 1;
-					$textEndContent = strrpos($line, "\"");
-					
-					$textContent = trim(substr($line, $textInitContent, $textEndContent - $textInitContent));
-					
-					$currentTextId = new Library_I18n_Text_TextId($textId);
-					
-					if($currentTextId->getId() == $textIdObj->getId())
-					{
-						return $textContent;
-					}
-				}
-			}
+			$this->translations = array_merge($this->translations, Library_Parsers_TranslationsFileParser::parse($translationFile));
+		}
+		
+		public function getText($textId)
+		{
+			return $this->translations[$textId];
 		}
 		
 		/**
