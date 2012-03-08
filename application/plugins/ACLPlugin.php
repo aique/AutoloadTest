@@ -2,28 +2,26 @@
 
 class Application_Plugins_ACLPlugin extends Library_Plugin_BasePlugin
 {
-	public function preDispatch(Library_Request_Request $request)
+	public function preDispatch(Library_Controller_BaseController $controller)
 	{
 		$acl = $this->createAclObject();
 		
-		$user = Library_Manage_SessionManager::getVar(Application_Consts_AppConst::LOGGED_USER);
+		$user = Library_Manage_SessionManager::getVar(Library_Consts_Application::LOGGED_USER);
 		
 		if($user)
 		{
-			if(!$acl->isAllowed($request->__toString(), $user->getRole()))
-			{
-				$request->setModule(Library_Request_Request::MODULE_DEFAULT_VALUE);
-				$request->setController(Library_Request_Request::CONTROLLER_DEFAULT_VALUE);
-				$request->setAction(Library_Request_Request::ACTION_DEFAULT_VALUE);
-			}
+ 			if(!$acl->isAllowed($user->getRole(), $controller->getRequest()->__toString()))
+ 			{
+ 				$controller->getHelper()->redirect(new Library_Request_Request(Library_Request_Request::MODULE_DEFAULT_VALUE,
+ 																			   Library_Request_Request::CONTROLLER_DEFAULT_VALUE,
+ 																			   Library_Request_Request::ACTION_DEFAULT_VALUE));
+ 			}
 		}
-		
-		return $request;
 	}
 	
 	private function createAclObject()
 	{
-		$acl = Library_Manage_SessionManager::getVar(Application_Consts_AppConst::ACL);
+		$acl = Library_Manage_SessionManager::getVar(Library_Consts_Application::ACL);
 		
 		if(!$acl)
 		{
@@ -39,6 +37,8 @@ class Application_Plugins_ACLPlugin extends Library_Plugin_BasePlugin
 			$resource = new Library_Request_Request("cms", "user", "list");
 			
 			$acl->addResource($resource->__toString(), "admin");
+			
+			Library_Manage_SessionManager::setVar(Library_Consts_Application::ACL, $acl);
 		}
 		
 		return $acl;

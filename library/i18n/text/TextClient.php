@@ -36,11 +36,11 @@
 			
 			if(Library_I18n_LocaleHelper::hasEnglishUSLocation($locale))
 			{
-				$text = self::getTextFromFile(Library_Manage_ResourceManager::getAppConfig()->getVar("i18n.path") . Library_I18n_LocaleFileHelper::ENGLISH_LOCALE_FOLDER, $textIdObj);
+				$text = self::getTextFromFile(Library_Manage_ResourceManager::getConfig()->getVar("i18n.path") . $locale, $textIdObj);
 			}
 			elseif(Library_I18n_LocaleHelper::hasSpanishLocation($locale))
 			{
-				$text = self::getTextFromFile(Library_Manage_ResourceManager::getAppConfig()->getVar("i18n.path") . Library_I18n_LocaleFileHelper::SPANISH_LOCALE_FOLDER, $textIdObj);
+				$text = self::getTextFromFile(Library_Manage_ResourceManager::getConfig()->getVar("i18n.path") . $locale, $textIdObj);
 			}
 			else
 			{
@@ -95,7 +95,7 @@
 			{
 				$locale = Library_Manage_ResourceManager::geti18nData()->getLocale();
 				
-				$filePath = Library_Manage_ResourceManager::getAppConfig()->getVar("i18n.path") . '/' . $locale . '/files/' . $name;
+				$filePath = Library_Manage_ResourceManager::getConfig()->getVar("i18n.path") . '/' . $locale . '/files/' . $name;
 			}
 			
 			return Library_File_FileUtil::getFileContent($filePath, $view);

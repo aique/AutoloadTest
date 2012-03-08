@@ -5,6 +5,7 @@ class Application_Model_User_Item
 	private $id;
 	private $name;
 	private $role;
+	private $email;
 	
 	private $printer;
 	
@@ -119,9 +120,29 @@ class Application_Model_User_Item
 	    $this->role = $role;
 	}
 	
-	public function printItem()
+	/**
+	 * Devuelve el valor del atributo email.
+	 *
+	 * @return string
+	 */
+	public function getEmail()
 	{
-		return $this->printer->printHTMLFormat($this);
+	    return $this->email;
+	}
+	 
+	/**
+	 * Establece el valor del atributo email.
+	 *
+	 * @param string $email
+	 */
+	public function setEmail($email)
+	{
+	    $this->email = $email;
+	}
+	
+	public function __toString()
+	{
+		return $this->printer->printHTML($this);
 	}
 	
 }

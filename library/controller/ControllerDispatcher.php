@@ -27,6 +27,7 @@ class Library_Controller_ControllerDispatcher
 			$this->controller->init();
 			$this->preDispatch();
 			$this->applyLayout($this->applyView($this->doAction()));
+			$this->postDispatch();
 			$this->controller->end();
 		}
 		catch(Exception $exception)
@@ -39,16 +40,17 @@ class Library_Controller_ControllerDispatcher
 	
 	private function preDispatch()
 	{
-		$request = $this->controller->getRequest();
-		
 		foreach($this->controller->getPlugins() as $plugin)
 		{
-			$resultReq = $plugin->preDispatch($request);
-			
-			if($request->__toString() != $resultReq->__toString())
-			{
-				$this->controller->getHelper()->redirect($resultReq);
-			}
+			$plugin->preDispatch($this->controller);
+		}
+	}
+	
+	private function postDispatch()
+	{
+		foreach($this->controller->getPlugins() as $plugin)
+		{
+			$plugin->postDispatch($this->controller);
 		}
 	}
 	
@@ -71,12 +73,12 @@ class Library_Controller_ControllerDispatcher
 		$module = $request->getModule();
 		$controller = $request->getController();
 		$action = $request->getAction();
-	
+		
 		$method = $action . "Action";
 	
 		if(method_exists($this->controller, $method))
 		{
-			Library_Manage_ResourceManager::getLogger()->logTrace("Llamando al action " . $method . " del controlador " . get_class($this), Library_Log_LogMessageType::TRACE);
+			Library_Manage_ResourceManager::getLogger()->logTrace("Llamando al action " . $method . " del controlador " . get_class($this));
 				
 			$this->controller->$method();
 		}

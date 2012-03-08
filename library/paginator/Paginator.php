@@ -8,9 +8,9 @@ class Library_Paginator_Paginator
 	private $pagesNumber;
 	private $currentPage;
 	
-	private $decorator;
+	private $printer;
 	
-	public function __construct($collection, $itemsPerPage, $decorator = null)
+	public function __construct($collection, $itemsPerPage, $printer = null)
 	{
 		$this->collection = $collection;
 		$this->itemsNumber = count($collection);
@@ -18,13 +18,13 @@ class Library_Paginator_Paginator
 		$this->pagesNumber = $this->calculatePagesNumber();
 		$this->currentPage = 1;
 		
-		if($decorator)
+		if($printer != null)
 		{
-			$this->decorator = $decorator;
+			$this->printer = $printer;
 		}
 		else
 		{
-			$this->decorator = new Library_Paginator_Decorators_PaginatorStandarDecorator();
+			$this->printer = new Library_Paginator_Printer_DefaultPaginatorPrinter();
 		}
 	}
 	
@@ -108,16 +108,6 @@ class Library_Paginator_Paginator
 	    $this->currentPage = $currentPage;
 	}
 	
-	public function show($currentPage)
-	{
-		if(is_numeric($currentPage) && $currentPage > 0)
-		{
-			$this->currentPage = $currentPage;
-		}
-		
-		return $this->decorator->show($this);
-	}
-	
 	public function getFirstItemPosOnPage()
 	{
 		return ($this->currentPage - 1) * $this->itemsPerPage + 1;
@@ -140,6 +130,16 @@ class Library_Paginator_Paginator
 		}
 		
 		return $pagesNumber;
+	}
+	
+	public function show($currentPage)
+	{
+		if(is_numeric($currentPage) && $currentPage > 0)
+		{
+			$this->currentPage = $currentPage;
+		}
+	
+		return $this->printer->show($this);
 	}
 	
 }

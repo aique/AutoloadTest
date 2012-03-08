@@ -25,7 +25,7 @@ class Application_Controllers_IndexController extends Library_Controller_BaseCon
 				
 				if($user)
 				{
-					Library_Manage_SessionManager::setVar(Application_Consts_AppConst::LOGGED_USER, $user);
+					Library_Manage_SessionManager::setVar(Library_Consts_Application::LOGGED_USER, $user);
  					$this->helper->redirect(new Library_Request_Request("cms", "user", "list"));
 				}
 				else

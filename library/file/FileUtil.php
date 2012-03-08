@@ -17,4 +17,33 @@ class Library_File_FileUtil
 			return false;
 		}
 	}
+	
+	public static function removeDirectoryTree($dir)
+	{
+		if(file_exists($dir))
+		{
+			$dhandle = opendir($dir);
+	
+			if($dhandle)
+			{
+				while(($fname = readdir($dhandle)) !== false)
+				{
+					if(is_dir( "{$dir}/{$fname}" ))
+					{
+						if(($fname != '.') && ($fname != '..'))
+						{
+							self::removeDirectoryTree("$dir/$fname");
+						}
+					}
+					else
+					{
+						unlink("{$dir}/{$fname}");
+					}
+				}
+				closedir($dhandle);
+			}
+	
+			rmdir($dir);
+		}
+	}
 }

@@ -38,7 +38,7 @@ class Library_ACL_ACL
 	{
 		foreach($this->resources as $resourceAllowed => $rolesAllowed)
 		{
-			if($resourceAllowed == $role)
+			if($resourceAllowed == $resource)
 			{
 				foreach($rolesAllowed as $roleAllowed)
 				{

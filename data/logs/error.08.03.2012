@@ -2,138 +2,8 @@ Fatal error
 -----------
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
-Line: 85
-Message: No se ha encontrado el método indexAction dentro del controlador Library_Controller_ControllerDispatcher.
-Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
-#1 C:\wamp\www\git_test_1\library\controller\BaseController.php(99): Library_Controller_ControllerDispatcher->dispatch()
-#2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(8): Library_Controller_BaseController->dispatch()
-#3 C:\wamp\www\git_test_1\public\bootstrap.php(14): Library_App_Dispatcher::dispatchRequest(Object(Library_Request_Request))
-#4 C:\wamp\www\git_test_1\public\index.php(3): include('C:\wamp\www\git...')
-#5 {main}
-
-Fatal error
------------
-
-File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
-Line: 85
-Message: No se ha encontrado el método indexAction dentro del controlador Library_Controller_ControllerDispatcher.
-Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
-#1 C:\wamp\www\git_test_1\library\controller\BaseController.php(99): Library_Controller_ControllerDispatcher->dispatch()
-#2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(8): Library_Controller_BaseController->dispatch()
-#3 C:\wamp\www\git_test_1\public\bootstrap.php(14): Library_App_Dispatcher::dispatchRequest(Object(Library_Request_Request))
-#4 C:\wamp\www\git_test_1\public\index.php(3): include('C:\wamp\www\git...')
-#5 {main}
-
-Fatal error
------------
-
-File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
-Line: 85
-Message: No se ha encontrado el método git_test_1Action dentro del controlador Application_Controllers_IndexController.
-Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
-#1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
-#2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
-#3 C:\wamp\www\git_test_1\public\bootstrap.php(14): Library_App_Dispatcher::dispatchRequest(Object(Library_Request_Request))
-#4 C:\wamp\www\git_test_1\public\index.php(3): include('C:\wamp\www\git...')
-#5 {main}
-
-Fatal error
------------
-
-File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
-Line: 85
-Message: No se ha encontrado el método git_test_1Action dentro del controlador Application_Controllers_IndexController.
-Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
-#1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
-#2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
-#3 C:\wamp\www\git_test_1\public\bootstrap.php(14): Library_App_Dispatcher::dispatchRequest(Object(Library_Request_Request))
-#4 C:\wamp\www\git_test_1\public\index.php(3): include('C:\wamp\www\git...')
-#5 {main}
-
-Fatal error
------------
-
-File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
-Line: 85
-Message: No se ha encontrado el método git_test_1Action dentro del controlador Application_Controllers_IndexController.
-Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
-#1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
-#2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
-#3 C:\wamp\www\git_test_1\public\bootstrap.php(14): Library_App_Dispatcher::dispatchRequest(Object(Library_Request_Request))
-#4 C:\wamp\www\git_test_1\public\index.php(3): include('C:\wamp\www\git...')
-#5 {main}
-
-Fatal error
------------
-
-File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
-Line: 85
-Message: No se ha encontrado el método indexAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
-Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
-#1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
-#2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
-#3 C:\wamp\www\git_test_1\public\bootstrap.php(14): Library_App_Dispatcher::dispatchRequest(Object(Library_Request_Request))
-#4 C:\wamp\www\git_test_1\public\index.php(3): include('C:\wamp\www\git...')
-#5 {main}
-
-Fatal error
------------
-
-File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
-Line: 85
-Message: No se ha encontrado el método indexAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
-Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
-#1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
-#2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
-#3 C:\wamp\www\git_test_1\public\bootstrap.php(14): Library_App_Dispatcher::dispatchRequest(Object(Library_Request_Request))
-#4 C:\wamp\www\git_test_1\public\index.php(3): include('C:\wamp\www\git...')
-#5 {main}
-
-Fatal error
------------
-
-File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
-Line: 85
-Message: No se ha encontrado el método indexAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
-Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
-#1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
-#2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
-#3 C:\wamp\www\git_test_1\public\bootstrap.php(14): Library_App_Dispatcher::dispatchRequest(Object(Library_Request_Request))
-#4 C:\wamp\www\git_test_1\public\index.php(3): include('C:\wamp\www\git...')
-#5 {main}
-
-Fatal error
------------
-
-File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
-Line: 85
-Message: No se ha encontrado el método indexAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
-Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
-#1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
-#2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
-#3 C:\wamp\www\git_test_1\public\bootstrap.php(14): Library_App_Dispatcher::dispatchRequest(Object(Library_Request_Request))
-#4 C:\wamp\www\git_test_1\public\index.php(3): include('C:\wamp\www\git...')
-#5 {main}
-
-Fatal error
------------
-
-File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
-Line: 85
-Message: No se ha encontrado el método indexAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
-Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
-#1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
-#2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
-#3 C:\wamp\www\git_test_1\public\bootstrap.php(14): Library_App_Dispatcher::dispatchRequest(Object(Library_Request_Request))
-#4 C:\wamp\www\git_test_1\public\index.php(3): include('C:\wamp\www\git...')
-#5 {main}
-
-Fatal error
------------
-
-File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
-Line: 85
-Message: No se ha encontrado el método indexAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Line: 80
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -145,8 +15,8 @@ Fatal error
 -----------
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
-Line: 87
-Message: No se ha encontrado el método indexAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Line: 80
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -158,8 +28,8 @@ Fatal error
 -----------
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
-Line: 87
-Message: No se ha encontrado el método indexAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Line: 80
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -171,8 +41,8 @@ Fatal error
 -----------
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
-Line: 87
-Message: No se ha encontrado el método indexAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Line: 80
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -184,8 +54,8 @@ Fatal error
 -----------
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
-Line: 87
-Message: No se ha encontrado el método indexAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Line: 80
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -197,8 +67,8 @@ Fatal error
 -----------
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
-Line: 87
-Message: No se ha encontrado el método indexAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Line: 80
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -210,8 +80,8 @@ Fatal error
 -----------
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
-Line: 87
-Message: No se ha encontrado el método indexAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Line: 80
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -223,8 +93,8 @@ Fatal error
 -----------
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
-Line: 87
-Message: No se ha encontrado el método indexAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Line: 80
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -236,8 +106,8 @@ Fatal error
 -----------
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
-Line: 87
-Message: No se ha encontrado el método indexAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Line: 80
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -249,8 +119,8 @@ Fatal error
 -----------
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
-Line: 85
-Message: No se ha encontrado el método indexAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Line: 80
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -262,8 +132,8 @@ Fatal error
 -----------
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
-Line: 85
-Message: No se ha encontrado el método indexAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Line: 80
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -275,8 +145,8 @@ Fatal error
 -----------
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
-Line: 85
-Message: No se ha encontrado el método indexAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Line: 80
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -288,8 +158,8 @@ Fatal error
 -----------
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
-Line: 85
-Message: No se ha encontrado el método indexAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Line: 80
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -301,8 +171,8 @@ Fatal error
 -----------
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
-Line: 85
-Message: No se ha encontrado el método indexAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Line: 80
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -315,7 +185,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método indexAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -328,7 +198,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método indexAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -341,7 +211,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método indexAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -354,7 +224,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método indexAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -367,7 +237,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método indexAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -380,7 +250,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método indexAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -393,174 +263,20 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método indexAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
 #3 C:\wamp\www\git_test_1\public\bootstrap.php(14): Library_App_Dispatcher::dispatchRequest(Object(Library_Request_Request))
 #4 C:\wamp\www\git_test_1\public\index.php(3): include('C:\wamp\www\git...')
 #5 {main}
-
-Fatal error
------------
-
-File: C:\wamp\www\git_test_1\application\controllers\IndexController.php
-Line: 40
-Message: Error previsto.
-Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(76): Application_Controllers_IndexController->indexAction()
-#1 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
-#2 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
-#3 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
-#4 C:\wamp\www\git_test_1\public\bootstrap.php(14): Library_App_Dispatcher::dispatchRequest(Object(Library_Request_Request))
-#5 C:\wamp\www\git_test_1\public\index.php(3): include('C:\wamp\www\git...')
-#6 {main}
-
-Fatal error
------------
-
-File: C:\wamp\www\git_test_1\application\controllers\IndexController.php
-Line: 40
-Message: Error previsto.
-Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(76): Application_Controllers_IndexController->indexAction()
-#1 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
-#2 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
-#3 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
-#4 C:\wamp\www\git_test_1\public\bootstrap.php(14): Library_App_Dispatcher::dispatchRequest(Object(Library_Request_Request))
-#5 C:\wamp\www\git_test_1\public\index.php(3): include('C:\wamp\www\git...')
-#6 {main}
-
-Fatal error
------------
-
-File: C:\wamp\www\git_test_1\application\controllers\IndexController.php
-Line: 40
-Message: Error previsto.
-Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(76): Application_Controllers_IndexController->indexAction()
-#1 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
-#2 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
-#3 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
-#4 C:\wamp\www\git_test_1\public\bootstrap.php(14): Library_App_Dispatcher::dispatchRequest(Object(Library_Request_Request))
-#5 C:\wamp\www\git_test_1\public\index.php(3): include('C:\wamp\www\git...')
-#6 {main}
-
-Fatal error
------------
-
-File: C:\wamp\www\git_test_1\application\controllers\IndexController.php
-Line: 40
-Message: Error previsto.
-Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(76): Application_Controllers_IndexController->indexAction()
-#1 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
-#2 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
-#3 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
-#4 C:\wamp\www\git_test_1\public\bootstrap.php(14): Library_App_Dispatcher::dispatchRequest(Object(Library_Request_Request))
-#5 C:\wamp\www\git_test_1\public\index.php(3): include('C:\wamp\www\git...')
-#6 {main}
-
-Fatal error
------------
-
-File: C:\wamp\www\git_test_1\application\controllers\IndexController.php
-Line: 40
-Message: Error previsto.
-Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(76): Application_Controllers_IndexController->indexAction()
-#1 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
-#2 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
-#3 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
-#4 C:\wamp\www\git_test_1\public\bootstrap.php(14): Library_App_Dispatcher::dispatchRequest(Object(Library_Request_Request))
-#5 C:\wamp\www\git_test_1\public\index.php(3): include('C:\wamp\www\git...')
-#6 {main}
-
-Fatal error
------------
-
-File: C:\wamp\www\git_test_1\application\controllers\IndexController.php
-Line: 40
-Message: Error previsto.
-Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(76): Application_Controllers_IndexController->indexAction()
-#1 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
-#2 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
-#3 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
-#4 C:\wamp\www\git_test_1\public\bootstrap.php(14): Library_App_Dispatcher::dispatchRequest(Object(Library_Request_Request))
-#5 C:\wamp\www\git_test_1\public\index.php(3): include('C:\wamp\www\git...')
-#6 {main}
-
-Fatal error
------------
 
-File: C:\wamp\www\git_test_1\application\controllers\IndexController.php
-Line: 40
-Message: Error previsto.
-Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(76): Application_Controllers_IndexController->indexAction()
-#1 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
-#2 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
-#3 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
-#4 C:\wamp\www\git_test_1\public\bootstrap.php(14): Library_App_Dispatcher::dispatchRequest(Object(Library_Request_Request))
-#5 C:\wamp\www\git_test_1\public\index.php(3): include('C:\wamp\www\git...')
-#6 {main}
-
-Fatal error
------------
-
-File: C:\wamp\www\git_test_1\application\controllers\IndexController.php
-Line: 40
-Message: Error previsto.
-Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(76): Application_Controllers_IndexController->indexAction()
-#1 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
-#2 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
-#3 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
-#4 C:\wamp\www\git_test_1\public\bootstrap.php(14): Library_App_Dispatcher::dispatchRequest(Object(Library_Request_Request))
-#5 C:\wamp\www\git_test_1\public\index.php(3): include('C:\wamp\www\git...')
-#6 {main}
-
-Fatal error
------------
-
-File: C:\wamp\www\git_test_1\application\controllers\IndexController.php
-Line: 40
-Message: Error previsto.
-Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(76): Application_Controllers_IndexController->indexAction()
-#1 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
-#2 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
-#3 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
-#4 C:\wamp\www\git_test_1\public\bootstrap.php(14): Library_App_Dispatcher::dispatchRequest(Object(Library_Request_Request))
-#5 C:\wamp\www\git_test_1\public\index.php(3): include('C:\wamp\www\git...')
-#6 {main}
-
-Fatal error
------------
-
-File: C:\wamp\www\git_test_1\application\controllers\IndexController.php
-Line: 40
-Message: Error previsto.
-Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(76): Application_Controllers_IndexController->indexAction()
-#1 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
-#2 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
-#3 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
-#4 C:\wamp\www\git_test_1\public\bootstrap.php(14): Library_App_Dispatcher::dispatchRequest(Object(Library_Request_Request))
-#5 C:\wamp\www\git_test_1\public\index.php(3): include('C:\wamp\www\git...')
-#6 {main}
-
-Fatal error
------------
-
-File: C:\wamp\www\git_test_1\application\controllers\IndexController.php
-Line: 40
-Message: Error previsto.
-Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(76): Application_Controllers_IndexController->indexAction()
-#1 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
-#2 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
-#3 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
-#4 C:\wamp\www\git_test_1\public\bootstrap.php(14): Library_App_Dispatcher::dispatchRequest(Object(Library_Request_Request))
-#5 C:\wamp\www\git_test_1\public\index.php(3): include('C:\wamp\www\git...')
-#6 {main}
-
 Fatal error
 -----------
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -573,7 +289,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -586,7 +302,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -599,7 +315,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -612,7 +328,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -625,7 +341,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -638,7 +354,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -651,7 +367,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -664,7 +380,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -677,7 +393,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -690,7 +406,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -703,7 +419,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -716,7 +432,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -729,7 +445,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -742,7 +458,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -755,7 +471,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -768,7 +484,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -781,7 +497,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -794,7 +510,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -807,7 +523,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -820,7 +536,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -833,7 +549,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -846,7 +562,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -859,7 +575,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -872,7 +588,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -885,7 +601,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -898,7 +614,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -911,7 +627,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -924,7 +640,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -937,7 +653,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -950,7 +666,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -963,7 +679,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -976,7 +692,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -989,7 +705,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -1002,7 +718,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -1015,7 +731,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -1028,7 +744,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -1041,7 +757,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -1054,7 +770,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -1067,7 +783,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -1080,7 +796,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -1093,7 +809,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -1106,7 +822,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -1119,7 +835,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -1132,7 +848,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -1145,7 +861,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -1158,7 +874,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -1171,7 +887,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -1184,7 +900,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -1197,7 +913,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -1210,7 +926,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -1223,7 +939,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -1236,7 +952,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -1249,7 +965,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -1262,7 +978,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -1275,7 +991,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -1288,7 +1004,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -1301,7 +1017,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -1314,7 +1030,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -1327,7 +1043,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -1340,7 +1056,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -1353,7 +1069,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -1366,7 +1082,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -1379,7 +1095,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -1392,7 +1108,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -1405,7 +1121,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -1418,7 +1134,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -1431,7 +1147,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -1444,7 +1160,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -1457,7 +1173,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -1470,7 +1186,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -1483,7 +1199,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -1496,7 +1212,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -1509,7 +1225,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -1522,7 +1238,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -1535,7 +1251,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -1548,7 +1264,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -1561,7 +1277,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -1574,7 +1290,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -1587,7 +1303,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -1600,7 +1316,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -1613,7 +1329,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -1626,7 +1342,7 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
@@ -1639,25 +1355,11 @@ Fatal error
 
 File: C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php
 Line: 80
-Message: No se ha encontrado el método autoloadAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
+Message: No se ha encontrado el método cmsAction dentro del controlador Application_Modules_Cms_Controllers_UserController.
 Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
 #1 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
 #2 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
 #3 C:\wamp\www\git_test_1\public\bootstrap.php(14): Library_App_Dispatcher::dispatchRequest(Object(Library_Request_Request))
 #4 C:\wamp\www\git_test_1\public\index.php(3): include('C:\wamp\www\git...')
 #5 {main}
-
-Fatal error
------------
-
-File: C:\wamp\www\git_test_1\application\controllers\IndexController.php
-Line: 40
-Message: Error previsto.
-Trace: #0 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(76): Application_Controllers_IndexController->indexAction()
-#1 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->doAction()
-#2 C:\wamp\www\git_test_1\library\controller\BaseController.php(139): Library_Controller_ControllerDispatcher->dispatch()
-#3 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
-#4 C:\wamp\www\git_test_1\public\bootstrap.php(14): Library_App_Dispatcher::dispatchRequest(Object(Library_Request_Request))
-#5 C:\wamp\www\git_test_1\public\index.php(3): include('C:\wamp\www\git...')
-#6 {main}
 

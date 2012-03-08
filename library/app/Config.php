@@ -14,7 +14,7 @@ class Library_App_Config
 	
 	public function __construct()
 	{
-		$this->configVars = Library_Util_ConfigFileParser::parse(PROJECT_PATH . '/application/configs/config.ini');
+		$this->configVars = Library_Parsers_ConfigFileParser::parse(PROJECT_PATH . '/application/configs/config.ini');
 		$this->currentEnvironment = DEFAULT_ENVIRONMENT;
 	}
 	

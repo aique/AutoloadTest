@@ -2,22 +2,27 @@
 
 class Library_Log_Logger
 {
+	// Archivos
 	private $traceFile;
 	private $dbFile;
 	private $errorFile;
+	
+	// Rutas
+	private $mailPath;
 	
 	public function __construct()
 	{
 		$this->traceFile = PROJECT_PATH . '/data/logs/trace';
 		$this->dbFile = PROJECT_PATH . '/data/logs/db';
 		$this->errorFile = PROJECT_PATH . '/data/logs/error';
+		$this->mailPath = PROJECT_PATH . '/data/mail/';
 	}
 	
 	public function logTrace($message)
 	{
 		$handler = fopen($this->traceFile . '.' . date("d.m.Y"), 'a');
 		
-		if(Library_Manage_ResourceManager::getAppConfig()->getCurrentEnvironment() != Application_Consts_EnvironmentConst::PRODUCTION_ENV)
+		if(Library_Manage_ResourceManager::getConfig()->getCurrentEnvironment() != Library_Consts_Environment::PRODUCTION_ENV)
 		{
 			$script_name = pathinfo($_SERVER['PHP_SELF'], PATHINFO_FILENAME);
 			$time = date('H:i:s');
@@ -29,7 +34,7 @@ class Library_Log_Logger
 	
 	public function logQuerySQL($query)
 	{
-		if(Library_Manage_ResourceManager::getAppConfig()->getCurrentEnvironment() != Application_Consts_EnvironmentConst::PRODUCTION_ENV)
+		if(Library_Manage_ResourceManager::getConfig()->getCurrentEnvironment() != Library_Consts_Environment::PRODUCTION_ENV)
 		{
 			$handler = fopen($this->dbFile . '.' . date("d.m.Y"), 'a');
 			fwrite($handler, "Query\n-----\n" . $query . "\n\n");
@@ -39,7 +44,7 @@ class Library_Log_Logger
 	
 	public function logQueryResult($result)
 	{
-		if(Library_Manage_ResourceManager::getAppConfig()->getCurrentEnvironment() != Application_Consts_EnvironmentConst::PRODUCTION_ENV)
+		if(Library_Manage_ResourceManager::getConfig()->getCurrentEnvironment() != Library_Consts_Environment::PRODUCTION_ENV)
 		{
 			$handler = fopen($this->dbFile . '.' . date("d.m.Y"), 'a');
 			fwrite($handler, "Result\n------\n" . $result . "\n\n");
@@ -57,6 +62,13 @@ class Library_Log_Logger
 		fwrite($handler, "Message: " . $exception->getMessage()."\n");
 		fwrite($handler, "Trace: " . $exception->getTraceAsString()."\n\n");
 		
+		fclose($handler);
+	}
+	
+	public function logMail($html, $name)
+	{
+		$handler = fopen($this->mailPath . $name, 'w');
+		fwrite($handler, $html);
 		fclose($handler);
 	}
 	

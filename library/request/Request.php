@@ -148,20 +148,41 @@ class Library_Request_Request
 		
 		if($this->module != self::MODULE_DEFAULT_VALUE)
 		{
-			$module = $this->module;
+			$module = "/" . $this->module;
 		}
 		
 		if($this->controller != self::CONTROLLER_DEFAULT_VALUE)
 		{
-			$controller = '/' . $this->controller;
+			if($this->module != self::MODULE_DEFAULT_VALUE)
+			{
+				$controller = "/" . $this->controller;
+			}
+			else
+			{
+				$controller = $this->controller;
+			}
 		}
 		
 		if($this->action != self::ACTION_DEFAULT_VALUE)
 		{
-			$action = '/' . $this->action;
+			if($this->controller != self::CONTROLLER_DEFAULT_VALUE)
+			{
+				$action = "/" . $this->action;
+			}
+			else
+			{
+				$action = $this->action;
+			}
 		}
 		
-		return '/' . $module . $controller . $action;
+		if(!empty($module) || !empty($controller) || !empty($action))
+		{
+			return "http://" . Library_Manage_ResourceManager::getConfig()->getVar("app.name") . $module . $controller . $action;
+		}
+		else
+		{
+			return "http://" . Library_Manage_ResourceManager::getConfig()->getVar("app.name");
+		}
 	}
 	
 }

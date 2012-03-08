@@ -14,7 +14,7 @@ class Library_Form_PrinterClient
 		return $printer->printHTML($element);
 	}
 	
-	protected static function getPrinter($element)
+	private static function getPrinter($element)
 	{
 		$printer = null;
 		

@@ -18,7 +18,7 @@ class Library_Request_URLParser
 		
 		foreach($urlTokens as $token)
 		{
-			if(!empty($token))
+			if(!empty($token) && !self::isGETParam($token))
 			{
 				if(Library_App_Helper::isModule($token) && !$moduleSetted)
 				{
@@ -58,11 +58,16 @@ class Library_Request_URLParser
 				$paramName = $urlTokens[$i];
 				$paramValue = $urlTokens[$i + 1];
 				$request->setParam($paramName, $paramValue);
-					
-				$i = $i + 2;
 			}
+			
+			$i = $i + 2;
 		}
 		
 		return $request;
+	}
+	
+	private static function isGETParam($token)
+	{
+		return substr($token, 0, 1) == "?";
 	}
 }
