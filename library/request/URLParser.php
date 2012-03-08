@@ -1,7 +1,31 @@
 <?php
 
+/**
+ * Clase que parsea una URL, obteniendo el módulo, el controlador, el action y
+ * la lista de parámetros.
+ * 
+ * @author qinteractiva
+ * 
+ */
 class Library_Request_URLParser
 {
+	/**
+	 * Parsea una URL y devuelve un objeto de tipo Library_Request_Request con
+	 * sus atributos debidamente establecidos.
+	 * 
+	 * @param string $url
+	 * 
+	 * 		Cadena de texto con la URL que se va a parsear.
+	 * 
+	 * 		El formato que el parseador reconoce es el siguiente:
+	 * 
+	 * 		- http://[nombreApp]/[modulo]/[controlador]/[action]/[param1]/[val1]/[param2]/[val2]/...
+	 * 
+	 * @return Library_Request_Request
+	 * 
+	 * 		Objeto de tipo Library_Request_Request con los atributos establecidos
+	 * 		en función de la URL parseada.
+	 */
 	public static function parse($url)
 	{
 		$request = new Library_Request_Request();

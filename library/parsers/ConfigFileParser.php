@@ -1,12 +1,10 @@
 <?php
 
 /**
- * Clase que es capaz de parsear el contenido de los ficheros de configuración
- * y devolver los valores que figuran en él como un array.
  * 
- * Estos ficheros tienen el siguiente formato:
  * 
- * 		nombreVariableSeparadaPorPuntos = "[valorVariable]"
+ * @author qinteractiva
+ *
  */
 class Library_Parsers_ConfigFileParser
 {

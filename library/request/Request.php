@@ -1,5 +1,14 @@
 <?php
 
+/**
+ * Clase que representa una petición realizada sobre la aplicación.
+ * 
+ * Estas peticiones pueden tener su origen bien en la solicitud de un
+ * usuario o bien en redirecciones internas a la misma.
+ * 
+ * @author qinteractiva
+ *
+ */
 class Library_Request_Request
 {
 	private $module;
@@ -128,6 +137,13 @@ class Library_Request_Request
 		}
 	}
 	
+	/**
+	 * Devuelve el valor de un parámetro almacenado en el array a tal efecto
+	 * a partir de su nombre.
+	 * 
+	 * @param string $name
+	 * 		Nombre del parámetro del que se quiere obtener el valor.
+	 */
 	public function getParam($name)
 	{
 		if(!empty($name) && isset($this->params[$name]))

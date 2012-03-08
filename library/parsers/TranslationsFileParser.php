@@ -1,7 +1,29 @@
 <?php
 
+/**
+ * Clase que lee un fichero de traducciones y parsea su contenido para
+ * devolver en un array los valores encontrados en él.
+ * 
+ * @author qinteractiva
+ *
+ */
 class Library_Parsers_TranslationsFileParser
 {
+	/**
+	 * Parsea el contenido de un fichero de traducciones y devuelve un array
+	 * con los valores encontrados.
+	 * 
+	 * @param string $filePath
+	 * 
+	 * 		Cadena de texto con la ubicación donde se encuentra el fichero
+	 * 		de traducciones.
+	 * 
+	 * @return array
+	 * 
+	 * 		Array asociativo con las traducciones encontradas. Cada clave será
+	 * 		un literal encontrado, y el valor asociado a ella será el contenido
+	 * 		que se debe sustituir por él en la vista. 
+	 */
 	public static function parse($filePath)
 	{	
 		$translations = array();
@@ -28,10 +50,21 @@ class Library_Parsers_TranslationsFileParser
 		return $translations;
 	}
 	
+	/**
+	 * Identifica los valores que se encuentran en una línea del fichero
+	 * de traducciones, las cuales tienen el siguiente formato:
+	 * 
+	 * - [literal] = "[contenido]"
+	 * 
+	 * @param string $line
+	 * 
+	 * 		Cadena de texto con el valor de una de las línea del fichero
+	 * 		de traducciones.
+	 */
 	private static function getTranslation($line)
 	{
 		$translation = array();
-			
+		
 		$translation[0] = trim(substr($line, 0, stripos($line, '=')));
 		
 		$transInitValue = stripos($line, '"');
