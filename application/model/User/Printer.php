@@ -2,8 +2,26 @@
 
 class Application_Model_User_Printer
 {
-	public static function printHTML(Application_Model_User_Item $user)
+	private $user;
+	
+	public function __construct(Application_Model_User_Item $user)
 	{
-		return '<li><a href="#">'.$user->name.'</a> ['.$user->id.']</li>';
+		$this->user = $user;
 	}
+	
+	public function standardPrint()
+	{
+		return
+		
+	    '<li>'.$this->user->id.' - <a href="'.new Library_Request_Request("cms", "user", "detail", array("id" => $this->user->getId())).'">'.$this->user->name.'</a> '.
+	    '<a class="action" href="'.new Library_Request_Request("cms", "user", "delete", array("id" => $this->user->getId())).'">'.Library_I18n_I18n::getText("screen_user_list_delete").'</a> '.
+	    '<a class="action" href="'.new Library_Request_Request("cms", "user", "update", array("id" => $this->user->getId())).'">'.Library_I18n_I18n::getText("screen_user_list_update").'</a>'.
+		'</li>';
+	}
+	
+	public function profilePrint()
+	{
+		return '<dl><dt>Nombre</dt><dd>'.$this->user->getName().'</dd><br /><dt>Email</dt><dd>'.$this->user->getEmail().'</dd><br /><dt>Rol</dt><dd>'.$this->user->getRole().'</dd></dl>';
+	}
+	
 }

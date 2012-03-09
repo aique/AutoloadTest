@@ -3,7 +3,7 @@
 abstract class Library_Html_Form_BaseForm extends Library_Html_BaseElement
 {
 	private $elements;
-	
+	private $validator;	
 	private $error;
 	
 	const DEFAULT_ACTION = "#";
@@ -14,13 +14,14 @@ abstract class Library_Html_Form_BaseForm extends Library_Html_BaseElement
 														  "method" => self::DEFAULT_METHOD,
 														  "enctype" => self::DEFAULT_ENCTYPE))
 	{
+		$this->elements = array();
+		$this->error = null;
+		
 		parent::__construct(Library_Html_Form_FormElementConst::FORM,
 							$attributes,
 							new Library_Html_Form_Printer_DefaultFormPrinter($this));
 		
-		$this->elements = array();
-		
-		$this->error = null;
+		$this->validator = new Library_Html_Form_FormElementValidator($this);
 		
 		$this->init();
 	}
@@ -127,6 +128,36 @@ abstract class Library_Html_Form_BaseForm extends Library_Html_BaseElement
 	
 	public abstract function init();
 	
+	/**
+	 * Devuelve uno de los elementos que componen el formulario cuyo
+	 * atributo name coincide con el valor recibido como parámetro.
+	 * 
+	 * @param string $nameValue
+	 * 
+	 * 		Valor del atributo name del elemento que se va a obtener.
+	 * 
+	 * @return Library_Html_Form_FormElement
+	 * 
+	 * 		Devuelve un objeto de tipo Library_Html_Form_FormElement
+	 * 		para el caso en el que el valor del atributo name de alguno
+	 * 		de los elementos del formulario coincida con el recibido como
+	 * 		parámetro.
+	 * 
+	 * 		Devolverá null en caso contrario.
+	 */
+	public function getElementByNameAttribute($nameValue)
+	{
+		foreach($this->elements as $element)
+		{
+			if($element->getNameAttributeValue() == $nameValue)
+			{
+				return $element;
+			}
+		}
+		
+		return null;
+	}
+	
 	public function addElement(Library_Html_Form_FormElement $element)
 	{
 		$this->elements[] = $element;
@@ -136,7 +167,7 @@ abstract class Library_Html_Form_BaseForm extends Library_Html_BaseElement
 	{
 		foreach($this->elements as $element)
 		{
-			if(!$element->isValid())
+			if(!$this->validator->validateElement($element))
 			{
 				return false;
 			}

@@ -2,5 +2,6 @@
 
 @import url('./reset.css');
 @import url('./layout.css');
+@import url('./default/lists.css');
 @import url('./default/forms.css');
 @import url('./default/pagination.css');

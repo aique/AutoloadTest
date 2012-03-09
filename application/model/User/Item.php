@@ -4,6 +4,7 @@ class Application_Model_User_Item
 {
 	private $id;
 	private $name;
+	private $password;
 	private $role;
 	private $email;
 	
@@ -16,7 +17,7 @@ class Application_Model_User_Item
 			$this->setOptions($options);
 		}
 		
-		$this->printer = new Application_Model_User_Printer();
+		$this->printer = new Application_Model_User_Printer($this);
 	}
 	
 	private function setOptions(array $options)
@@ -101,6 +102,26 @@ class Application_Model_User_Item
 	}
 	
 	/**
+	 * Devuelve el valor del atributo password.
+	 *
+	 * @return string
+	 */
+	public function getPassword()
+	{
+	    return $this->password;
+	}
+	 
+	/**
+	 * Establece el valor del atributo password.
+	 *
+	 * @param string $password
+	 */
+	public function setPassword($password)
+	{
+	    $this->password = $password;
+	}
+	
+	/**
 	 * Devuelve el valor del atributo role.
 	 *
 	 * @return string
@@ -140,9 +161,14 @@ class Application_Model_User_Item
 	    $this->email = $email;
 	}
 	
+	public function getPrinter()
+	{
+		return $this->printer;
+	}
+	
 	public function __toString()
 	{
-		return $this->printer->printHTML($this);
+		return $this->printer->standardPrint();
 	}
 	
 }

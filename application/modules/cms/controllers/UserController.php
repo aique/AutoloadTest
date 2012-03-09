@@ -27,4 +27,70 @@ class Application_Modules_Cms_Controllers_UserController extends Library_Control
 		
 		$this->view["paginator"] = new Library_Paginator_Paginator($users, Library_Manage_ResourceManager::getConfig()->getVar("users.paginator.itemsPerPage"));
 	}
+	
+	public function insertAction()
+	{
+		$form = new Application_Modules_Cms_Forms_InsertUserForm();
+		
+		if(Library_Manage_InputManager::isPost())
+		{
+			$params = Library_Manage_InputManager::getParams(Library_Manage_InputManager::POST);
+			
+			$form->setParams($params);
+				
+			if($form->isValid())
+			{
+				$userModel = new Application_Model_User();
+				
+				if($userModel->insertUser(new Application_Model_User_Item($params)))
+				{
+					$this->helper->redirect(new Library_Request_Request("cms", "user", "list"));
+				}
+				else
+				{
+					$form->setError("El usuario no se ha podido guardar.");
+				}
+			}
+		}
+		
+		$this->view["form"] = $form;
+	}
+	
+	public function detailAction()
+	{
+		$id = $this->getRequest()->getParam("id");
+		
+		if(Application_Model_User_Validator::validateUserId($id))
+		{
+			$userModel = new Application_Model_User();
+			
+			$user = $userModel->getUser($id);
+			
+			if($user)
+			{
+				$this->view["user"] = $user;
+			}
+			else
+			{
+				$this->helper->redirect(new Library_Request_Request("cms", "user", "list"));
+			}
+		}
+	}
+	
+	public function deleteAction()
+	{
+		$id = $this->getRequest()->getParam("id");
+		
+		if(Application_Model_User_Validator::validateUserId($id))
+		{
+			$userModel = new Application_Model_User();
+				
+			$user = $userModel->deleteUser($id);
+		}
+		
+		// TODO Crear un sistema de mensajes estándar para mostrar los resultados de las operaciones
+		
+		$this->helper->redirect(new Library_Request_Request("cms", "user", "list"));
+	}
+	
 }

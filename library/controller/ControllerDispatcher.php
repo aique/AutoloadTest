@@ -137,12 +137,14 @@ class Library_Controller_ControllerDispatcher
 			$viewPath = PROJECT_PATH . "/application/modules/" . $module . "/views/scripts/" . $controller . "/" . $action . ".php";
 		}
 	
-		if(!file_exists($viewPath))
+		if(file_exists($viewPath))
 		{
-			throw new Exception("Se intenta aplicar una vista que no existe: " . $viewPath . ".");
+			return Library_File_FileUtil::getFileContent($viewPath, $this->controller->getView());
 		}
-	
-		return Library_File_FileUtil::getFileContent($viewPath, $this->controller->getView());
+		else
+		{
+			return "";
+		}
 	}
 	
 	/**

@@ -1,1 +1,3 @@
 screen_user_list_title = "Lista de usuarios"
+screen_user_list_delete = "eliminar"
+screen_user_list_update = "actualizar"

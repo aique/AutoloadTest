@@ -28,24 +28,27 @@ class Library_Parsers_TranslationsFileParser
 	{	
 		$translations = array();
 		
-		$handler = fopen($filePath, 'r');
-		
-		while(!feof($handler))
+		if(file_exists($filePath))
 		{
-			$line = trim(fgets($handler));
-				
-			if(!empty($line))
-			{
-				$translation = self::getTranslation($line);
+			$handler = fopen($filePath, 'r');
 		
-				if(isset($translation[0]) && isset($translation[1]))
+			while(!feof($handler))
+			{
+				$line = trim(fgets($handler));
+			
+				if(!empty($line))
 				{
-					$translations[$translation[0]] = $translation[1];
+					$translation = self::getTranslation($line);
+			
+					if(isset($translation[0]) && isset($translation[1]))
+					{
+						$translations[$translation[0]] = $translation[1];
+					}
 				}
 			}
+			
+			fclose($handler);
 		}
-		
-		fclose($handler);
 		
 		return $translations;
 	}

@@ -80,6 +80,40 @@ abstract class Library_Html_BaseElement
 		return false;
 	}
 	
+	public function getValue()
+	{
+		if(isset($this->attributes["value"]))
+		{
+			return $this->attributes["value"];
+		}
+		else
+		{
+			return "";
+		}
+	}
+	
+	public function setValue($value)
+	{
+		$this->attributes["value"] = $value;
+	}
+	
+	public function getDisplay()
+	{
+		if(isset($this->attributes["display"]))
+		{
+			return $this->attributes["display"];
+		}
+		else
+		{
+			return "";
+		}
+	}
+	
+	public function setDisplay($display)
+	{
+		$this->attributes["display"] = $display;
+	}
+	
 	/**
 	* Devuelve el valor del atributo printer.
 	*
@@ -98,6 +132,11 @@ abstract class Library_Html_BaseElement
 	public function setPrinter($printer)
 	{
 		$this->printer = $printer;
+	}
+	
+	public function __toString()
+	{
+		return $this->printer->printHTML();
 	}
 	
 }

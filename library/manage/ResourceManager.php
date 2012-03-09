@@ -44,6 +44,20 @@ class Library_Manage_ResourceManager
 		return $request;
 	}
 	
+	public static function getAclData()
+	{
+		$acl = Library_Manage_SessionManager::getVar(Library_Consts_Application::ACL);
+		
+		if(!$acl)
+		{
+			$acl = new Library_ACL_ACL();
+			
+			Library_Manage_SessionManager::setVar(Library_Consts_Application::ACL, $acl);
+		}
+		
+		return $acl;
+	} 
+	
 	public static function getLogger()
 	{
 		$logger = Library_Manage_SessionManager::getVar(Library_Consts_Application::LOGGER);

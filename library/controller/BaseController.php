@@ -154,8 +154,6 @@ class Library_Controller_BaseController
 	    $this->dispatcher = $dispatcher;
 	}
 	
-	
-	
 	public function dispatch()
 	{
 		$this->dispatcher->dispatch();

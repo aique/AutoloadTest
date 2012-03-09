@@ -28,7 +28,7 @@ class Library_Request_Request
 		$this->module = $module;
 		$this->controller = $controller;
 		$this->action = $action;
-		$this->params = array();
+		$this->params = $params;
 	}
 	
 	/**
@@ -114,10 +114,7 @@ class Library_Request_Request
 	 */
 	public function setParams($params)
 	{
-		if(!empty($params))
-		{
-	    	$this->params = $params;
-		}
+		$this->params = $params;
 	}
 	
 	/**
@@ -156,49 +153,82 @@ class Library_Request_Request
 		}
 	}
 	
+	// TODO Valorar si sacarlo a una clase printer
+	
+	public function getResource()
+	{
+		$output = "http://" . Library_Manage_ResourceManager::getConfig()->getVar("app.name");
+		
+		$module = $this->getModuleAsString();
+		$controller = $this->getControllerAsString();
+		$action = $this->getActionAsString();
+		
+		if(!empty($module) || !empty($controller) || !empty($action))
+		{
+			$output .= $module . $controller . $action;
+		}
+		
+		return $output;
+	}
+	
 	public function __toString()
 	{
-		$module = "";
-		$controller = "";
-		$action = "";
+		return $this->getResource() . $this->getParamsAsString();
+	}
+	
+	private function getModuleAsString()
+	{
+		$output = "";
 		
 		if($this->module != self::MODULE_DEFAULT_VALUE)
 		{
-			$module = "/" . $this->module;
+			$output = "/" . $this->module;
 		}
+		
+		return $output;
+	}
+	
+	private function getControllerAsString()
+	{
+		$output = "";
 		
 		if($this->controller != self::CONTROLLER_DEFAULT_VALUE)
 		{
-			if($this->module != self::MODULE_DEFAULT_VALUE)
-			{
-				$controller = "/" . $this->controller;
-			}
-			else
-			{
-				$controller = $this->controller;
-			}
+			$output = "/" . $this->controller;
 		}
+		
+		return $output;
+	}
+	
+	private function getActionAsString()
+	{
+		$output = "";
 		
 		if($this->action != self::ACTION_DEFAULT_VALUE)
 		{
 			if($this->controller != self::CONTROLLER_DEFAULT_VALUE)
 			{
-				$action = "/" . $this->action;
+				$output = "/" . $this->action;
 			}
 			else
 			{
-				$action = $this->action;
+				$output = $this->action;
 			}
 		}
 		
-		if(!empty($module) || !empty($controller) || !empty($action))
+		return $output;
+	}
+	
+	private function getParamsAsString()
+	{
+		$output = "";
+		
+		foreach($this->params as $paramName => $paramValue)
 		{
-			return "http://" . Library_Manage_ResourceManager::getConfig()->getVar("app.name") . $module . $controller . $action;
+			$output .= "/" . $paramName . "/" . $paramValue;
 		}
-		else
-		{
-			return "http://" . Library_Manage_ResourceManager::getConfig()->getVar("app.name");
-		}
+		
+		return $output;
 	}
 	
 }

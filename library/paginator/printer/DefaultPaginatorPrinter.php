@@ -41,14 +41,21 @@ class Library_Paginator_Printer_DefaultPaginatorPrinter
 	
 	private static function printPagination($paginator, $output)
 	{
-		$output .= '<div id="paginator"><ul>';
-			
-		for($i = 1 ; $i < $paginator->getPagesNumber() ; $i++)
+		$request = Library_Manage_ResourceManager::getRequestData();
+		
+		$request->setParams(array());
+		
+		$pagesNumber = $paginator->getPagesNumber();
+		
+		if($pagesNumber > 1)
 		{
-			$output .= '<li><a href="'.Library_Manage_ResourceManager::getRequestData().'/page/'.$i.'">'.$i.'</a></li>';
-		}
+			$output .= '<div id="paginator"><ul>';
 			
-		$output .= '</ul></div>';
+			for($i = 1 ; $i <= $paginator->getPagesNumber() ; $i++)
+			{
+				$output .= '<li><a href="'.$request.'/page/'.$i.'">'.$i.'</a></li>';
+			}
+		}
 		
 		return $output;
 	}

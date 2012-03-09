@@ -1,13 +1,15 @@
 @CHARSET "UTF-8";
 
-#paginator ul li
+dt
 {
 	display: inline;
 	
 	margin-right: 10px;
+	
+	font-weight: bold;
 }
 
-.action
+dd
 {
-	font-size: 11px;
+	display: inline;
 }
