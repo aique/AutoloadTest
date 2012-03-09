@@ -12,9 +12,9 @@ class Library_Log_Logger
 	
 	public function __construct()
 	{
-		$this->traceFile = PROJECT_PATH . '/data/logs/trace';
-		$this->dbFile = PROJECT_PATH . '/data/logs/db';
-		$this->errorFile = PROJECT_PATH . '/data/logs/error';
+		$this->traceFile = PROJECT_PATH . '/data/logs/trace/trace';
+		$this->dbFile = PROJECT_PATH . '/data/logs/db/db';
+		$this->errorFile = PROJECT_PATH . '/data/logs/error/error';
 		$this->mailPath = PROJECT_PATH . '/data/mail/';
 	}
 	

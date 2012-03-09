@@ -16,6 +16,8 @@ class Library_Request_Request
 	private $action;
 	private $params;
 	
+	private $printer;
+	
 	const MODULE_DEFAULT_VALUE = "";
 	const CONTROLLER_DEFAULT_VALUE = "index";
 	const ACTION_DEFAULT_VALUE = "index";
@@ -29,6 +31,8 @@ class Library_Request_Request
 		$this->controller = $controller;
 		$this->action = $action;
 		$this->params = $params;
+		
+		$this->printer = new Library_Request_Printer($this);
 	}
 	
 	/**
@@ -153,82 +157,14 @@ class Library_Request_Request
 		}
 	}
 	
-	// TODO Valorar si sacarlo a una clase printer
-	
 	public function getResource()
 	{
-		$output = "http://" . Library_Manage_ResourceManager::getConfig()->getVar("app.name");
-		
-		$module = $this->getModuleAsString();
-		$controller = $this->getControllerAsString();
-		$action = $this->getActionAsString();
-		
-		if(!empty($module) || !empty($controller) || !empty($action))
-		{
-			$output .= $module . $controller . $action;
-		}
-		
-		return $output;
+		return $this->printer->resourcePrint();
 	}
 	
 	public function __toString()
 	{
-		return $this->getResource() . $this->getParamsAsString();
-	}
-	
-	private function getModuleAsString()
-	{
-		$output = "";
-		
-		if($this->module != self::MODULE_DEFAULT_VALUE)
-		{
-			$output = "/" . $this->module;
-		}
-		
-		return $output;
-	}
-	
-	private function getControllerAsString()
-	{
-		$output = "";
-		
-		if($this->controller != self::CONTROLLER_DEFAULT_VALUE)
-		{
-			$output = "/" . $this->controller;
-		}
-		
-		return $output;
-	}
-	
-	private function getActionAsString()
-	{
-		$output = "";
-		
-		if($this->action != self::ACTION_DEFAULT_VALUE)
-		{
-			if($this->controller != self::CONTROLLER_DEFAULT_VALUE)
-			{
-				$output = "/" . $this->action;
-			}
-			else
-			{
-				$output = $this->action;
-			}
-		}
-		
-		return $output;
-	}
-	
-	private function getParamsAsString()
-	{
-		$output = "";
-		
-		foreach($this->params as $paramName => $paramValue)
-		{
-			$output .= "/" . $paramName . "/" . $paramValue;
-		}
-		
-		return $output;
+		return $this->printer->standardPrint();
 	}
 	
 }
