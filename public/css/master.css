@@ -1,7 +1,14 @@
 @CHARSET "UTF-8";
 
-@import url('./reset.css');
 @import url('./layout.css');
+
+/* Bootstrap */
+
+@import url('../lib/bootstrap/css/bootstrap.css');
+@import url('../lib/bootstrap/css/bootstrap-responsive.css');
+
+/* Default styles */
+
 @import url('./default/lists.css');
 @import url('./default/forms.css');
 @import url('./default/pagination.css');

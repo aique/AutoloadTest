@@ -4,7 +4,10 @@ class Application_Forms_LoginForm extends Library_Html_Form_BaseForm
 {
 	public function init()
 	{
+		$this->setLegend("Login");
+		
 		$this->addAttribute("id", "login_form");
+		$this->addAttribute("class", "form-horizontal");
 		
 		$username = new Library_Html_Form_Element_Input(array("type" => "text", "id" => "usuario", "name" => "usuario", "label" => "usuario"),
 												   		array(Library_Html_Form_ValidationRuleConst::REQUIRED => true,
@@ -18,6 +21,6 @@ class Application_Forms_LoginForm extends Library_Html_Form_BaseForm
 		
 		$this->addElement($username);
 		$this->addElement($password);
-		$this->addElement($submit);
+		$this->addAction($submit);
 	}
 }

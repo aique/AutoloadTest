@@ -2,6 +2,9 @@
 
 /**
  * Clase que gestiona el acceso a las variables de sesión.
+ * 
+ * @author qinteractiva
+ * 
  */
 class Library_Manage_SessionManager
 {

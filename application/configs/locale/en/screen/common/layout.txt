@@ -1,1 +1,2 @@
-screen_common_layout_title = "Autoload test - MP project skeleton"
+screen_common_layout_title = "Autoload test"
+screen_common_layout_subtitle = "MP project skeleton"

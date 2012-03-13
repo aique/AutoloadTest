@@ -4,7 +4,11 @@ class Application_Modules_Cms_Forms_InsertUserForm extends Library_Html_Form_Bas
 {
 	public function init()
 	{
-		$name = new Library_Html_Form_Element_Input(array("type" => "text", "id" => "name", "name" => "name", "label" => "name"),
+		$this->setLegend("Datos del usuario");
+		
+		$this->addAttribute("class", "form-horizontal");
+		
+		$name = new Library_Html_Form_Element_Input(array("type" => "text", "id" => "name", "name" => "name", "label" => "nombre"),
 													array(Library_Html_Form_ValidationRuleConst::REQUIRED => true,
 														  Library_Html_Form_ValidationRuleConst::FORMAT => Library_Html_Form_ValidationRuleConst::ALPHABETICAL_FORMAT));
 		
@@ -21,7 +25,7 @@ class Application_Modules_Cms_Forms_InsertUserForm extends Library_Html_Form_Bas
 													 array(Library_Html_Form_ValidationRuleConst::REQUIRED => true,
 														   Library_Html_Form_ValidationRuleConst::FORMAT => Library_Html_Form_ValidationRuleConst::EMAIL));
 		
-		$role = new Library_Html_Form_Element_Select(array("name" => "role", "id" => "role"));
+		$role = new Library_Html_Form_Element_Select(array("name" => "role", "id" => "role", "label" => "rol"));
 		
 		$role->addOption(new Library_Html_Form_Element_Option(array("value" => "admin", "display" => "Administrador")));
 		$role->addOption(new Library_Html_Form_Element_Option(array("value" => "guest", "display" => "Invitado")));
@@ -33,6 +37,6 @@ class Application_Modules_Cms_Forms_InsertUserForm extends Library_Html_Form_Bas
 		$this->addElement($passConf);
 		$this->addElement($email);
 		$this->addElement($role);
-		$this->addElement($submit);
+		$this->addAction($submit);
 	}
 }

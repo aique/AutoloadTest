@@ -125,9 +125,11 @@ class Library_Request_Request
 	 * Almacena un atributo en el array de parámetros.
 	 * 
 	 * @param string $name
+	 * 
 	 * 		Nombre del atributo que se almacenará en el array de parámetros.
 	 * 
 	 * @param string $value
+	 * 
 	 * 		Valor del atributo que se almacenará en el array de parámetros.
 	 */
 	public function setParam($name, $value)
@@ -139,11 +141,17 @@ class Library_Request_Request
 	}
 	
 	/**
-	 * Devuelve el valor de un parámetro almacenado en el array a tal efecto
-	 * a partir de su nombre.
+	 * Devuelve el valor de un parámetro almacenado en el array de la clase
+	 * destinado a tal efecto a partir de su nombre.
 	 * 
 	 * @param string $name
+	 * 
 	 * 		Nombre del parámetro del que se quiere obtener el valor.
+	 * 
+	 * @return
+	 * 
+	 * 		Cadena de texto con el valor solicitado o null en caso de no
+	 * 		encontrar coincidencias.
 	 */
 	public function getParam($name)
 	{
@@ -153,10 +161,19 @@ class Library_Request_Request
 		}
 		else
 		{
-			return false;
+			return null;
 		}
 	}
 	
+	/**
+	 * Imprime la petición en el mismo formato en el que el objeto
+	 * ACL es capaz de interpretar los recursos sobre los que validará
+	 * los permisos de acceso.
+	 * 
+	 * @return
+	 * 
+	 * 		Cadena de texto que representa la petición como un recurso.
+	 */
 	public function getResource()
 	{
 		return $this->printer->resourcePrint();

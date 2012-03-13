@@ -1,13 +1,33 @@
 <?php
 
 /**
+ * Clase que parsea el fichero de configuración de la aplicación.
  * 
+ * Este fichero se encuentra en el directorio application/configs/config.ini.
  * 
  * @author qinteractiva
  *
  */
 class Library_Parsers_ConfigFileParser
 {
+	/**
+	 * Parsea el fichero de configuración y devuelve un array asociativo
+	 * con los valores encontrados en un formato interpretable por
+	 * la aplicación.
+	 * 
+	 * El array devuelto tendrá el siguiente formato:
+ 	 * 
+ 	 * - ("entorno1" => ("atributo1" => "valor1", "atributo2" => "valor2"), "entorno2" => ("atributo3" => "valor3") ... )
+ 	 * 
+	 * @param string $filePath
+	 * 
+	 * 		Cadena de texto que contiene la ubicación del fichero de
+	 * 		configuración.
+	 * 
+	 * @return array
+	 * 
+	 * 		Array asociativo con los datos de configuración establecidos.
+	 */
 	public static function parse($filePath)
 	{		
 		$values = array();

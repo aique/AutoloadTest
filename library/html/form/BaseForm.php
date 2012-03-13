@@ -3,8 +3,11 @@
 abstract class Library_Html_Form_BaseForm extends Library_Html_BaseElement
 {
 	private $elements;
-	private $validator;	
+	private $actions;
+	private $legend;
 	private $error;
+	
+	private $validator;
 	
 	const DEFAULT_ACTION = "#";
 	const DEFAULT_METHOD = "POST";
@@ -15,6 +18,8 @@ abstract class Library_Html_Form_BaseForm extends Library_Html_BaseElement
 														  "enctype" => self::DEFAULT_ENCTYPE))
 	{
 		$this->elements = array();
+		$this->actions = array();
+		$this->legend = null;
 		$this->error = null;
 		
 		parent::__construct(Library_Html_Form_FormElementConst::FORM,
@@ -106,6 +111,56 @@ abstract class Library_Html_Form_BaseForm extends Library_Html_BaseElement
 	    $this->elements = $elements;
 	}
 	
+	public function addElement(Library_Html_Form_FormElement $element)
+	{
+		$this->elements[] = $element;
+	}
+	
+	/**
+	 * Devuelve el valor del atributo actions.
+	 *
+	 * @return array
+	 */
+	public function getActions()
+	{
+	    return $this->actions;
+	}
+	 
+	/**
+	 * Establece el valor del atributo actions.
+	 *
+	 * @param array $actions
+	 */
+	public function setActions($actions)
+	{
+	    $this->actions = $actions;
+	}
+	
+	public function addAction(Library_Html_Form_Element_Input $action)
+	{
+		$this->actions[] = $action;
+	}
+	
+	/**
+	 * Devuelve el valor del atributo legend.
+	 *
+	 * @return string
+	 */
+	public function getLegend()
+	{
+	    return $this->legend;
+	}
+	 
+	/**
+	 * Establece el valor del atributo legend.
+	 *
+	 * @param string $legend
+	 */
+	public function setLegend($legend)
+	{
+	    $this->legend = $legend;
+	}
+	
 	/**
 	 * Devuelve el valor del atributo error.
 	 *
@@ -158,11 +213,6 @@ abstract class Library_Html_Form_BaseForm extends Library_Html_BaseElement
 		return null;
 	}
 	
-	public function addElement(Library_Html_Form_FormElement $element)
-	{
-		$this->elements[] = $element;
-	}
-	
 	public function isValid()
 	{
 		foreach($this->elements as $element)
@@ -195,7 +245,7 @@ abstract class Library_Html_Form_BaseForm extends Library_Html_BaseElement
 	
 	public function __toString()
 	{
-		return $this->printer->printHTML();
+		return $this->printer->standardPrint();
 	}
 	
 }

@@ -1,17 +1,13 @@
 <?php
 
-abstract class Library_Html_Printer_ElementBasePrinter
+abstract class Library_Html_Printer_ElementBasePrinter extends Library_Printer_BasePrinter
 {
-	protected $element;
-	
 	public function __construct(Library_Html_BaseElement $element = null)
 	{
-		$this->element = $element;
+		parent::__construct($element);
 	}
 	
-	public abstract function printHTML();
-	
-	protected function getAttributeValue($name, $value)
+	protected function printAttribute($name, $value)
 	{
 		if($value)
 		{

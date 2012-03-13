@@ -1,16 +1,19 @@
 <?php
 
 /**
- * Clase que extiende el comportamiento de MySQLi, ampliandolo si fuera necesario.
+ * Clase encargada de comunicar la aplicación con la base de datos.
  * 
- * Será la encargada de comunicarse con la base de datos a lo largo de toda la
- * aplicación.
+ * Está basada en la clase MySQLi, utilizando los métodos de la misma y ampliando
+ * su funcionalidad si fuera necesario.
+ * 
+ * @author qinteractiva
+ * 
  */
 class Library_Manage_DBManager
 {
-	private static $dbManager = null;
-	
 	private $mysqli;
+	
+	private static $instance = null;
 	
 	private function __construct()
 	{
@@ -25,21 +28,21 @@ class Library_Manage_DBManager
 		$this->mysqli->close();
 	}
 	
-	public static function getDbManager()
+	public static function getInstance()
 	{
-		if(self::$dbManager == null)
+		if(self::$instance == null)
 		{
-			self::$dbManager = new Library_Manage_DBManager();
+			self::$instance = new Library_Manage_DBManager();
 		}
 		
-		return self::$dbManager;
+		return self::$instance;
 	}
 	
 	public function query($query)
 	{
 		Library_Manage_ResourceManager::getLogger()->logQuerySQL($query);
 		
-		$result = self::$dbManager->mysqli->query($query);
+		$result = self::$instance->mysqli->query($query);
 		
 		return $result;
 	}

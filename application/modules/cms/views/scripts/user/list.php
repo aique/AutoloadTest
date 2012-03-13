@@ -2,6 +2,6 @@
 
 <ul>
 	
-	<?php echo $view["paginator"]->show(Library_Manage_ResourceManager::getRequestData()->getParam("page")); ?>
+	<?php echo $view["paginator"]->standardPrint(Library_Manage_ResourceManager::getRequestData()->getParam("page")); ?>
 	
 </ul>

@@ -23,7 +23,7 @@ class IndexTest extends PHPUnit_Extensions_SeleniumTestCase
 		$this->type("dom=document.forms['login_form'].password", 'juan');
 		
 		// Submit
-		$this->click("xpath=//form[@id='login_form']/input[@type='submit']");
+		$this->click("xpath=//form[@id='login_form']/fieldset/div[@class='form-actions']/input[@type='submit']");
 		$this->waitForPageToLoad(30000); // 30 second default
 		
 		// Verify 

@@ -13,7 +13,8 @@ class Application_Modules_Cms_Controllers_UserController extends Library_Control
 		else
 		{
 			$this->addPlugin(new Application_Plugins_ACLPlugin());
-			$this->addPlugin(new Application_Modules_Cms_Plugins_WellcomeMailPlugin());
+			
+			// $this->addPlugin(new Application_Modules_Cms_Plugins_WellcomeMailPlugin());
 		}
 	}
 	

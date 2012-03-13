@@ -1,8 +1,11 @@
 <?php
 
 /**
- * Clase que lee un fichero de traducciones y parsea su contenido para
- * devolver en un array los valores encontrados en él.
+ * Clase que parsea un fichero de traducciones.
+ * 
+ * Estos ficheros se encuentran en el directorio application/configs/locale/[siglaIdioma]/screen,
+ * divididos en distintas carpetas que representan el nombre de los controladores y dentro de
+ * ficheros con el nombre de los diferentes action en los que participan.
  * 
  * @author qinteractiva
  *
@@ -11,7 +14,14 @@ class Library_Parsers_TranslationsFileParser
 {
 	/**
 	 * Parsea el contenido de un fichero de traducciones y devuelve un array
-	 * con los valores encontrados.
+	 * asociativo con los valores encontrados en un formato interpretable por
+	 * la aplicación.
+	 * 
+	 * Cada clave de este array será un literal encontrado y el valor asociado
+	 * a ella será el contenido	que debe ser sustituido en la vista. El formato
+	 * por tanto es el siguiente:
+	 * 
+	 * - ("literal1" => "traduccion1", "literal2" => "traduccion2", ... )
 	 * 
 	 * @param string $filePath
 	 * 
@@ -20,9 +30,7 @@ class Library_Parsers_TranslationsFileParser
 	 * 
 	 * @return array
 	 * 
-	 * 		Array asociativo con las traducciones encontradas. Cada clave será
-	 * 		un literal encontrado, y el valor asociado a ella será el contenido
-	 * 		que se debe sustituir por él en la vista. 
+	 * 		Array asociativo con las traducciones encontradas.
 	 */
 	public static function parse($filePath)
 	{	
@@ -54,15 +62,22 @@ class Library_Parsers_TranslationsFileParser
 	}
 	
 	/**
-	 * Identifica los valores que se encuentran en una línea del fichero
-	 * de traducciones, las cuales tienen el siguiente formato:
+	 * Identifica los valores que se encuentran dentro de una línea del
+	 * fichero de traducciones y devuelve un array de dos elementos; el
+	 * primero es el literal y el segundo el valor asociado a él.
+	 * 
+	 * Cada una de estas líneas tienen el siguiente formato:
 	 * 
 	 * - [literal] = "[contenido]"
 	 * 
 	 * @param string $line
 	 * 
-	 * 		Cadena de texto con el valor de una de las línea del fichero
-	 * 		de traducciones.
+	 * 		Cadena de texto con una de las línea del fichero de traducciones.
+	 * 
+	 * @return
+	 * 		
+	 * 		Array con la información de la traducción establecida.
+	 * 		
 	 */
 	private static function getTranslation($line)
 	{

@@ -6,7 +6,7 @@ class Application_Model_User
 	{
 		$query = "SELECT id, name, role, email FROM user WHERE id = '" . mysql_real_escape_string($id) . "'";
 		
-		$result = Library_Manage_DBManager::getDbManager()->query($query);
+		$result = Library_Manage_DBManager::getInstance()->query($query);
 		
 		$user = false;
 		
@@ -22,7 +22,7 @@ class Application_Model_User
 	{
 		$query = "SELECT id, name, role, email FROM user";
 		
-		$result = Library_Manage_DBManager::getDbManager()->query($query);
+		$result = Library_Manage_DBManager::getInstance()->query($query);
 		
 		$users = array();
 		
@@ -39,7 +39,7 @@ class Application_Model_User
 		$query = "SELECT id, name, role, email FROM user WHERE name = '".mysql_real_escape_string($name)."' AND
 															   pass = '" . mysql_real_escape_string($pass) . "'";
 		
-		$result = Library_Manage_DBManager::getDbManager()->query($query);
+		$result = Library_Manage_DBManager::getInstance()->query($query);
 		
 		$user = false;
 		
@@ -58,7 +58,7 @@ class Application_Model_User
 																	'".mysql_real_escape_string($user->getRole())."',
 																	'".mysql_real_escape_string($user->getEmail())."')";
 		
-		return Library_Manage_DBManager::getDbManager()->query($query);
+		return Library_Manage_DBManager::getInstance()->query($query);
 		
 	}
 	
@@ -66,7 +66,7 @@ class Application_Model_User
 	{
 		$query = "DELETE FROM user WHERE id = '" . mysql_real_escape_string($id) . "'";
 		
-		return Library_Manage_DBManager::getDbManager()->query($query);
+		return Library_Manage_DBManager::getInstance()->query($query);
 	}
 	
 }

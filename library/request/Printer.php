@@ -1,19 +1,49 @@
 <?php
 
-class Library_Request_Printer
+/**
+ * Clase que imprime por pantalla una petición en sus distintos formatos.
+ * 
+ * @author qinteractiva
+ *
+ */
+class Library_Request_Printer extends Library_Printer_BasePrinter
 {
-	private $request;
-	
 	public function __construct(Library_Request_Request $request)
 	{
-		$this->request = $request;
+		parent::__construct($request);
 	}
 	
+	/**
+	 * Imprime la petición en el formato estándar.
+	 * 
+	 * Es llamado desde el método __toString de la petición y su
+	 * formato de salida es igual a como se debe introducir la
+	 * petición en la barra de direcciones del navegador:
+	 * 
+	 * - http://[nombreApp]/[modulo]/[controlador]/[action]/[param1]/[val1]/[param2]/[val2]/...
+	 * 
+	 * @return
+	 * 
+	 * 		Cadena de texto con la salida estándar de la petición.
+	 */
 	public function standardPrint()
 	{
 		return $this->resourcePrint() . $this->getParamsAsString();
 	}
 	
+	/**
+	 * Imprime la petición en el formato de recurso.
+	 * 
+	 * Este formato es el manejado por el objeto ACL para
+	 * gestionar los permisos de acceso y su formato de salida es
+	 * el siguiente:
+	 * 
+	 * - http://[nombreApp]/[modulo]/[controlador]/[action]
+	 * 
+	 * @return
+	 * 
+	 * 	Cadena de texto con la salida en formato recurso de la petición.
+	 */
 	public function resourcePrint()
 	{
 		$output = "http://" . Library_Manage_ResourceManager::getConfig()->getVar("app.name");
@@ -34,9 +64,9 @@ class Library_Request_Printer
 	{
 		$output = "";
 	
-		if($this->request->getModule() != Library_Request_Request::MODULE_DEFAULT_VALUE)
+		if($this->element->getModule() != Library_Request_Request::MODULE_DEFAULT_VALUE)
 		{
-			$output = "/" . $this->request->getModule();
+			$output = "/" . $this->element->getModule();
 		}
 	
 		return $output;
@@ -46,9 +76,9 @@ class Library_Request_Printer
 	{
 		$output = "";
 	
-		if($this->request->getController() != Library_Request_Request::CONTROLLER_DEFAULT_VALUE)
+		if($this->element->getController() != Library_Request_Request::CONTROLLER_DEFAULT_VALUE)
 		{
-			$output = "/" . $this->request->getController();
+			$output = "/" . $this->element->getController();
 		}
 	
 		return $output;
@@ -58,15 +88,15 @@ class Library_Request_Printer
 	{
 		$output = "";
 	
-		if($this->request->getAction() != Library_Request_Request::ACTION_DEFAULT_VALUE)
+		if($this->element->getAction() != Library_Request_Request::ACTION_DEFAULT_VALUE)
 		{
-			if($this->request->getController() != Library_Request_Request::CONTROLLER_DEFAULT_VALUE)
+			if($this->element->getController() != Library_Request_Request::CONTROLLER_DEFAULT_VALUE)
 			{
-				$output = "/" . $this->request->getAction();
+				$output = "/" . $this->element->getAction();
 			}
 			else
 			{
-				$output = $this->request->getAction();
+				$output = $this->element->getAction();
 			}
 		}
 	
@@ -77,7 +107,7 @@ class Library_Request_Printer
 	{
 		$output = "";
 	
-		foreach($this->request->getParams() as $paramName => $paramValue)
+		foreach($this->element->getParams() as $paramName => $paramValue)
 		{
 			$output .= "/" . $paramName . "/" . $paramValue;
 		}

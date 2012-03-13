@@ -1,15 +1,1 @@
 @CHARSET "UTF-8";
-
-dt
-{
-	display: inline;
-	
-	margin-right: 10px;
-	
-	font-weight: bold;
-}
-
-dd
-{
-	display: inline;
-}

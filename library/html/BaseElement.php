@@ -136,7 +136,7 @@ abstract class Library_Html_BaseElement
 	
 	public function __toString()
 	{
-		return $this->printer->printHTML();
+		return $this->printer->standardPrint();
 	}
 	
 }

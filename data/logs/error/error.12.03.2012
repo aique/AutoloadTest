@@ -1,0 +1,32 @@
+Fatal error
+-----------
+
+File: C:\wamp\www\git_test_1\library\paginator\Paginator.php
+Line: 184
+Message: El número de página es incorrecto. Se ha recibido . Deve ser un número entero mayor que 0.
+Trace: #0 C:\wamp\www\git_test_1\application\modules\cms\views\scripts\user\list.php(5): Library_Paginator_Paginator->standardPrint(NULL)
+#1 C:\wamp\www\git_test_1\library\file\FileUtil.php(15): include('C:\wamp\www\git...')
+#2 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(142): Library_File_FileUtil::getFileContent('C:\wamp\www\git...', Array)
+#3 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->applyView(NULL)
+#4 C:\wamp\www\git_test_1\library\controller\BaseController.php(159): Library_Controller_ControllerDispatcher->dispatch()
+#5 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
+#6 C:\wamp\www\git_test_1\public\bootstrap.php(14): Library_App_Dispatcher::dispatchRequest(Object(Library_Request_Request))
+#7 C:\wamp\www\git_test_1\public\index.php(3): include('C:\wamp\www\git...')
+#8 {main}
+
+Fatal error
+-----------
+
+File: C:\wamp\www\git_test_1\library\paginator\Paginator.php
+Line: 184
+Message: El número de página es incorrecto. Se ha recibido . Deve ser un número entero mayor que 0.
+Trace: #0 C:\wamp\www\git_test_1\application\modules\cms\views\scripts\user\list.php(5): Library_Paginator_Paginator->standardPrint(NULL)
+#1 C:\wamp\www\git_test_1\library\file\FileUtil.php(15): include('C:\wamp\www\git...')
+#2 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(142): Library_File_FileUtil::getFileContent('C:\wamp\www\git...', Array)
+#3 C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php(29): Library_Controller_ControllerDispatcher->applyView(NULL)
+#4 C:\wamp\www\git_test_1\library\controller\BaseController.php(159): Library_Controller_ControllerDispatcher->dispatch()
+#5 C:\wamp\www\git_test_1\library\app\Dispatcher.php(9): Library_Controller_BaseController->dispatch()
+#6 C:\wamp\www\git_test_1\public\bootstrap.php(14): Library_App_Dispatcher::dispatchRequest(Object(Library_Request_Request))
+#7 C:\wamp\www\git_test_1\public\index.php(3): include('C:\wamp\www\git...')
+#8 {main}
+

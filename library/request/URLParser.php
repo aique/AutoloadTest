@@ -1,8 +1,7 @@
 <?php
 
 /**
- * Clase que parsea una URL, obteniendo el módulo, el controlador, el action y
- * la lista de parámetros.
+ * Clase que parsea una URL.
  * 
  * @author qinteractiva
  * 
@@ -11,7 +10,8 @@ class Library_Request_URLParser
 {
 	/**
 	 * Parsea una URL y devuelve un objeto de tipo Library_Request_Request con
-	 * sus atributos debidamente establecidos.
+	 * sus atributos debidamente establecidos en función de la información
+	 * encontrada en ella.
 	 * 
 	 * @param string $url
 	 * 

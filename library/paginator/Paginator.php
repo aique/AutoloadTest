@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Clase que gestiona visualmente una colección de elementos.
+ * 
+ * Representa la información de los elementos de la colección
+ * de manera visual en un formato de lista, paginando los resultados
+ * según las preferencias establecidas en el fichero de configuración.
+ * 
+ * @author qinteractiva
+ *
+ */
 class Library_Paginator_Paginator
 {
 	private $collection;
@@ -24,7 +34,7 @@ class Library_Paginator_Paginator
 		}
 		else
 		{
-			$this->printer = new Library_Paginator_Printer_DefaultPaginatorPrinter();
+			$this->printer = new Library_Paginator_Printer_DefaultPaginatorPrinter($this);
 		}
 	}
 	
@@ -108,21 +118,36 @@ class Library_Paginator_Paginator
 	    $this->currentPage = $currentPage;
 	}
 	
+	/**
+	 * Devuelve la posición del primer elemento mostrado en la página actual.
+	 * 
+	 * @return int
+	 */
 	public function getFirstItemPosOnPage()
 	{
 		return ($this->currentPage - 1) * $this->itemsPerPage + 1;
 	}
 	
+	/**
+	 * Devuelve la posición del último elemento mostrado en la página actual.
+	 * 
+	 * @return int
+	 */
 	public function getLastItemPosOnPage()
 	{
 		return $this->getFirstItemPosOnPage() + $this->itemsPerPage - 1;
 	}
 	
+	/**
+	 * Calcula el número de páginas totales que componen el sistema de paginación.
+	 * 
+	 * @return int
+	 */
 	private function calculatePagesNumber()
 	{
 		$pagesNumber = 0;
 		
-		$pagesNumber = $this->itemsNumber / $this->itemsPerPage;
+		$pagesNumber = floor($this->itemsNumber / $this->itemsPerPage);
 		
 		if($this->itemsNumber % $this->itemsPerPage > 0)
 		{
@@ -132,14 +157,37 @@ class Library_Paginator_Paginator
 		return $pagesNumber;
 	}
 	
-	public function show($currentPage)
+	/**
+	 * Imprime la salida por defecto del paginador.
+	 * 
+	 * @param int $currentPage
+	 * 
+	 * 		Número de página actual.
+	 * 
+	 * @return
+	 * 
+	 * 		Cadena de texto que se mostrará en pantalla.
+	 * 
+	 * @throws Exception
+	 * 
+	 * 		Lanza una excepción en caso de que el formato del número
+	 * 		de página no sea el correcto.
+	 */
+	public function standardPrint($currentPage)
 	{
-		if(is_numeric($currentPage) && $currentPage > 0)
+		if(!empty($currentPage))
 		{
-			$this->currentPage = $currentPage;
+			if(is_numeric($currentPage) && $currentPage > 0)
+			{
+				$this->currentPage = $currentPage;
+			}
+			else
+			{
+				throw new Exception("El número de página es incorrecto. Se ha recibido " . $currentPage . ". Debe ser un número entero mayor que 0.");
+			}
 		}
 	
-		return $this->printer->show($this);
+		return $this->printer->standardPrint($this);
 	}
 	
 }

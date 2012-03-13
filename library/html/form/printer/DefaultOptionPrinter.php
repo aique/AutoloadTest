@@ -1,14 +1,14 @@
 <?php
 
-class Library_Html_Form_Printer_DefaultOptionPrinter extends Library_Html_Printer_ElementBasePrinter
+class Library_Html_Form_Printer_DefaultOptionPrinter extends Library_Html_Form_Printer_DefaultFormElementPrinter
 {
-	public function printHTML()
+	protected function printElement()
 	{
 		$output = '<option';
 		
 		foreach($this->element->getAttributes() as $name => $value)
 		{
-			$output .= self::getAttributeValue($name, $value);
+			$output .= self::printAttribute($name, $value);
 		}
 		
 		$output .= '>' . $this->element->getDisplay() . '</option>';

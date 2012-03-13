@@ -1,9 +1,12 @@
 <?php
 
 /**
- * Clase que se comporta como una capa superior de acceso a la configuración de la
- * aplicación. Comprueba que el objeto de configuración de la aplicación se encuentre
- * inicializado y guardado en sesión. Si no es así realiza estas acciones.
+ * Clase que filtra el acceso a los distintos recursos del sistema.
+ * 
+ * Realiza las tareas previas necesarias antes de permitir el acceso
+ * a estos recursos y los almacena en el sistema si fuera necesario.
+ * 
+ * @author qinteractiva
  */
 class Library_Manage_ResourceManager
 {

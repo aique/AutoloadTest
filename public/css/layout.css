@@ -1,11 +1,11 @@
 @CHARSET "UTF-8";
 
-body
+.page-header
 {
-	padding: 1%;
+	padding-top: 60px;
 }
 
-nav li
+.page-header h1 small
 {
-	display: inline-block;
+	margin-left: 5px;
 }

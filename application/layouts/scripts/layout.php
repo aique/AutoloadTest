@@ -16,17 +16,17 @@
 
 	<body>
 	
-		<?php include PROJECT_PATH . "/application/layouts/scripts/header.php"; ?>
-		
 		<?php echo Library_I18n_I18n::getFileContent("menu.php"); ?>
-		
-		<div id="main_content">
-		
-		<?php echo $content; ?>
+	
+		<div class="container">
+	
+			<?php include PROJECT_PATH . "/application/layouts/scripts/header.php"; ?>
+				
+			<?php echo $content; ?>
+				
+			<?php include PROJECT_PATH . "/application/layouts/scripts/footer.php"; ?>
 		
 		</div>
-		
-		<?php include PROJECT_PATH . "/application/layouts/scripts/footer.php"; ?>
 	 
 	</body>
 

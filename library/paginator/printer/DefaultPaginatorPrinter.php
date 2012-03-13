@@ -1,26 +1,51 @@
 <?php
 
-class Library_Paginator_Printer_DefaultPaginatorPrinter
+/**
+ * Clase que imprime por pantalla la información contenida en el paginador.
+ *  
+ * @author qinteractiva
+ *
+ */
+class Library_Paginator_Printer_DefaultPaginatorPrinter extends Library_Printer_BasePrinter
 {
-	public static function show($paginator)
+	public function __contruct(Library_Paginator_Paginator $paginator)
 	{
-		$collection = $paginator->getCollection();
+		parent::__construct($paginator);
+	}
+	
+	/**
+	 * Devuelve una cadena de texto con la salida en pantalla por defecto
+	 * del paginador.
+	 * 
+	 * Los elementos que componen la colección serán impresos en formato
+	 * de lista, utilizando su salida estándar devuelta por su método
+	 * __toString.
+	 * 
+	 * También se imprimirán las distintas páginas que componen el sistema
+	 * de paginación en formato de enlace para poder navegar a través de
+	 * ellas.
+	 * 
+	 * @param string $paginator
+	 */
+	public function standardPrint()
+	{
+		$collection = $this->element->getCollection();
 		
 		if(count($collection > 0))
 		{
-			$output = self::printCollection($paginator, $collection);
+			$output = self::printCollection($this->element, $collection);
 			
-			$output = self::printPagination($paginator, $output);
+			$output = self::printPagination($this->element, $output);
 		}
 		else
 		{
-			$output = "No hay elementos para mostrar.";
+			$output = 'No hay elementos para mostrar.';
 		}
 		
 		return $output;
 	}
 	
-	private static function printCollection($paginator, $collection)
+	private function printCollection(Library_Paginator_Paginator $paginator, $collection)
 	{
 		$output = '<div id="users"><ul>';
 		
@@ -30,7 +55,7 @@ class Library_Paginator_Printer_DefaultPaginatorPrinter
 			{
 				$item = $collection[$i];
 				
-				$output .= $item;
+				$output .= '<li>' . $item . '</li>';
 			}
 		}
 			
@@ -39,7 +64,7 @@ class Library_Paginator_Printer_DefaultPaginatorPrinter
 		return $output;
 	}
 	
-	private static function printPagination($paginator, $output)
+	private function printPagination(Library_Paginator_Paginator $paginator, $output)
 	{
 		$request = Library_Manage_ResourceManager::getRequestData();
 		
@@ -49,13 +74,26 @@ class Library_Paginator_Printer_DefaultPaginatorPrinter
 		
 		if($pagesNumber > 1)
 		{
-			$output .= '<div id="paginator"><ul>';
+			$output .= '<div class="pagination"><ul>';
 			
-			for($i = 1 ; $i <= $paginator->getPagesNumber() ; $i++)
+			$output .= '<li><a href="'.$request.'/page/1">Primera</a></li>';
+			
+			for($i = 1 ; $i <= $pagesNumber ; $i++)
 			{
-				$output .= '<li><a href="'.$request.'/page/'.$i.'">'.$i.'</a></li>';
+				if($i == $paginator->getCurrentPage())
+				{
+					$output .= '<li class="active"><a href="'.$request.'/page/'.$i.'">'.$i.'</a></li>';
+				}
+				else
+				{
+					$output .= '<li><a href="'.$request.'/page/'.$i.'">'.$i.'</a></li>';
+				}
 			}
+			
+			$output .= '<li><a href="'.$request.'/page/'.$pagesNumber.'">Última</a></li>';
 		}
+		
+		$output .= '</ul></div>';
 		
 		return $output;
 	}

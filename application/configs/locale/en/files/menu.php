@@ -1,11 +1,23 @@
-<nav>
+<div class="navbar navbar-fixed-top">
 
-	<ul>
+	<div class="navbar-inner">
 	
-		<li><a href="/">Home</a></li>
-		<li><a href="/cms/user/list">Users list</a></li>
-		<li><a href="/cms/user/insert">Users insertion</a></li>
+		<div class="container">
 		
-	</ul>
+			<div class="nav-collapse">
+
+				<ul class="nav">
+				
+					<li><a href="/">Home</a></li>
+					<li><a href="/cms/user/list">Users list</a></li>
+					<li><a href="/cms/user/insert">Users insertion</a></li>
+					
+				</ul>
+			
+			</div>
+		
+		</div>
 	
-</nav>
+	</div>
+	
+</div>

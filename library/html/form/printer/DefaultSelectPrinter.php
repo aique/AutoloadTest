@@ -1,8 +1,8 @@
 <?php
 
-class Library_Html_Form_Printer_DefaultSelectPrinter extends Library_Html_Printer_ElementBasePrinter
+class Library_Html_Form_Printer_DefaultSelectPrinter extends Library_Html_Form_Printer_DefaultFormElementPrinter
 {
-	public function printHTML()
+	protected function printElement()
 	{
 		$output = '<select';
 		
@@ -10,7 +10,7 @@ class Library_Html_Form_Printer_DefaultSelectPrinter extends Library_Html_Printe
 		{
 			if($name != "label")
 			{
-				$output .= self::getAttributeValue($name, $value);
+				$output .= self::printAttribute($name, $value);
 			}
 		}
 		
@@ -21,7 +21,7 @@ class Library_Html_Form_Printer_DefaultSelectPrinter extends Library_Html_Printe
 			$output .= $option;
 		}
 		
-		$output .= '</select>';
+		$output .= '</select><br />';
 		
 		return $output;
 	}

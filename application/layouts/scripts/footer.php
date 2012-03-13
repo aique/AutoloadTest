@@ -1,7 +1,7 @@
-<div id="footer">
+<footer>
 
 	<p>
 		© Q-Interactiva, 2012
 	</p>
 
-</div>
+</footer>

@@ -1,12 +1,5 @@
 @CHARSET "UTF-8";
 
-#paginator ul li
-{
-	display: inline;
-	
-	margin-right: 10px;
-}
-
 .action
 {
 	font-size: 11px;
