@@ -1,64 +1,18 @@
 <?php
 
-class Application_Model_User_Item
+class Application_Model_User_Item extends Library_Model_BaseItem
 {
 	private $id;
 	private $name;
 	private $password;
 	private $role;
 	private $email;
-	
-	private $printer;
+	private $married;
+	private $childNum;
 	
 	public function __construct(array $options = null)
-	{
-		if(is_array($options))
-		{
-			$this->setOptions($options);
-		}
-		
-		$this->printer = new Application_Model_User_Printer($this);
-	}
-	
-	private function setOptions(array $options)
-	{
-		$methods = get_class_methods($this);
-		
-		foreach($options as $key => $value)
-		{
-			$method = 'set' . ucfirst($key);
-			
-			if(in_array($method, $methods))
-			{
-				$this->$method($value);
-			}
-		}
-		 
-		return $this;
-	}
-	
-	public function __set($name, $value)
-	{
-		$method = 'set' . $name;
-		 
-		if(!method_exists($this, $method))
-		{
-			throw new Exception('Se está accediendo a una propiedad no válida (' . $name . ') del objeto Application_Modules_Users_Model_User_Item.');
-		}
-		 
-		$this->$method($value);
-	}
-	
-	public function __get($name)
-	{
-		$method = 'get' . $name;
-		 
-		if(!method_exists($this, $method))
-		{
-			throw new Exception('Se está accediendo a una propiedad no válida (' . $name . ') del objeto Application_Modules_Users_Model_User_Item.');
-		}
-		 
-		return $this->$method();
+	{	
+		parent::__construct($options, new Application_Model_User_Printer($this));
 	}
 	
 	/**
@@ -161,14 +115,58 @@ class Application_Model_User_Item
 	    $this->email = $email;
 	}
 	
-	public function getPrinter()
+	/**
+	 * Devuelve el valor del atributo married.
+	 *
+	 * @return boolean
+	 */
+	public function getMarried()
 	{
-		return $this->printer;
+	    return $this->married;
+	}
+	 
+	/**
+	 * Establece el valor del atributo married.
+	 *
+	 * @param boolean $married
+	 */
+	public function setMarried($married)
+	{
+	    $this->married = $married;
 	}
 	
-	public function __toString()
+	/**
+	 * Devuelve el valor del atributo numChild.
+	 *
+	 * @return int
+	 */
+	public function getNumChild()
 	{
-		return $this->printer->standardPrint();
+	    return $this->numChild;
+	}
+	 
+	/**
+	 * Establece el valor del atributo numChild.
+	 *
+	 * @param int $numChild
+	 */
+	public function setNumChild($numChild)
+	{
+	    $this->numChild = $numChild;
+	}
+	
+	public function getAttributesAsArray()
+	{
+		$attributes = array();
+		
+		$vars = get_class_vars(get_class($this));
+		
+		foreach($vars as $key => $value)
+		{
+			$attributes[$key] = $this->__get($key);
+		}
+		
+		return $attributes;
 	}
 	
 }

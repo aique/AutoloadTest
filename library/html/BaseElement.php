@@ -7,19 +7,10 @@ abstract class Library_Html_BaseElement
 	
 	protected $printer;
 	
-	public function __construct($name, $attributes = array(), Library_Html_Printer_ElementBasePrinter $printer = null)
+	public function __construct($name, $attributes = array())
 	{
 		$this->name = $name;
 		$this->attributes = $attributes;
-		
-		if($printer != null)
-		{
-			$this->printer = $printer;
-		}
-		else
-		{
-			$this->printer = new Library_Html_Printer_ElementBasePrinter($this);
-		}
 	}
 	
 	/**

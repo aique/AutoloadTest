@@ -30,6 +30,9 @@ class Application_Modules_Cms_Forms_InsertUserForm extends Library_Html_Form_Bas
 		$role->addOption(new Library_Html_Form_Element_Option(array("value" => "admin", "display" => "Administrador")));
 		$role->addOption(new Library_Html_Form_Element_Option(array("value" => "guest", "display" => "Invitado")));
 		
+		$married = new Library_Html_Form_Element_Input(array("type" => "checkbox", "id" => "married", "name" => "married", "display" => "Está casado"));
+		$married->setPrinter(new Library_Html_Form_Printer_DefaultCheckboxPrinter($married));
+		
 		$submit = new Library_Html_Form_Element_Input(array("type" => "submit", "value" => Library_I18n_I18n::getText("screen_common_form_submit")));
 		
 		$this->addElement($name);
@@ -37,6 +40,7 @@ class Application_Modules_Cms_Forms_InsertUserForm extends Library_Html_Form_Bas
 		$this->addElement($passConf);
 		$this->addElement($email);
 		$this->addElement($role);
+		$this->addElement($married);
 		$this->addAction($submit);
 	}
 }

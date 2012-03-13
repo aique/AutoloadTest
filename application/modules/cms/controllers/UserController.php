@@ -57,6 +57,34 @@ class Application_Modules_Cms_Controllers_UserController extends Library_Control
 		$this->view["form"] = $form;
 	}
 	
+	public function updateAction()
+	{
+		$id = $this->getRequest()->getParam("id");
+		
+		if(Application_Model_User_Validator::validateUserId($id))
+		{
+			$userModel = new Application_Model_User();
+				
+			$user = $userModel->getUser($id);
+			
+			if($user)
+			{
+				$this->view["user"] = $user;
+				
+				$form = new Application_Modules_Cms_Forms_InsertUserForm();
+				
+				$form->setParams($user->getAttributesAsArray());
+					
+				$this->view["form"] = $form;
+			}
+		
+		}
+		else
+		{
+			$this->helper->redirect(new Library_Request_Request("cms", "user", "list"));
+		}
+	}
+	
 	public function detailAction()
 	{
 		$id = $this->getRequest()->getParam("id");

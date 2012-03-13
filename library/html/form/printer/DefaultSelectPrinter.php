@@ -8,20 +8,34 @@ class Library_Html_Form_Printer_DefaultSelectPrinter extends Library_Html_Form_P
 		
 		foreach($this->element->getAttributes() as $name => $value)
 		{
-			if($name != "label")
-			{
-				$output .= self::printAttribute($name, $value);
-			}
+			$output .= self::printAttribute($name, $value);
 		}
 		
 		$output .= '>';
 		
-		foreach($this->element->getOptions() as $option)
-		{
-			$output .= $option;
-		}
+		$output .= $this->printOptions($this->element->getOptions(), $this->element->getValue());
 		
 		$output .= '</select><br />';
+		
+		return $output;
+	}
+	
+	private function printOptions($options, $selectedValue)
+	{
+		$output = '';
+		
+		foreach($options as $option)
+		{
+			if($option->getValue() == $selectedValue)
+			{
+				$output .= $option->getPrinter()->printSelectedOption();
+			}
+			else
+			{
+				$output .= $option;
+			}
+			
+		}
 		
 		return $output;
 	}

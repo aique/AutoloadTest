@@ -37,6 +37,9 @@ class Application_Plugins_ACLPlugin extends Library_Plugin_BasePlugin
 		$request = new Library_Request_Request("cms", "user", "insert");
 		$acl->addResource($request->getResource(), "admin");
 		
+		$request = new Library_Request_Request("cms", "user", "update");
+		$acl->addResource($request->getResource(), "admin");
+		
 		$request = new Library_Request_Request("cms", "user", "detail");
 		$acl->addResource($request->getResource(), "admin");
 		
