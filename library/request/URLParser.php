@@ -38,13 +38,13 @@ class Library_Request_URLParser
 		
 		// Procesa la URL hasta llegar al action, donde termina el bucle
 		// que identifica la URL para comenzar con el bucle que identifica
-		// los parámetros.
+		// los parámetros
 		
 		foreach($urlTokens as $token)
 		{
 			if(!empty($token) && !self::isGETParam($token))
 			{
-				if(Library_App_Helper::isModule($token) && !$moduleSetted)
+				if(Library_Request_Helper::isModule($token) && !$moduleSetted)
 				{
 					$request->setModule($token);
 					$moduleSetted = true;

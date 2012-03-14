@@ -6,7 +6,7 @@ class Application_Plugins_ACLPlugin extends Library_Plugin_BasePlugin
 	{
 		$acl = $this->createAclObject();
 		
-		$user = Library_Manage_SessionManager::getVar(Library_Consts_Application::LOGGED_USER);
+		$user = Library_Manage_SessionManager::getVar(Library_Consts_Session::LOGGED_USER);
 		
 		if($user)
 		{

@@ -4,7 +4,7 @@ class Application_Modules_Cms_Controllers_UserController extends Library_Control
 {
 	public function init()
 	{
-		if(!Library_Manage_SessionManager::getVar(Library_Consts_Application::LOGGED_USER))
+		if(!Library_Manage_SessionManager::getVar(Library_Consts_Session::LOGGED_USER))
 		{
 			$this->helper->redirect(new Library_Request_Request(Library_Request_Request::MODULE_DEFAULT_VALUE,
  													    		Library_Request_Request::CONTROLLER_DEFAULT_VALUE,

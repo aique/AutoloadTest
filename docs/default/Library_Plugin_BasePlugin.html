@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class Library_Plugin_BasePlugin</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class Library_Plugin_BasePlugin</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+							<a href="#sec-descendents">Descendents</a>
+			|													<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Clase base de la que heredarán todos los plugins utilizados en la  aplicación.</p>
+<p class="description"><p>Un plugin es un fragmento de código que se ejecuta en un momento  determinado dentro del ciclo de atención de una petición. Este  momento viene determinado por el método de la clase padre (esta  misma clase) en el que se ubique.</p><p>Es importante asociar el plugin al controlador que servirá la  petición en su método init().</p></p>
+	<ul class="tags">
+				<li><span class="field">author:</span> qinteractiva</li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_library---plugin---BasePlugin.php.html">/library/plugin/BasePlugin.php</a> (line <span class="field">18</span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+	<a name="sec-descendents"></a>
+	<div class="info-box">
+		<div class="info-box-title">Direct descendents</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+			<span class="disabled">Descendents</span>
+			|															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<table cellpadding="2" cellspacing="0" class="class-table">
+				<tr>
+					<th class="class-table-header">Class</th>
+					<th class="class-table-header">Description</th>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../default/Application_Modules_Cms_Plugins_WellcomeMailPlugin.html">Application_Modules_Cms_Plugins_WellcomeMailPlugin</a></td>
+					<td>
+											Clase base de la que heredarán todos los plugins utilizados en la  aplicación.
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../default/Application_Plugins_ACLPlugin.html">Application_Plugins_ACLPlugin</a></td>
+					<td>
+											Clase base de la que heredarán todos los plugins utilizados en la  aplicación.
+										</td>
+				</tr>
+							</table>
+		</div>
+	</div>
+
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+												<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																				
+												<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#postDispatch" title="details" class="method-name">postDispatch</a>
+											(<span class="var-type"><a href="../default/Library_Request_Request.html">Library_Request_Request</a></span>&nbsp;<span class="var-name">$request</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#preDispatch" title="details" class="method-name">preDispatch</a>
+											(<span class="var-type"><a href="../default/Library_Request_Request.html">Library_Request_Request</a></span>&nbsp;<span class="var-name">$request</span>)
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+																<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+
+<a name="methodpostDispatch" id="postDispatch"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">postDispatch</span> (line <span class="line-number">59</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Ejecuta el fragmento de código contenido en este método después  de que la petición sea atendida por el controlador correspondiente.</p>
+<p class="description"><p>Los plugins que deseen ejecutar un fragmento de código en ese  preciso instante deberán sobreescribir este método con el código  correspondiente.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			postDispatch
+		</span>
+					(<span class="var-type"><a href="../default/Library_Request_Request.html">Library_Request_Request</a></span>&nbsp;<span class="var-name">$request</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../default/Library_Request_Request.html">Library_Request_Request</a></span>
+				<span class="var-name">$request</span><span class="var-description">: <p>Objeto de tipo Library_Request_Request con la información          sobre la petición que está siendo atendida.</p><p>Alterando su valor, al finalizar la ejecución de este método          finalizará el ciclo de atención de la petición y se realizará          una nueva con los datos modificados.</p></span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../default/Application_Modules_Cms_Plugins_WellcomeMailPlugin.html#methodpostDispatch">Application_Modules_Cms_Plugins_WellcomeMailPlugin::postDispatch()</a>
+							</li>
+				</ul>
+	</div>
+<a name="methodpreDispatch" id="preDispatch"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">preDispatch</span> (line <span class="line-number">37</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Ejecuta el fragmento de código contenido en este método antes  de que la petición sea atendida por el controlador correspondiente.</p>
+<p class="description"><p>Los plugins que deseen ejecutar un fragmento de código en ese  preciso instante deberán sobreescribir este método con el código  correspondiente.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			preDispatch
+		</span>
+					(<span class="var-type"><a href="../default/Library_Request_Request.html">Library_Request_Request</a></span>&nbsp;<span class="var-name">$request</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../default/Library_Request_Request.html">Library_Request_Request</a></span>
+				<span class="var-name">$request</span><span class="var-description">: <p>Objeto de tipo Library_Request_Request con la información          sobre la petición que está siendo atendida.</p><p>Alterando su valor, al finalizar la ejecución de este método          finalizará el ciclo de atención de la petición y se realizará          una nueva con los datos modificados.</p></span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../default/Application_Plugins_ACLPlugin.html#methodpreDispatch">Application_Plugins_ACLPlugin::preDispatch()</a>
+							</li>
+				</ul>
+	</div>
+						
+		</div>
+	</div>
+
+
+	<p class="notes" id="credit">
+		Documentation generated on Wed, 14 Mar 2012 12:56:55 +0000 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

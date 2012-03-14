@@ -1,11 +1,19 @@
 <?php
 
 /**
- * Clase que contine la configuración de la aplicación.
+ * Clase que gestiona el contenido del fichero de configuración, así como
+ * el entorno en el que se está ejecutando la aplicación.
  * 
- * Inicialmente se ha de hacer un volcado de los ficheros de configuración al
- * array de parámetros que contiene esta clase. Una vez hecho esto, la manera de
- * acceder a estos valores será a través de esta clase.
+ * Cuando se instancia un objeto de esta clase se realiza un parseo
+ * del fichero de configuración de la aplicación. A partir de ese momento,
+ * cada una de las variables establecidas en el mencionado fichero serán
+ * accesibles utilizando los métodos de esta clase.
+ * 
+ * @package library
+ * 
+ * @subpackage app
+ * 
+ * @author qinteractiva 
  */
 class Library_App_Config
 {
@@ -19,7 +27,7 @@ class Library_App_Config
 	}
 	
 	/**
-	 * Devuelve el valor del atributo configVars.
+	 * Devuelve el array de variables de configuración.
 	 *
 	 * @return array
 	 */
@@ -29,7 +37,7 @@ class Library_App_Config
 	}
 	 
 	/**
-	 * Establece el valor del atributo configVars.
+	 * Establece el valor del array de variables de configuración.
 	 *
 	 * @param array $configVars
 	 */
@@ -38,16 +46,38 @@ class Library_App_Config
 	    $this->configVars = $configVars;
 	}
 	
+	/**
+	 * Devuelve el valor de una variable de configuración en
+	 * función de su nombre.
+	 * 
+	 * @param string $name
+	 * 
+	 * 		Nombre de la variable de configuración solicitada.
+	 * 
+	 * @return string
+	 * 
+	 * 		Valor de la variable de configuración solicitada.
+	 */
 	public function getVar($name)
 	{
 		return $this->configVars[$this->currentEnvironment][$name];
 	}
 	
+	/**
+	 * Devuelve el nombre del entorno en el que se está ejecutando la aplicación.
+	 * 
+	 * @return string
+	 */
 	public function getCurrentEnvironment()
 	{
 		return $this->currentEnvironment;
 	}
 	
+	/**
+	 * Establece el valor del entorno en el que se está ejecutando la aplicación.
+	 * 
+	 * @param string $currentEnvironment
+	 */
 	public function setCurrentEnvironment($currentEnvironment)
 	{
 		$this->currentEnvironment = $currentEnvironment;

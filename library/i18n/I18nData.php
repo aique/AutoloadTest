@@ -79,12 +79,12 @@
 				}
 				else
 				{
-					return Library_Manage_AppConfigManager::getVar("i18n.defaultLang");
+					return Library_Manage_ResourceManager::getConfig()->getVar("i18n.defaultLang");
 				}
 			}
 			else
 			{
-				return Library_Manage_AppConfigManager::getVar("i18n.defaultLang");
+				return Library_Manage_ResourceManager::getConfig()->getVar("i18n.defaultLang");
 			}
 		}
 	}
