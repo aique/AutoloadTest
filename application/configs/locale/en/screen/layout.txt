@@ -1,1 +1,0 @@
-screen_layout_index_title = "Autoload test - MP project skeleton"

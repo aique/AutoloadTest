@@ -1,1 +1,0 @@
-screen_index_index_title = "Página de inicio"

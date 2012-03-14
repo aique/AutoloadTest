@@ -1,1 +1,0 @@
-screen_user_list_title = "Lista de usuarios"
