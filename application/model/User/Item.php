@@ -12,7 +12,10 @@ class Application_Model_User_Item extends Library_Model_BaseItem
 	
 	public function __construct(array $options = null)
 	{	
-		parent::__construct($options, new Application_Model_User_Printer($this));
+		$printer = new Application_Model_User_Printer();
+		$printer->setElement($this);
+		
+		parent::__construct($options, $printer);
 	}
 	
 	/**

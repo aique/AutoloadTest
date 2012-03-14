@@ -6,11 +6,12 @@ abstract class Library_Html_Form_FormElement extends Library_Html_BaseElement
 	
 	public function __construct($name,
 								array $attributes = array(),
-								array $validations = array())
+								array $validations = array(),
+								Library_Html_Printer_ElementBasePrinter $printer = null)
 	{
 		$this->validations = $validations;
 		
-		parent::__construct($name, $attributes);
+		parent::__construct($name, $attributes, $printer);
 	}
 	
 	/**

@@ -34,8 +34,10 @@ class Library_Paginator_Paginator
 		}
 		else
 		{
-			$this->printer = new Library_Paginator_Printer_DefaultPaginatorPrinter($this);
+			$this->printer = new Library_Paginator_Printer_DefaultPaginatorPrinter();
 		}
+		
+		$this->printer->setElement($this);
 	}
 	
 	/**

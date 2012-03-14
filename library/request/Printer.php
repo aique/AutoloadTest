@@ -8,11 +8,6 @@
  */
 class Library_Request_Printer extends Library_Printer_BasePrinter
 {
-	public function __construct(Library_Request_Request $request)
-	{
-		parent::__construct($request);
-	}
-	
 	/**
 	 * Imprime la petición en el formato estándar.
 	 * 

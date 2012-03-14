@@ -8,11 +8,6 @@
  */
 class Library_Paginator_Printer_DefaultPaginatorPrinter extends Library_Printer_BasePrinter
 {
-	public function __contruct(Library_Paginator_Paginator $paginator)
-	{
-		parent::__construct($paginator);
-	}
-	
 	/**
 	 * Devuelve una cadena de texto con la salida en pantalla por defecto
 	 * del paginador.

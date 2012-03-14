@@ -2,11 +2,6 @@
 
 class Library_Html_Form_Printer_DefaultFormPrinter extends Library_Html_Printer_ElementBasePrinter
 {
-	public function __construct(Library_Html_Form_BaseForm $form)
-	{
-		parent::__construct($form);
-	}
-	
 	public function standardPrint()
 	{
 		$output = '';

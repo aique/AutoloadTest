@@ -2,11 +2,6 @@
 
 class Application_Model_User_Printer extends Library_Printer_BasePrinter
 {
-	public function __construct(Application_Model_User_Item $user)
-	{
-		parent::__construct($user);
-	}
-	
 	public function standardPrint()
 	{
 		return

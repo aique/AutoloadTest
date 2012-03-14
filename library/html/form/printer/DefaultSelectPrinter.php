@@ -28,13 +28,10 @@ class Library_Html_Form_Printer_DefaultSelectPrinter extends Library_Html_Form_P
 		{
 			if($option->getValue() == $selectedValue)
 			{
-				$output .= $option->getPrinter()->printSelectedOption();
-			}
-			else
-			{
-				$output .= $option;
+				$option->addAttribute('selected', 'selected');
 			}
 			
+			$output .= $option;
 		}
 		
 		return $output;

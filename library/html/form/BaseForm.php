@@ -22,10 +22,10 @@ abstract class Library_Html_Form_BaseForm extends Library_Html_BaseElement
 		$this->legend = null;
 		$this->error = null;
 		
-		parent::__construct(Library_Html_Form_FormElementConst::FORM,
-							$attributes);
+		$printer = new Library_Html_Form_Printer_DefaultFormPrinter();
+		$printer->setElement($this);
 		
-		$this->printer = new Library_Html_Form_Printer_DefaultFormPrinter($this);
+		parent::__construct(Library_Html_Form_FormElementConst::FORM, $attributes, $printer); 
 		
 		$this->validator = new Library_Html_Form_FormElementValidator($this);
 		
@@ -233,13 +233,10 @@ abstract class Library_Html_Form_BaseForm extends Library_Html_BaseElement
 		{
 			foreach($this->elements as $element)
 			{
-// 				if($element->getName() == Library_Html_Form_FormElementConst::INPUT)
-// 				{
-					if($paramName == $element->getAttributeByName("name"))
-					{
-						$element->setValue($paramValue);
-					}
-// 				}	
+				if($paramName == $element->getAttributeByName("name"))
+				{
+					$element->setValue($paramValue);
+				}	
 			}
 		}
 	}

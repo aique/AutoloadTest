@@ -4,9 +4,14 @@ abstract class Library_Printer_BasePrinter
 {
 	protected $element;
 	
-	public function __construct($element)
+	public function getElement()
 	{
-		$this->element = $element;
+	    return $this->element;
+	}
+	 
+	public function setElement($element)
+	{
+	    $this->element = $element;
 	}
 	
 	public abstract function standardPrint();

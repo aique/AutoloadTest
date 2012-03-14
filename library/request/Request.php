@@ -32,7 +32,8 @@ class Library_Request_Request
 		$this->action = $action;
 		$this->params = $params;
 		
-		$this->printer = new Library_Request_Printer($this);
+		$this->printer = new Library_Request_Printer();
+		$this->printer->setElement($this);
 	}
 	
 	/**

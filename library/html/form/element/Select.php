@@ -5,11 +5,17 @@ class Library_Html_Form_Element_Select extends Library_Html_Form_FormElement
 	private $options;
 	
 	public function __construct(array $attributes = array(),
-								array $validations = array())
+								array $validations = array(),
+								Library_Html_Form_Printer_DefaultFormElementPrinter $printer = null)
 	{
-		parent::__construct(Library_Html_Form_FormElementConst::SELECT, $attributes, $validations);
+		if($printer == null)
+		{
+			$printer = new Library_Html_Form_Printer_DefaultSelectPrinter();
+		}
 		
-		$this->printer = new Library_Html_Form_Printer_DefaultSelectPrinter($this);
+		$printer->setElement($this);
+		
+		parent::__construct(Library_Html_Form_FormElementConst::SELECT, $attributes, $validations, $printer);
 	}
 	
 	/**
