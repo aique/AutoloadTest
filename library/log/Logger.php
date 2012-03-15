@@ -3,8 +3,9 @@
 class Library_Log_Logger
 {
 	// Archivos
+	private $dbTraceFile;
+	private $dbErrorFile;
 	private $traceFile;
-	private $dbFile;
 	private $errorFile;
 	
 	// Rutas
@@ -12,56 +13,85 @@ class Library_Log_Logger
 	
 	public function __construct()
 	{
+		$this->dbTraceFile = PROJECT_PATH . '/data/logs/db/trace';
+		$this->dbErrorFile = PROJECT_PATH . '/data/logs/db/error';
 		$this->traceFile = PROJECT_PATH . '/data/logs/trace/trace';
-		$this->dbFile = PROJECT_PATH . '/data/logs/db/db';
 		$this->errorFile = PROJECT_PATH . '/data/logs/error/error';
 		$this->mailPath = PROJECT_PATH . '/data/mail/';
 	}
 	
 	public function logTrace($message)
 	{
-		$handler = fopen($this->traceFile . '.' . date("d.m.Y"), 'a');
-		
 		if(Library_Manage_ResourceManager::getConfig()->getCurrentEnvironment() != Library_Consts_Environment::PRODUCTION_ENV)
 		{
-			$script_name = pathinfo($_SERVER['PHP_SELF'], PATHINFO_FILENAME);
-			$time = date('H:i:s');
-			fwrite($handler, $time .' ( ' . $script_name . ' ) ' . $message . "\n");
-		}
-		
-		fclose($handler);
-	}
-	
-	public function logQuerySQL($query)
-	{
-		if(Library_Manage_ResourceManager::getConfig()->getCurrentEnvironment() != Library_Consts_Environment::PRODUCTION_ENV)
-		{
-			$handler = fopen($this->dbFile . '.' . date("d.m.Y"), 'a');
-			fwrite($handler, "Query\n-----\n" . $query . "\n\n");
+			$content = date('H:i:s') .' ( ' . pathinfo($_SERVER['PHP_SELF'], PATHINFO_FILENAME) . ' ) ' . $message . "\n";
+			
+			$handler = fopen($this->traceFile . '.' . date("d.m.Y"), 'a');
+			fwrite($handler, $content);
 			fclose($handler);
 		}
 	}
 	
-	public function logQueryResult($result)
+	public function logDBConnection(Library_Manage_DBManager $dbManager)
 	{
 		if(Library_Manage_ResourceManager::getConfig()->getCurrentEnvironment() != Library_Consts_Environment::PRODUCTION_ENV)
 		{
-			$handler = fopen($this->dbFile . '.' . date("d.m.Y"), 'a');
-			fwrite($handler, "Result\n------\n" . $result . "\n\n");
+			$content = "Conexión\n--------\n\n";
+			$content .= "Hora: " . date("H:i:s") . "\n";
+			$content .= "Se ha producido una conexión con los datos:\n\n";
+			$content .= "Servidor: " . $dbManager->getServer() . "\n";
+			$content .= "Base de datos: " . $dbManager->getDbName() . "\n";
+			$content .= "Usuario: " . $dbManager->getUser() . "\n\n";
+			$content .= Library_Manage_ResourceManager::getHostData()->getPrinter()->logPrint();
+			
+			$handler = fopen($this->dbTraceFile . '.' . date("d.m.Y"), 'a');
+			fwrite($handler, $content);
 			fclose($handler);
 		}
 	}
 	
-	public function logError(Exception $exception)
+	public function logDBQuery($query)
 	{
+		if(Library_Manage_ResourceManager::getConfig()->getCurrentEnvironment() != Library_Consts_Environment::PRODUCTION_ENV)
+		{
+			$content = "Consulta\n--------\n\n";
+			$content .= "Hora: " . date("H:i:s\n") . "\n";
+			$content .= $query . "\n\n";
+			$content .= Library_Manage_ResourceManager::getHostData()->getPrinter()->logPrint();
+			
+			$handler = fopen($this->dbTraceFile . '.' . date("d.m.Y"), 'a');
+			fwrite($handler, $content);
+			fclose($handler);
+		}
+	}
+	
+	public function logDBError($error)
+	{
+		if(Library_Manage_ResourceManager::getConfig()->getCurrentEnvironment() != Library_Consts_Environment::PRODUCTION_ENV)
+		{
+			$content = "Error\n----\n\n";
+			$content .= "Hora: " . date("H:i:s\n");
+			$content .= "Archivo: " . pathinfo($_SERVER['PHP_SELF'], PATHINFO_FILENAME) . "\n\n";
+			$content .= "Mensaje: " . $error . "\n\n";
+			$content .= Library_Manage_ResourceManager::getHostData()->getPrinter()->logPrint();
+			
+			$handler = fopen($this->dbErrorFile . '.' . date("d.m.Y"), 'a');
+			fwrite($handler, $content);
+			fclose($handler);
+		}
+	}
+	
+	public function logError($exception)
+	{
+		$content = "Error\n-----\n\n";
+		$content .= "Hora: " . date("H:i:s\n");
+		$content .= "Fichero: " . $exception->getFile()."\n";
+		$content .= "Línea: " . $exception->getLine()."\n";
+		$content .= "Mensaje: " . $exception->getMessage()."\n";
+		$content .= "Traza de ejecución:\n" . $exception->getTraceAsString()."\n\n";
+		
 		$handler = fopen($this->errorFile . '.' . date("d.m.Y"), 'a');
-		
-		fwrite($handler, "Fatal error\n-----------\n\n");
-		fwrite($handler, "File: " . $exception->getFile()."\n");
-		fwrite($handler, "Line: " . $exception->getLine()."\n");
-		fwrite($handler, "Message: " . $exception->getMessage()."\n");
-		fwrite($handler, "Trace: " . $exception->getTraceAsString()."\n\n");
-		
+		fwrite($handler, $content);
 		fclose($handler);
 	}
 	

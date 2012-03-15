@@ -1,0 +1,832 @@
+Consulta
+--------
+
+142012Thu, 15 Mar 2012 14:12:13 +0000pm: 14:12:13
+SELECT id, name, role, email FROM user WHERE name = 'juan' AND
+															   pass = 'juan'
+
+Consulta
+--------
+
+142012Thu, 15 Mar 2012 14:12:13 +0000pm: 14:12:13
+SELECT id, name, role, email FROM user
+
+Consulta
+--------
+
+142012Thu, 15 Mar 2012 14:12:46 +0000pm: 14:12:46
+SELECT id, name, role, email FROM user
+
+Consulta
+--------
+
+142012Thu, 15 Mar 2012 14:13:38 +0000pm: 14:13:38
+SELECT id, name, role, email FROM user
+
+Consulta
+--------
+
+142012Thu, 15 Mar 2012 14:13:57 +0000pm: 14:13:57
+SELECT id, name, role, email FROM user WHERE id = '1'
+
+Consulta
+--------
+
+142012Thu, 15 Mar 2012 14:13:59 +0000pm: 14:13:59
+SELECT id, name, role, email FROM user
+
+Consulta
+--------
+
+142012Thu, 15 Mar 2012 14:14:02 +0000pm: 14:14:02
+SELECT id, name, role, email FROM user WHERE id = '1'
+
+Consulta
+--------
+
+142012Thu, 15 Mar 2012 14:14:08 +0000pm: 14:14:08
+SELECT id, name, role, email FROM user
+
+Consulta
+--------
+
+142012Thu, 15 Mar 2012 14:14:10 +0000pm: 14:14:10
+SELECT id, name, role, email FROM user WHERE id = '2'
+
+Consulta
+--------
+
+142012Thu, 15 Mar 2012 14:14:13 +0000pm: 14:14:13
+SELECT id, name, role, email FROM user WHERE id = '2'
+
+Consulta
+--------
+
+142012Thu, 15 Mar 2012 14:14:20 +0000pm: 14:14:20
+SELECT id, name, role, email FROM user WHERE id = '2'
+
+Consulta
+--------
+
+142012Thu, 15 Mar 2012 14:14:22 +0000pm: 14:14:22
+SELECT id, name, role, email FROM user
+
+Consulta
+--------
+
+142012Thu, 15 Mar 2012 14:14:23 +0000pm: 14:14:23
+SELECT id, name, role, email FROM user WHERE id = '2'
+
+Consulta
+--------
+
+142012Thu, 15 Mar 2012 14:14:25 +0000pm: 14:14:25
+SELECT id, name, role, email FROM user
+
+Consulta
+--------
+
+142012Thu, 15 Mar 2012 14:14:48 +0000pm: 14:14:48
+INSERT INTO user(name, pass, role, email) VALUES ('ana',
+																	'ana',
+																	'guest',
+																	'ana@mail.com')
+
+Consulta
+--------
+
+142012Thu, 15 Mar 2012 14:14:48 +0000pm: 14:14:48
+SELECT id, name, role, email FROM user
+
+Consulta
+--------
+
+142012Thu, 15 Mar 2012 14:14:51 +0000pm: 14:14:51
+SELECT id, name, role, email FROM user
+
+Consulta
+--------
+
+142012Thu, 15 Mar 2012 14:14:53 +0000pm: 14:14:53
+SELECT id, name, role, email FROM user
+
+Conexión
+--------
+
+142012Thu, 15 Mar 2012 14:19:29 +0000pm: 14:19:29
+
+Se ha producido una conexión con los datos:
+5.5.8-log
+
+Los datos del host son los siguientes:
+
+
+Conexión
+--------
+
+142012Thu, 15 Mar 2012 14:20:46 +0000pm: 14:20:46
+
+Se ha producido una conexión con los datos:
+5.5.8-log
+
+Los datos del host son los siguientes:
+
+
+Conexión
+--------
+
+142012Thu, 15 Mar 2012 14:21:23 +0000pm: 14:21:23
+
+Se ha producido una conexión con los datos:
+5.5.8-log
+
+Los datos del host son los siguientes:
+
+
+Conexión
+--------
+
+142012Thu, 15 Mar 2012 14:22:50 +0000pm: 14:22:50
+
+Se ha producido una conexión con los datos:
+5.5.8-log
+
+Los datos del host son los siguientes:
+
+
+Conexión
+--------
+
+142012Thu, 15 Mar 2012 14:23:53 +0000pm: 14:23:53
+
+Se ha producido una conexión con los datos:
+5.5.8-log
+
+Los datos del host son los siguientes:
+
+
+Conexión
+--------
+
+142012Thu, 15 Mar 2012 14:24:48 +0000pm: 14:24:48
+
+Se ha producido una conexión con los datos:
+5.5.8-log
+
+Los datos del host son los siguientes:
+
+
+Conexión
+--------
+
+142012Thu, 15 Mar 2012 14:25:50 +0000pm: 14:25:50
+
+Se ha producido una conexión con los datos:
+5.5.8-log
+
+Los datos del host son los siguientes:
+
+
+Conexión
+--------
+
+142012Thu, 15 Mar 2012 14:27:24 +0000pm: 14:27:24
+
+Se ha producido una conexión con los datos:
+5.5.8-log
+
+Los datos del host son los siguientes:
+
+
+Conexión
+--------
+
+142012Thu, 15 Mar 2012 14:29:08 +0000pm: 14:29:08
+
+Se ha producido una conexión con los datos:
+5.5.8-log
+
+Los datos del host son los siguientes:
+
+
+Conexión
+--------
+
+142012Thu, 15 Mar 2012 14:30:51 +0000pm: 14:30:51
+
+Se ha producido una conexión con los datos:
+5.5.8-log
+
+Los datos del host son los siguientes:
+
+
+Conexión
+--------
+
+142012Thu, 15 Mar 2012 14:31:06 +0000pm: 14:31:06
+
+Se ha producido una conexión con los datos:
+5.5.8-log
+
+Los datos del host son los siguientes:
+
+
+Conexión
+--------
+
+142012Thu, 15 Mar 2012 14:32:20 +0000pm: 14:32:20
+
+Se ha producido una conexión con los datos:
+5.5.8-log
+
+Los datos del host son los siguientes:
+
+
+Conexión
+--------
+
+142012Thu, 15 Mar 2012 14:38:10 +0000pm: 14:38:10
+
+Se ha producido una conexión con los datos:
+5.5.8-log
+
+Los datos del host son los siguientes:
+
+
+Conexión
+--------
+
+142012Thu, 15 Mar 2012 14:38:34 +0000pm: 14:38:34
+
+Se ha producido una conexión con los datos:
+5.5.8-log
+
+Los datos del host son los siguientes:
+
+
+Conexión
+--------
+
+152012Thu, 15 Mar 2012 15:47:12 +0000pm: 15:47:12
+
+Se ha producido una conexión con los datos:
+5.5.8-log
+
+Los datos del host son los siguientes:
+
+
+Conexión
+--------
+
+152012Thu, 15 Mar 2012 15:50:40 +0000pm: 15:50:40
+
+Se ha producido una conexión con los datos:
+
+
+Los datos del host son los siguientes:
+
+
+Conexión
+--------
+
+152012Thu, 15 Mar 2012 15:52:20 +0000pm: 15:52:20
+
+Se ha producido una conexión con los datos:
+5.5.8-log
+
+Los datos del host son los siguientes:
+
+
+Conexión
+--------
+
+162012Thu, 15 Mar 2012 16:05:14 +0000pm: 16:05:14
+
+Se ha producido una conexión con los datos:
+
+
+Los datos del host son los siguientes:
+
+
+Conexión
+--------
+
+162012Thu, 15 Mar 2012 16:06:19 +0000pm: 16:06:19
+
+Se ha producido una conexión con los datos:
+
+
+Los datos del host son los siguientes:
+
+
+Conexión
+--------
+
+162012Thu, 15 Mar 2012 16:09:22 +0000pm: 16:09:22
+
+Se ha producido una conexión con los datos:
+
+Servidor: localhost
+Base de datos: autoload
+Usuario: root
+
+Los datos del host son los siguientes:
+
+
+
+Conexión
+--------
+
+162012Thu, 15 Mar 2012 16:10:45 +0000pm: 16:10:45
+
+Se ha producido una conexión con los datos:
+
+Servidor: localhost
+Base de datos: autoload
+Usuario: root
+
+Los datos del host son los siguientes:
+
+
+
+Conexión
+--------
+
+162012Thu, 15 Mar 2012 16:12:11 +0000pm: 16:12:11
+
+Se ha producido una conexión con los datos:
+
+Servidor: localhost
+Base de datos: autoload
+Usuario: root
+
+Los datos del host son los siguientes:
+
+
+
+Conexión
+--------
+
+162012Thu, 15 Mar 2012 16:13:42 +0000pm: 16:13:42
+
+Se ha producido una conexión con los datos:
+
+Servidor: localhost
+Base de datos: autoload
+Usuario: root
+
+Los datos del host son los siguientes:
+
+
+
+Error
+----
+
+162012Thu, 15 Mar 2012 16:13:42 +0000pm: 16:13:42
+Archivo: index
+
+Mensaje: 
+
+Consulta
+--------
+
+162012Thu, 15 Mar 2012 16:13:42 +0000pm: 16:13:42
+SELECT id, name, role, email FROM user WHERE name = 'juan' AND
+															   pass = 'juan'
+
+Conexión
+--------
+
+162012Thu, 15 Mar 2012 16:13:42 +0000pm: 16:13:42
+
+Se ha producido una conexión con los datos:
+
+Servidor: localhost
+Base de datos: autoload
+Usuario: root
+
+Los datos del host son los siguientes:
+
+
+
+Error
+----
+
+162012Thu, 15 Mar 2012 16:13:42 +0000pm: 16:13:42
+Archivo: index
+
+Mensaje: 
+
+Consulta
+--------
+
+162012Thu, 15 Mar 2012 16:13:42 +0000pm: 16:13:42
+SELECT id, name, role, email FROM user
+
+Conexión
+--------
+
+162012Thu, 15 Mar 2012 16:14:30 +0000pm: 16:14:30
+
+Se ha producido una conexión con los datos:
+
+Servidor: localhost
+Base de datos: autoload
+Usuario: root
+
+Los datos del host son los siguientes:
+
+
+
+Error
+----
+
+162012Thu, 15 Mar 2012 16:14:30 +0000pm: 16:14:30
+Archivo: index
+
+Mensaje: 
+
+Consulta
+--------
+
+162012Thu, 15 Mar 2012 16:14:30 +0000pm: 16:14:30
+SELECT id, name, role, email FROM user
+
+Conexión
+--------
+
+162012Thu, 15 Mar 2012 16:14:35 +0000pm: 16:14:35
+
+Se ha producido una conexión con los datos:
+
+Servidor: localhost
+Base de datos: autoload
+Usuario: root
+
+Los datos del host son los siguientes:
+
+
+
+Error
+----
+
+162012Thu, 15 Mar 2012 16:14:35 +0000pm: 16:14:35
+Archivo: index
+
+Mensaje: 
+
+Consulta
+--------
+
+162012Thu, 15 Mar 2012 16:14:35 +0000pm: 16:14:35
+SELECT id, name, role, email FROM user
+
+Conexión
+--------
+
+162012Thu, 15 Mar 2012 16:14:36 +0000pm: 16:14:36
+
+Se ha producido una conexión con los datos:
+
+Servidor: localhost
+Base de datos: autoload
+Usuario: root
+
+Los datos del host son los siguientes:
+
+
+
+Error
+----
+
+162012Thu, 15 Mar 2012 16:14:36 +0000pm: 16:14:36
+Archivo: index
+
+Mensaje: 
+
+Consulta
+--------
+
+162012Thu, 15 Mar 2012 16:14:36 +0000pm: 16:14:36
+SELECT id, name, role, email FROM user
+
+Conexión
+--------
+
+162012Thu, 15 Mar 2012 16:15:50 +0000pm: 16:15:50
+
+Se ha producido una conexión con los datos:
+
+Servidor: localhost
+Base de datos: autoload
+Usuario: root
+
+Los datos del host son los siguientes:
+
+
+
+Error
+----
+
+162012Thu, 15 Mar 2012 16:15:50 +0000pm: 16:15:50
+Archivo: index
+
+Mensaje: 
+
+Consulta
+--------
+
+162012Thu, 15 Mar 2012 16:15:50 +0000pm: 16:15:50
+SELECT id, name, role, email FROM user
+
+Conexión
+--------
+
+162012Thu, 15 Mar 2012 16:15:53 +0000pm: 16:15:53
+
+Se ha producido una conexión con los datos:
+
+Servidor: localhost
+Base de datos: autoload
+Usuario: root
+
+Los datos del host son los siguientes:
+
+
+
+Error
+----
+
+162012Thu, 15 Mar 2012 16:15:53 +0000pm: 16:15:53
+Archivo: index
+
+Mensaje: 
+
+Consulta
+--------
+
+162012Thu, 15 Mar 2012 16:15:53 +0000pm: 16:15:53
+SELECT id, name, role, email FROM user
+
+Conexión
+--------
+
+162012Thu, 15 Mar 2012 16:15:54 +0000pm: 16:15:54
+
+Se ha producido una conexión con los datos:
+
+Servidor: localhost
+Base de datos: autoload
+Usuario: root
+
+Los datos del host son los siguientes:
+
+
+
+Error
+----
+
+162012Thu, 15 Mar 2012 16:15:54 +0000pm: 16:15:54
+Archivo: index
+
+Mensaje: 
+
+Consulta
+--------
+
+162012Thu, 15 Mar 2012 16:15:54 +0000pm: 16:15:54
+SELECT id, name, role, email FROM user WHERE id = '3'
+
+Conexión
+--------
+
+162012Thu, 15 Mar 2012 16:16:51 +0000pm: 16:16:51
+
+Se ha producido una conexión con los datos:
+
+Servidor: localhost
+Base de datos: autoload
+Usuario: root
+
+Los datos del host son los siguientes:
+
+
+
+Error
+----
+
+162012Thu, 15 Mar 2012 16:18:20 +0000pm: 16:18:20
+Archivo: index
+
+Mensaje: 
+
+Consulta
+--------
+
+162012Thu, 15 Mar 2012 16:18:22 +0000pm: 16:18:22
+SELECT id, name, role, email FROM user WHERE name = 'juan' AND
+															   pass = 'juan'
+
+Conexión
+--------
+
+Hora: 16:18:24
+Se ha producido una conexión con los datos:
+
+Servidor: localhost
+Base de datos: autoload
+Usuario: root
+
+Los datos del host son los siguientes:
+
+
+
+Error
+----
+
+162012Thu, 15 Mar 2012 16:18:24 +0000pm: 16:18:24
+Archivo: index
+
+Mensaje: 
+
+Consulta
+--------
+
+162012Thu, 15 Mar 2012 16:18:24 +0000pm: 16:18:24
+SELECT id, name, role, email FROM user
+
+Conexión
+--------
+
+Hora: 16:20:52
+Se ha producido una conexión con los datos:
+
+Servidor: localhost
+Base de datos: autoload
+Usuario: root
+
+Los datos del host son los siguientes:
+
+
+
+Conexión
+--------
+
+Hora: 16:23:23
+Se ha producido una conexión con los datos:
+
+Servidor: localhost
+Base de datos: autoload
+Usuario: root
+
+Los datos del host son los siguientes:
+
+
+
+Consulta
+--------
+
+162012Thu, 15 Mar 2012 16:23:23 +0000pm: 16:23:23
+SELECT id, name, role, email FROM user WHERE id = '3'
+
+Conexión
+--------
+
+Hora: 16:23:48
+Se ha producido una conexión con los datos:
+
+Servidor: localhost
+Base de datos: autoload
+Usuario: root
+
+Los datos del host son los siguientes:
+
+
+
+Consulta
+--------
+
+162012Thu, 15 Mar 2012 16:23:48 +0000pm: 16:23:48
+SELECT id, name, role, email FROM user WHERE name = 'juan' AND
+															   pass = 'juan'
+
+Conexión
+--------
+
+Hora: 16:23:49
+Se ha producido una conexión con los datos:
+
+Servidor: localhost
+Base de datos: autoload
+Usuario: root
+
+Los datos del host son los siguientes:
+
+
+
+Consulta
+--------
+
+162012Thu, 15 Mar 2012 16:23:49 +0000pm: 16:23:49
+SELECT id, name, role, email FROM user
+
+Conexión
+--------
+
+Hora: 16:24:08
+Se ha producido una conexión con los datos:
+
+Servidor: localhost
+Base de datos: autoload
+Usuario: root
+
+Los datos del host son los siguientes:
+
+
+
+Consulta
+--------
+
+162012Thu, 15 Mar 2012 16:24:52 +0000pm: 16:24:52
+SELECT id, name, role, email FROM user
+
+Conexión
+--------
+
+Hora: 16:25:20
+Se ha producido una conexión con los datos:
+
+Servidor: localhost
+Base de datos: autoload
+Usuario: root
+
+Los datos del host son los siguientes:
+
+
+
+Consulta
+--------
+
+162012Thu, 15 Mar 2012 16:25:28 +0000pm: 16:25:28
+SELECT id, name, role, email FROM user
+
+Conexión
+--------
+
+Hora: 16:26:21
+Se ha producido una conexión con los datos:
+
+Servidor: localhost
+Base de datos: autoload
+Usuario: root
+
+Los datos del host son los siguientes:
+
+
+
+Consulta
+--------
+
+162012Thu, 15 Mar 2012 16:26:47 +0000pm: 16:26:47
+SELECT id, name, role, email FROM user
+
+Conexión
+--------
+
+Hora: 16:26:57
+Se ha producido una conexión con los datos:
+
+Servidor: localhost
+Base de datos: autoload
+Usuario: root
+
+Los datos del host son los siguientes:
+
+
+
+Consulta
+--------
+
+162012Thu, 15 Mar 2012 16:27:03 +0000pm: 16:27:03
+SELECT id, name, role, email FROM user
+
+Conexión
+--------
+
+Hora: 16:28:02
+Se ha producido una conexión con los datos:
+
+Servidor: localhost
+Base de datos: autoload
+Usuario: root
+
+Los datos del host son los siguientes:
+
+
+
+Consulta
+--------
+
+162012Thu, 15 Mar 2012 16:28:03 +0000pm: 16:28:03
+SELECT id, name, role, email FROM user
+

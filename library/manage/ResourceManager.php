@@ -47,6 +47,11 @@ class Library_Manage_ResourceManager
 		return $request;
 	}
 	
+	public static function getHostData()
+	{	
+		return new Library_Host_Host();
+	}
+	
 	public static function getAclData()
 	{
 		$acl = Library_Manage_SessionManager::getVar(Library_Consts_Resources::ACL);

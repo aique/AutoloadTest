@@ -7,8 +7,12 @@
  * con el usuario a través de la información enviada tanto por GET
  * como por POST.
  * 
- * A su vez también deberá eliminar información introducida por el
- * usuario que pueda poner en peligro la seguridad de la aplicación.
+ * A su vez también deberá eliminar auqella información introducida
+ * por el usuario que pueda poner en peligro la seguridad de la aplicación.
+ * 
+ * @package library
+ * 
+ * @subpackage manage
  * 
  * @author qinteractiva
  *
@@ -69,7 +73,7 @@ class Library_Manage_InputManager
 	
 	/**
 	 * Devuelve en un array asociativo todos los parámetros enviados
-	 * por un determinado método de envío.
+	 * a través de un determinado método de envío.
 	 * 
 	 * @param string $method
 	 * 
