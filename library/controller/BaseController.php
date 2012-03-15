@@ -1,18 +1,37 @@
 <?php
 
 /**
- * Clase base que contiene el comportamiento común a todos los controladores
- * que posee la aplicación y de la cual han de heredar.
+ * Clase base de la cual heredarán los controladores utilizados por la
+ * aplicación, la cual contiene el comportamiento y la información
+ * común a todos ellos.
+ * 
+ * @package library
+ * 
+ * @subpackage controller
+ * 
+ * @author qinteractiva
+ * 
  */
 class Library_Controller_BaseController
 {
+	/**
+	 * Array que contendrá todos los elementos a los que accederá la capa de la vista.
+	 * 
+	 * @var array
+	 */
 	protected $view;
+	
 	protected $request;
 	protected $layout;
 	protected $helper;
 	
 	private $plugins;
 	
+	/**
+	 * Objeto que encapsula la lógica de atención de la petición.
+	 * 
+	 * @var Library_Controller_ControllerDispatcher
+	 */
 	private $dispatcher;
 	
 	const DEFAULT_LAYOUT = "layout";
@@ -129,6 +148,11 @@ class Library_Controller_BaseController
 	    $this->plugins = $plugins;
 	}
 	
+	/**
+	 * Registra un nuevo plugin sobre el controlador.
+	 * 
+	 * @param Library_Plugin_BasePlugin $plugin
+	 */
 	public function addPlugin(Library_Plugin_BasePlugin $plugin)
 	{
 		$this->plugins[] = $plugin;
@@ -154,28 +178,35 @@ class Library_Controller_BaseController
 	    $this->dispatcher = $dispatcher;
 	}
 	
+	/**
+	 * Lleva a cabo la atención de la petición por el controlador, delegando
+	 * en el atributo dispatcher.
+	 */
 	public function dispatch()
 	{
 		$this->dispatcher->dispatch();
 	}
 	
 	/**
-	* Realiza las funciones de inicialización pertinentes. Cada controlador
-	* que hereda de esta clase base debe sobreescribir este método para
-	* añadir las funciones que según el controlador sean necesarias antes
-	* de atender la petición.
-	*/
+	 * Realiza las funciones de inicialización llevadas a cabo por el
+	 * controlador.
+	 * 
+	 * Cada clase hija que así lo precise debe sobreescribir esté método
+	 * estableciendo dentro de él las tareas de inicialización.
+	 */
 	public function init()
 	{
 	
 	}
 	
 	/**
-	* Realiza las funciones de finalización pertinentes. Cada controlador
-	* que hereda de esta clase base debe sobreescribir este método para
-	* añadir las funciones que según el controlador sean necesarias después
-	* de atender la petición.
-	*/
+	 * Realiza las funciones necesarias una vez terminado el proceso de
+	 * atención de la petición por parte del controlador. 
+	 * 
+	 * Cada clase hija que así lo precise debe sobreescribir esté método
+	 * estableciendo dentro de él las tareas necesarias tras la atención
+	 * de la petición.
+	 */
 	public function end()
 	{
 	

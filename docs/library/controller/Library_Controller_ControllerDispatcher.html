@@ -4,8 +4,8 @@
 		<head>
 			<!-- template designed by Marco Von Ballmoos -->
 			<title>Docs For Class Library_Controller_ControllerDispatcher</title>
-			<link rel="stylesheet" href="../media/stylesheet.css" />
-			<meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
 		</head>
 		<body>
 			<div class="page-body">			
@@ -22,8 +22,12 @@
 					</div>
 	<div class="info-box-body">
         		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Contiene la lógica común a todos los controladores que llevará a cabo  el proceso de atención de peticiones.</p>
+	<ul class="tags">
+				<li><span class="field">author:</span> qinteractiva</li>
+			</ul>
 		<p class="notes">
-			Located in <a class="field" href="_library---controller---ControllerDispatcher.php.html">/library/controller/ControllerDispatcher.php</a> (line <span class="field">3</span>)
+			Located in <a class="field" href="_library---controller---ControllerDispatcher.php.html">/library/controller/ControllerDispatcher.php</a> (line <span class="field">14</span>)
 		</p>
 		
 				
@@ -70,7 +74,7 @@
 												<div class="method-definition">
 											<span class="method-result">Library_Controller_ControllerDispatcher</span>
 										<a href="#__construct" title="details" class="method-name">__construct</a>
-											(<span class="var-type"><a href="../default/Library_Controller_BaseController.html">Library_Controller_BaseController</a></span>&nbsp;<span class="var-name">$controller</span>)
+											(<span class="var-type"><a href="../../library/controller/Library_Controller_BaseController.html">Library_Controller_BaseController</a></span>&nbsp;<span class="var-name">$controller</span>)
 									</div>
 																<div class="method-definition">
 											<span class="method-result">void</span>
@@ -78,7 +82,7 @@
 											(<span class="var-type">string</span>&nbsp;<span class="var-name">$content</span>)
 									</div>
 																<div class="method-definition">
-											<span class="method-result">void</span>
+											<span class="method-result">string</span>
 										<a href="#applyView" title="details" class="method-name">applyView</a>
 										()
 									</div>
@@ -93,7 +97,7 @@
 										()
 									</div>
 																<div class="method-definition">
-											<span class="method-result">array</span>
+											<span class="method-result">void</span>
 										<a href="#doAction" title="details" class="method-name">doAction</a>
 										()
 									</div>
@@ -105,12 +109,12 @@
 																<div class="method-definition">
 											<span class="method-result">void</span>
 										<a href="#postDispatch" title="details" class="method-name">postDispatch</a>
-											(<span class="var-type"><a href="../default/Library_Request_Request.html">Library_Request_Request</a></span>&nbsp;<span class="var-name">$request</span>)
+											(<span class="var-type">Library_Request_Request</span>&nbsp;<span class="var-name">$request</span>)
 									</div>
 																<div class="method-definition">
 											<span class="method-result">void</span>
 										<a href="#preDispatch" title="details" class="method-name">preDispatch</a>
-											(<span class="var-type"><a href="../default/Library_Request_Request.html">Library_Request_Request</a></span>&nbsp;<span class="var-name">$request</span>)
+											(<span class="var-type">Library_Request_Request</span>&nbsp;<span class="var-name">$request</span>)
 									</div>
 								</div>
 		</div>
@@ -136,7 +140,7 @@
 		<span class="var-title">
 			<span class="var-type">mixed</span>
 			<span class="var-name">$controller</span>
-						(line <span class="line-number">5</span>)
+						(line <span class="line-number">16</span>)
 		</span>
 	</div>
 
@@ -170,7 +174,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">Constructor __construct</span> (line <span class="line-number">7</span>)
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">18</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -183,12 +187,12 @@
 		<span class="method-name">
 			__construct
 		</span>
-					(<span class="var-type"><a href="../default/Library_Controller_BaseController.html">Library_Controller_BaseController</a></span>&nbsp;<span class="var-name">$controller</span>)
+					(<span class="var-type"><a href="../../library/controller/Library_Controller_BaseController.html">Library_Controller_BaseController</a></span>&nbsp;<span class="var-name">$controller</span>)
 			</div>
 	
 			<ul class="parameters">
 					<li>
-				<span class="var-type"><a href="../default/Library_Controller_BaseController.html">Library_Controller_BaseController</a></span>
+				<span class="var-type"><a href="../../library/controller/Library_Controller_BaseController.html">Library_Controller_BaseController</a></span>
 				<span class="var-name">$controller</span>			</li>
 				</ul>
 		
@@ -198,11 +202,12 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">applyLayout</span> (line <span class="line-number">159</span>)
+		<span class="method-title">applyLayout</span> (line <span class="line-number">205</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
-<p class="short-description">Aplica el layout definido para el controlador. Si no se especifica  nada, se aplicará el layout por defecto, el cual se encuentra dentro  del directorio de layouts bajo el nombre de layout.</p>
+<p class="short-description">Aplica el layout definido para el controlador.</p>
+<p class="description"><p>Si no se ha especificado ninguno, se aplicará el layout por defecto,  el cual se encuentra dentro del directorio de layouts bajo el nombre  de layout.</p></p>
 	<ul class="tags">
 				<li><span class="field">access:</span> private</li>
 			</ul>
@@ -218,7 +223,7 @@
 			<ul class="parameters">
 					<li>
 				<span class="var-type">string</span>
-				<span class="var-name">$content</span><span class="var-description">: Cadena de texto con el contenido principal que ha de mostrarse          dentro del layout.</span>			</li>
+				<span class="var-name">$content</span><span class="var-description">: Cadena de texto con el código HTML que se mostrará en el navegador,          a falta de aplicar el layout sobre él.</span>			</li>
 				</ul>
 		
 			
@@ -227,18 +232,19 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">applyView</span> (line <span class="line-number">123</span>)
+		<span class="method-title">applyView</span> (line <span class="line-number">166</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
-<p class="short-description">Aplica el fichero que renderiza la capa de la vista.</p>
+<p class="short-description">Aplica el fichero que renderiza la capa de la vista y devuelve su  contenido.</p>
 	<ul class="tags">
-				<li><span class="field">throws:</span> Exception          Lanza una excepción cuando no existe el fichero que renderiza          la capa de la vista.</li>
+				<li><span class="field">return:</span> Cadena de texto con el código HTML que se mostrará en el navegador,          a falta de aplicar el layout sobre él.</li>
+				<li><span class="field">throws:</span> <p>Exception</p><p>Lanza una excepción cuando no encuentra el fichero que renderiza          la capa de la vista.</p></li>
 				<li><span class="field">access:</span> private</li>
 			</ul>
 	
 	<div class="method-signature">
-		<span class="method-result">void</span>
+		<span class="method-result">string</span>
 		<span class="method-name">
 			applyView
 		</span>
@@ -252,7 +258,7 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">checkPluginRedirection</span> (line <span class="line-number">65</span>)
+		<span class="method-title">checkPluginRedirection</span> (line <span class="line-number">103</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -283,12 +289,12 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">dispatch</span> (line <span class="line-number">23</span>)
+		<span class="method-title">dispatch</span> (line <span class="line-number">35</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
-<p class="short-description">Único método público de esta clase y por tanto de todos los  controladores que posee la aplicación. Se utiliza para atender  una petición realizada por el usuario a un action concreto.</p>
-<p class="description"><p>Cuando la aplicación recibe una petición, contruye el controlador  que ha de atenderla en base a su URL y llama a este método, el cual  realiza las tareas de inicialización necesarias, llama al action  correspondiente, aplica el layout definido para el controlador y  realiza las tareas de finalización.</p></p>
+<p class="short-description">Atiende una petición recibida por la aplicación. Los pasos que se  llevan a cabo son los sigueintes:</p>
+<p class="description"><p><ul><li>Realiza una llamada al método init() para llevar a cabo las tareas de inicialización.</li><li>Lleva a cabo un bucle sobre todos los plugins asociados a él ejecutando sus métodos preDispatch().</li><li>Realiza una llamada al action correspondiente, aplicando la vista a su respuesta y posteriormente el layout.</li><li>Lleva a cabo un bucle sobre todos los plugins asociados a él ejecutando sus métodos postDispatch().</li><li>Realiza una llamada al método init() para llevar a cabo las tareas de finalización.</li></ul></p></p>
 	<ul class="tags">
 				<li><span class="field">access:</span> public</li>
 			</ul>
@@ -308,19 +314,18 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">doAction</span> (line <span class="line-number">94</span>)
+		<span class="method-title">doAction</span> (line <span class="line-number">130</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
-<p class="short-description">Analiza la URL recibida en la petición y determina el action dentro  del controlador que debe encargarse de responder.</p>
+<p class="short-description">Analiza la URL asociada a la petición y determina que action del  controlador será el encargado de responder.</p>
 	<ul class="tags">
-				<li><span class="field">return:</span> Array recibido como parámetro con los valores definitivos que          recibirá la capa de la vista.</li>
-				<li><span class="field">throws:</span> Exception          Lanza una excepción cuando no existe el action encargado de atender          la petición.</li>
+				<li><span class="field">throws:</span> <p>Exception</p><p>Lanza una excepción cuando no existe dentro del controlador el          action que por la URL asociada a la petición debería encargarse          de responder.</p></li>
 				<li><span class="field">access:</span> private</li>
 			</ul>
 	
 	<div class="method-signature">
-		<span class="method-result">array</span>
+		<span class="method-result">void</span>
 		<span class="method-name">
 			doAction
 		</span>
@@ -334,7 +339,7 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">endDispatch</span> (line <span class="line-number">77</span>)
+		<span class="method-title">endDispatch</span> (line <span class="line-number">115</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
@@ -357,10 +362,12 @@
 <div class="evenrow">
 	
 	<div class="method-header">
-		<span class="method-title">postDispatch</span> (line <span class="line-number">53</span>)
+		<span class="method-title">postDispatch</span> (line <span class="line-number">91</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Realiza un bucle sobre todos los plugins asociados al controlador  ejecutando sus métodos postDispatch().</p>
+<p class="description"><p>Este método recibe el objeto petición como parámetro, ya que existe  la opción de poder hacer una redirección dentro del plugin en caso  de que así se considere oportuno.</p></p>
 	<ul class="tags">
 				<li><span class="field">access:</span> private</li>
 			</ul>
@@ -370,13 +377,13 @@
 		<span class="method-name">
 			postDispatch
 		</span>
-					(<span class="var-type"><a href="../default/Library_Request_Request.html">Library_Request_Request</a></span>&nbsp;<span class="var-name">$request</span>)
+					(<span class="var-type">Library_Request_Request</span>&nbsp;<span class="var-name">$request</span>)
 			</div>
 	
 			<ul class="parameters">
 					<li>
-				<span class="var-type"><a href="../default/Library_Request_Request.html">Library_Request_Request</a></span>
-				<span class="var-name">$request</span>			</li>
+				<span class="var-type"><a href="../../default/Library_Request_Request.html">Library_Request_Request</a></span>
+				<span class="var-name">$request</span><span class="var-description">: Petición que se está tratando en el momento de ejecutar los métodos          postDispatch() de los plugins.</span>			</li>
 				</ul>
 		
 			
@@ -385,10 +392,12 @@
 <div class="oddrow">
 	
 	<div class="method-header">
-		<span class="method-title">preDispatch</span> (line <span class="line-number">41</span>)
+		<span class="method-title">preDispatch</span> (line <span class="line-number">66</span>)
 	</div> 
 	
 	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Realiza un bucle sobre todos los plugins asociados al controlador  ejecutando sus métodos preDispatch().</p>
+<p class="description"><p>Este método recibe el objeto petición como parámetro, ya que existe  la opción de poder hacer una redirección dentro del plugin en caso  de que así se considere oportuno.</p></p>
 	<ul class="tags">
 				<li><span class="field">access:</span> private</li>
 			</ul>
@@ -398,13 +407,13 @@
 		<span class="method-name">
 			preDispatch
 		</span>
-					(<span class="var-type"><a href="../default/Library_Request_Request.html">Library_Request_Request</a></span>&nbsp;<span class="var-name">$request</span>)
+					(<span class="var-type">Library_Request_Request</span>&nbsp;<span class="var-name">$request</span>)
 			</div>
 	
 			<ul class="parameters">
 					<li>
-				<span class="var-type"><a href="../default/Library_Request_Request.html">Library_Request_Request</a></span>
-				<span class="var-name">$request</span>			</li>
+				<span class="var-type"><a href="../../default/Library_Request_Request.html">Library_Request_Request</a></span>
+				<span class="var-name">$request</span><span class="var-description">: Petición que se está tratando en el momento de ejecutar los métodos          preDispatch() de los plugins.</span>			</li>
 				</ul>
 		
 			
@@ -415,7 +424,7 @@
 
 
 	<p class="notes" id="credit">
-		Documentation generated on Wed, 14 Mar 2012 12:56:55 +0000 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+		Documentation generated on Thu, 15 Mar 2012 12:14:48 +0000 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.4</a>
 	</p>
 	</div></body>
 </html>

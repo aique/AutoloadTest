@@ -5,12 +5,11 @@
 			<!-- template designed by Marco Von Ballmoos -->
 			<title>phpDocumentor Parser Errors and Warnings</title>
 			<link rel="stylesheet" href="media/stylesheet.css" />
-			<meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
 		</head>
 		<body>
 						<a href="#Post-parsing">Post-parsing</a><br>
 <a href="#ACLPlugin.php">ACLPlugin.php</a><br>
-<a href="#Application.php">Application.php</a><br>
 <a href="#Autoloader.php">Autoloader.php</a><br>
 <a href="#BaseController.php">BaseController.php</a><br>
 <a href="#BaseElement.php">BaseElement.php</a><br>
@@ -86,7 +85,9 @@
 <a href="#PrinterClient.php">PrinterClient.php</a><br>
 <a href="#Request.php">Request.php</a><br>
 <a href="#ResourceManager.php">ResourceManager.php</a><br>
+<a href="#Resources.php">Resources.php</a><br>
 <a href="#Select.php">Select.php</a><br>
+<a href="#Session.php">Session.php</a><br>
 <a href="#SessionManager.php">SessionManager.php</a><br>
 <a href="#SMTP.php">SMTP.php</a><br>
 <a href="#TextClient.php">TextClient.php</a><br>
@@ -105,7 +106,6 @@
 <a name="Post-parsing"></a>
 <h1>Post-parsing</h1>
 <h2>Warnings:</h2><br>
-<b>Warning</b> - Class UserTest parent PHPUnit_Framework_TestCase not found<br>
 <b>Warning</b> - Class IndexTest parent PHPUnit_Extensions_SeleniumTestCase not found<br>
 <b>Warning</b> - 
 duplicate define element "PROJECT_PATH" in file C:\wamp\www\git_test_1\tests\bootstrap.php will be ignored.
@@ -113,6 +113,7 @@ Use an @ignore tag on the original if you want this case to be documented.<br>
 <b>Warning</b> - 
 duplicate define element "DEFAULT_ENVIRONMENT" in file C:\wamp\www\git_test_1\tests\bootstrap.php will be ignored.
 Use an @ignore tag on the original if you want this case to be documented.<br>
+<b>Warning</b> - Class UserTest parent PHPUnit_Framework_TestCase not found<br>
 <a name="ACL.php"></a>
 <h1>ACL.php</h1>
 <h2>Warnings:</h2><br>
@@ -122,11 +123,6 @@ Use an @ignore tag on the original if you want this case to be documented.<br>
 <h2>Warnings:</h2><br>
 <b>Warning on line 3</b> - no @package tag was used in a DocBlock for class Application_Plugins_ACLPlugin<br>
 <b>Warning on line 50</b> - File "C:\wamp\www\git_test_1\application\plugins\ACLPlugin.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
-<a name="Application.php"></a>
-<h1>Application.php</h1>
-<h2>Warnings:</h2><br>
-<b>Warning on line 3</b> - no @package tag was used in a DocBlock for class Library_Consts_Application<br>
-<b>Warning on line 12</b> - File "C:\wamp\www\git_test_1\library\consts\Application.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
 <a name="Autoloader.php"></a>
 <h1>Autoloader.php</h1>
 <h2>Warnings:</h2><br>
@@ -134,8 +130,7 @@ Use an @ignore tag on the original if you want this case to be documented.<br>
 <a name="BaseController.php"></a>
 <h1>BaseController.php</h1>
 <h2>Warnings:</h2><br>
-<b>Warning on line 7</b> - no @package tag was used in a DocBlock for class Library_Controller_BaseController<br>
-<b>Warning on line 183</b> - File "C:\wamp\www\git_test_1\library\controller\BaseController.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 15</b> - DocBlock would be page-level, but precedes class "Library_Controller_BaseController", use another DocBlock to document the file<br>
 <a name="BaseElement.php"></a>
 <h1>BaseElement.php</h1>
 <h2>Warnings:</h2><br>
@@ -178,13 +173,11 @@ Use an @ignore tag on the original if you want this case to be documented.<br>
 <a name="ControllerDispatcher.php"></a>
 <h1>ControllerDispatcher.php</h1>
 <h2>Warnings:</h2><br>
-<b>Warning on line 3</b> - no @package tag was used in a DocBlock for class Library_Controller_ControllerDispatcher<br>
-<b>Warning on line 176</b> - File "C:\wamp\www\git_test_1\library\controller\ControllerDispatcher.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 14</b> - DocBlock would be page-level, but precedes class "Library_Controller_ControllerDispatcher", use another DocBlock to document the file<br>
 <a name="ControllerHelper.php"></a>
 <h1>ControllerHelper.php</h1>
 <h2>Warnings:</h2><br>
-<b>Warning on line 3</b> - no @package tag was used in a DocBlock for class Library_Controller_ControllerHelper<br>
-<b>Warning on line 10</b> - File "C:\wamp\www\git_test_1\library\controller\ControllerHelper.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 13</b> - DocBlock would be page-level, but precedes class "Library_Controller_ControllerHelper", use another DocBlock to document the file<br>
 <a name="Date.php"></a>
 <h1>Date.php</h1>
 <h2>Warnings:</h2><br>
@@ -266,8 +259,7 @@ Use an @ignore tag on the original if you want this case to be documented.<br>
 <a name="Environment.php"></a>
 <h1>Environment.php</h1>
 <h2>Warnings:</h2><br>
-<b>Warning on line 3</b> - no @package tag was used in a DocBlock for class Library_Consts_Environment<br>
-<b>Warning on line 7</b> - File "C:\wamp\www\git_test_1\library\consts\Environment.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 13</b> - DocBlock would be page-level, but precedes class "Library_Consts_Environment", use another DocBlock to document the file<br>
 <a name="error.php"></a>
 <h1>error.php</h1>
 <h2>Warnings:</h2><br>
@@ -423,8 +415,8 @@ Use an @ignore tag on the original if you want this case to be documented.<br>
 <a name="menu.php"></a>
 <h1>menu.php</h1>
 <h2>Warnings:</h2><br>
-<b>Warning on line 22</b> - File "C:\wamp\www\git_test_1\application\configs\locale\en\files\menu.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
 <b>Warning on line 22</b> - File "C:\wamp\www\git_test_1\application\configs\locale\es\files\menu.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 22</b> - File "C:\wamp\www\git_test_1\application\configs\locale\en\files\menu.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
 <a name="Money.php"></a>
 <h1>Money.php</h1>
 <h2>Warnings:</h2><br>
@@ -492,11 +484,19 @@ Use an @ignore tag on the original if you want this case to be documented.<br>
 <h2>Warnings:</h2><br>
 <b>Warning on line 11</b> - no @package tag was used in a DocBlock for class Library_Manage_ResourceManager<br>
 <b>Warning on line 77</b> - File "C:\wamp\www\git_test_1\library\manage\ResourceManager.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="Resources.php"></a>
+<h1>Resources.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 13</b> - DocBlock would be page-level, but precedes class "Library_Consts_Resources", use another DocBlock to document the file<br>
 <a name="Select.php"></a>
 <h1>Select.php</h1>
 <h2>Warnings:</h2><br>
 <b>Warning on line 3</b> - no @package tag was used in a DocBlock for class Library_Html_Form_Element_Select<br>
 <b>Warning on line 45</b> - File "C:\wamp\www\git_test_1\library\html\form\element\Select.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="Session.php"></a>
+<h1>Session.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 13</b> - DocBlock would be page-level, but precedes class "Library_Consts_Session", use another DocBlock to document the file<br>
 <a name="SessionManager.php"></a>
 <h1>SessionManager.php</h1>
 <h2>Warnings:</h2><br>
@@ -570,7 +570,7 @@ Use an @ignore tag on the original if you want this case to be documented.<br>
 <b>Warning on line 3</b> - no @package tag was used in a DocBlock for class Application_Modules_Cms_Plugins_WellcomeMailPlugin<br>
 <b>Warning on line 8</b> - File "C:\wamp\www\git_test_1\application\modules\cms\plugins\WellcomeMailPlugin.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
 	<p class="notes" id="credit">
-		Documentation generated on Wed, 14 Mar 2012 12:57:05 +0000 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+		Documentation generated on Thu, 15 Mar 2012 12:14:58 +0000 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.4</a>
 	</p>
 	</body>
 </html>

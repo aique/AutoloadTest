@@ -1,5 +1,16 @@
 <?php
 
+/**
+ * Contiene la lógica común a todos los controladores que llevará a cabo
+ * el proceso de atención de peticiones.
+ * 
+ * @package library
+ * 
+ * @subpackage controller
+ * 
+ * @author qinteractiva
+ *
+ */
 class Library_Controller_ControllerDispatcher
 {
 	private $controller;
@@ -10,16 +21,17 @@ class Library_Controller_ControllerDispatcher
 	}
 	
 	/**
-	* Único método público de esta clase y por tanto de todos los
-	* controladores que posee la aplicación. Se utiliza para atender
-	* una petición realizada por el usuario a un action concreto.
-	*
-	* Cuando la aplicación recibe una petición, contruye el controlador
-	* que ha de atenderla en base a su URL y llama a este método, el cual
-	* realiza las tareas de inicialización necesarias, llama al action
-	* correspondiente, aplica el layout definido para el controlador y
-	* realiza las tareas de finalización.
-	*/
+	 * Atiende una petición recibida por la aplicación. Los pasos que se
+	 * llevan a cabo son los sigueintes:
+	 * 
+	 * <ul>
+	 * <li>Realiza una llamada al método init() para llevar a cabo las tareas de inicialización.</li>
+	 * <li>Lleva a cabo un bucle sobre todos los plugins asociados a él ejecutando sus métodos preDispatch().</li>
+	 * <li>Realiza una llamada al action correspondiente, aplicando la vista a su respuesta y posteriormente el layout.</li>
+	 * <li>Lleva a cabo un bucle sobre todos los plugins asociados a él ejecutando sus métodos postDispatch().</li>
+	 * <li>Realiza una llamada al método init() para llevar a cabo las tareas de finalización.</li>
+	 * </ul>
+	 */
 	public function dispatch()
 	{
 		try
@@ -38,6 +50,19 @@ class Library_Controller_ControllerDispatcher
 		}
 	}
 	
+	/**
+	 * Realiza un bucle sobre todos los plugins asociados al controlador
+	 * ejecutando sus métodos preDispatch().
+	 * 
+	 * Este método recibe el objeto petición como parámetro, ya que existe
+	 * la opción de poder hacer una redirección dentro del plugin en caso
+	 * de que así se considere oportuno.
+	 * 
+	 * @param Library_Request_Request $request
+	 * 
+	 * 		Petición que se está tratando en el momento de ejecutar los métodos
+	 * 		preDispatch() de los plugins.
+	 */
 	private function preDispatch(Library_Request_Request $request)
 	{
 		$currentAction = $request->__toString(); 
@@ -50,6 +75,19 @@ class Library_Controller_ControllerDispatcher
 		}
 	}
 	
+	/**
+	 * Realiza un bucle sobre todos los plugins asociados al controlador
+	 * ejecutando sus métodos postDispatch().
+	 *
+	 * Este método recibe el objeto petición como parámetro, ya que existe
+	 * la opción de poder hacer una redirección dentro del plugin en caso
+	 * de que así se considere oportuno.
+	 *
+	 * @param Library_Request_Request $request
+	 *
+	 * 		Petición que se está tratando en el momento de ejecutar los métodos
+	 * 		postDispatch() de los plugins.
+	 */
 	private function postDispatch(Library_Request_Request $request)
 	{
 		$currentAction = $request->__toString();
@@ -80,16 +118,14 @@ class Library_Controller_ControllerDispatcher
 	}
 	
 	/**
-	 * Analiza la URL recibida en la petición y determina el action dentro
-	 * del controlador que debe encargarse de responder.
-	 *
+	 * Analiza la URL asociada a la petición y determina que action del
+	 * controlador será el encargado de responder.
+	 * 
 	 * @throws Exception
-	 * 		Lanza una excepción cuando no existe el action encargado de atender
-	 * 		la petición.
-	 *
-	 * @return array
-	 * 		Array recibido como parámetro con los valores definitivos que
-	 * 		recibirá la capa de la vista.
+	 * 
+	 * 		Lanza una excepción cuando no existe dentro del controlador el
+	 * 		action que por la URL asociada a la petición debería encargarse
+	 * 		de responder.
 	 */
 	private function doAction()
 	{
@@ -114,10 +150,17 @@ class Library_Controller_ControllerDispatcher
 	}
 	
 	/**
-	 * Aplica el fichero que renderiza la capa de la vista.
+	 * Aplica el fichero que renderiza la capa de la vista y devuelve su
+	 * contenido.
+	 * 
+	 * @return string
+	 * 
+	 * 		Cadena de texto con el código HTML que se mostrará en el navegador,
+	 * 		a falta de aplicar el layout sobre él.
 	 *
 	 * @throws Exception
-	 * 		Lanza una excepción cuando no existe el fichero que renderiza
+	 * 
+	 * 		Lanza una excepción cuando no encuentra el fichero que renderiza
 	 * 		la capa de la vista.
 	 */
 	private function applyView()
@@ -148,13 +191,16 @@ class Library_Controller_ControllerDispatcher
 	}
 	
 	/**
-	 * Aplica el layout definido para el controlador. Si no se especifica
-	 * nada, se aplicará el layout por defecto, el cual se encuentra dentro
-	 * del directorio de layouts bajo el nombre de layout.
+	 * Aplica el layout definido para el controlador.
+	 * 
+	 * Si no se ha especificado ninguno, se aplicará el layout por defecto,
+	 * el cual se encuentra dentro del directorio de layouts bajo el nombre
+	 * de layout.
 	 *
 	 * @param string $content
-	 * 		Cadena de texto con el contenido principal que ha de mostrarse
-	 * 		dentro del layout.
+	 * 
+	 * 		Cadena de texto con el código HTML que se mostrará en el navegador,
+	 * 		a falta de aplicar el layout sobre él.
 	 */
 	private function applyLayout($content)
 	{
