@@ -154,6 +154,13 @@ class Library_Manage_DBManager extends mysqli
 		Library_Manage_ResourceManager::getLogger()->logDBQuery($query);
 	
 		$result = parent::query($query);
+		
+		if(!$result)
+		{
+			Library_Manage_ResourceManager::getLogger()->logDBQueryError($query);
+			
+			throw new Exception("La consulta SQL realizada sobre la base de datos ha provocado un error.");
+		}
 	
 		return $result;
 	}
@@ -171,7 +178,7 @@ class Library_Manage_DBManager extends mysqli
 		
 		if(mysqli_connect_errno())
 		{
-			Library_Manage_ResourceManager::getLogger()->logDBError(mysqli_connect_error());
+			Library_Manage_ResourceManager::getLogger()->logDBConnectionError(mysqli_connect_error());
 
 			throw new Exception("La configuración de la conexión con la base de datos ha provocado un error.");
 		}

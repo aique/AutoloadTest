@@ -13,24 +13,19 @@ class Library_Html_Form_Printer_DefaultSelectPrinter extends Library_Html_Form_P
 		
 		$output .= '>';
 		
-		$output .= $this->printOptions($this->element->getOptions(), $this->element->getValue());
+		$output .= $this->printOptions($this->element->getOptions());
 		
 		$output .= '</select><br />';
 		
 		return $output;
 	}
 	
-	private function printOptions($options, $selectedValue)
+	private function printOptions($options)
 	{
 		$output = '';
 		
 		foreach($options as $option)
 		{
-			if($option->getValue() == $selectedValue)
-			{
-				$option->addAttribute('selected', 'selected');
-			}
-			
 			$output .= $option;
 		}
 		

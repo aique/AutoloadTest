@@ -15,4 +15,26 @@ class Library_Html_Form_Element_Input extends Library_Html_Form_FormElement
 		
 		parent::__construct(Library_Html_Form_FormElementConst::INPUT, $attributes, $validations, $printer);
 	}
+	
+	public function setValue($value)
+	{
+		if($this->getAttributeByName('type') == 'checkbox')
+		{
+			if($value != 0)
+			{
+				$this->addAttribute('checked', 'checked');
+			}
+		}
+		elseif($this->getAttributeByName('type') == 'radio')
+		{
+			if($value == $this->getValue())
+			{
+				$this->addAttribute('checked', 'checked');
+			}
+		}
+		else
+		{
+			parent::setValue($value);
+		}
+	}
 }

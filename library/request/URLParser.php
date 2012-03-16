@@ -44,7 +44,7 @@ class Library_Request_URLParser
 		{
 			if(!empty($token) && !self::isGETParam($token))
 			{
-				if(Library_Request_Helper::isModule($token) && !$moduleSetted)
+				if(Library_App_Helper::isModule($token) && !$moduleSetted)
 				{
 					$request->setModule($token);
 					$moduleSetted = true;

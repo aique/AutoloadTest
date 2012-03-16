@@ -1,1 +1,21 @@
 @CHARSET "UTF-8";
+
+.checkbox
+{
+	margin: 10px 0;
+}
+
+.checkbox_label
+{
+	display: inline;
+}
+
+.radio_group
+{
+	margin: 10px 0;
+}
+
+.radio_label
+{
+	display: inline;
+}

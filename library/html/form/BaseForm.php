@@ -2,12 +2,12 @@
 
 abstract class Library_Html_Form_BaseForm extends Library_Html_BaseElement
 {
-	private $elements;
-	private $actions;
-	private $legend;
-	private $error;
+	protected $elements;
+	protected $actions;
+	protected $legend;
+	protected $error;
 	
-	private $validator;
+	protected $validator;
 	
 	const DEFAULT_ACTION = "#";
 	const DEFAULT_METHOD = "POST";

@@ -2,13 +2,13 @@
 
 class Application_Model_User_Item extends Library_Model_BaseItem
 {
-	private $id;
 	private $name;
 	private $password;
 	private $role;
 	private $email;
 	private $married;
 	private $childNum;
+	private $jobDesc;
 	
 	public function __construct(array $options = null)
 	{	
@@ -16,26 +16,6 @@ class Application_Model_User_Item extends Library_Model_BaseItem
 		$printer->setElement($this);
 		
 		parent::__construct($options, $printer);
-	}
-	
-	/**
-	 * Returns the id value.
-	 *
-	 * @return int
-	 */
-	public function getId()
-	{
-	    return $this->id;
-	}
-	 
-	/**
-	 * Set the id value.
-	 *
-	 * @param int $id
-	 */
-	public function setId($id)
-	{
-	    $this->id = $id;
 	}
 	
 	/**
@@ -113,7 +93,7 @@ class Application_Model_User_Item extends Library_Model_BaseItem
 	 *
 	 * @param string $email
 	 */
-	public function setEmail($email)
+	public function setEmail($email = '')
 	{
 	    $this->email = $email;
 	}
@@ -133,43 +113,82 @@ class Application_Model_User_Item extends Library_Model_BaseItem
 	 *
 	 * @param boolean $married
 	 */
-	public function setMarried($married)
+	public function setMarried($married = 0)
 	{
 	    $this->married = $married;
 	}
 	
 	/**
-	 * Devuelve el valor del atributo numChild.
+	 * Devuelve el valor del atributo childNum.
 	 *
 	 * @return int
 	 */
-	public function getNumChild()
+	public function getChildNum()
 	{
-	    return $this->numChild;
+	    return $this->childNum;
 	}
 	 
 	/**
-	 * Establece el valor del atributo numChild.
+	 * Establece el valor del atributo childNum.
 	 *
-	 * @param int $numChild
+	 * @param int $childNum
 	 */
-	public function setNumChild($numChild)
+	public function setChildNum($childNum = 0)
 	{
-	    $this->numChild = $numChild;
+	    $this->childNum = $childNum;
+	}
+	
+	/**
+	 * Devuelve el valor del atributo jobDesc.
+	 *
+	 * @return string
+	 */
+	public function getJobDesc()
+	{
+	    return $this->jobDesc;
+	}
+	 
+	/**
+	 * Establece el valor del atributo jobDesc.
+	 *
+	 * @param string $jobDesc
+	 */
+	public function setJobDesc($jobDesc)
+	{
+	    $this->jobDesc = $jobDesc;
 	}
 	
 	public function getAttributesAsArray()
 	{
 		$attributes = array();
-		
+	
 		$vars = get_class_vars(get_class($this));
-		
+	
 		foreach($vars as $key => $value)
 		{
 			$attributes[$key] = $this->__get($key);
 		}
-		
+	
 		return $attributes;
+	}
+	
+	public function setAttributesFromArray(array $options)
+	{
+		$attributes = array_diff_assoc(get_class_vars(get_class($this)), get_class_vars(get_parent_class($this)));
+	
+		foreach($attributes as $key => $value)
+		{
+			$method = 'set' . ucfirst($key);
+	
+			if(key_exists($key, $options))
+			{
+				$this->$method($options[$key]);
+			}
+			else
+			{
+				$this->$method();
+			}
+		}
 	}
 	
 }

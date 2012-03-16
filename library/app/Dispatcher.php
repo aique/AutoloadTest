@@ -31,25 +31,39 @@ class Library_App_Dispatcher
 	{
 		$controller = self::getController($request);
 		
-		$controller->dispatch();
+		if($controller)
+		{
+			$controller->dispatch();
+		}
+		else
+		{
+			Library_App_Dispatcher::dispatchRequest(new Library_Request_Request("", "error", "pageNotFound"));
+		}
 	}
 	
 	private static function getController(Library_Request_Request $request)
 	{
 		$module = $request->getModule();
 		
-		$controller = $request->getController();
+		$controller = ucwords($request->getController());
 		
-		if(empty($module))
+		if(Library_App_Helper::isController($controller))
 		{
-			$constructor = "Application_Controllers_" . $controller . "Controller";
+			if(empty($module))
+			{
+				$constructor = "Application_Controllers_" . $controller . "Controller";
+			}
+			else
+			{
+				$constructor = "Application_Modules_" . $module . "_Controllers_" . $controller . "Controller";
+			}
+			
+			return new $constructor($request);
 		}
 		else
 		{
-			$constructor = "Application_Modules_" . $module . "_Controllers_" . $controller . "Controller";
+			return null;
 		}
-		
-		return new $constructor($request);
 	}
 	
 }

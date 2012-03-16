@@ -62,9 +62,12 @@ class Library_App_Autoloader
 	 */
 	private function autoload($className)
 	{
-		$path = str_replace("_", "/", $className);
+		$file = PROJECT_PATH . '/' . str_replace('_', '/', $className) . '.php';
 		
-		require_once PROJECT_PATH . "/" . $path . ".php";
+		if(file_exists($file))
+		{
+			require_once $file;
+		}
 	}
 	
 }

@@ -43,4 +43,15 @@ class Library_Html_Form_Element_Select extends Library_Html_Form_FormElement
 		$this->options[] = $option;
 	}
 	
+	public function setValue($value)
+	{
+		foreach($this->options as $option)
+		{
+			if($option->getValue() == $value)
+			{
+				$option->addAttribute('selected', 'selected');
+			}
+		}
+	}
+	
 }

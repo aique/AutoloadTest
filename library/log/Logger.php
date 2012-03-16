@@ -65,7 +65,7 @@ class Library_Log_Logger
 		}
 	}
 	
-	public function logDBError($error)
+	public function logDBConnectionError($error)
 	{
 		if(Library_Manage_ResourceManager::getConfig()->getCurrentEnvironment() != Library_Consts_Environment::PRODUCTION_ENV)
 		{
@@ -75,6 +75,23 @@ class Library_Log_Logger
 			$content .= "Mensaje: " . $error . "\n\n";
 			$content .= Library_Manage_ResourceManager::getHostData()->getPrinter()->logPrint();
 			
+			$handler = fopen($this->dbErrorFile . '.' . date("d.m.Y"), 'a');
+			fwrite($handler, $content);
+			fclose($handler);
+		}
+	}
+	
+	public function logDBQueryError($query)
+	{
+		if(Library_Manage_ResourceManager::getConfig()->getCurrentEnvironment() != Library_Consts_Environment::PRODUCTION_ENV)
+		{
+			$content = "Error\n----\n\n";
+			$content .= "Hora: " . date("H:i:s\n");
+			$content .= "Archivo: " . pathinfo($_SERVER['PHP_SELF'], PATHINFO_FILENAME) . "\n\n";
+			$content .= "Mensaje: Error en base de datos al ejecutar una consulta SQL.\n\n";
+			$content .= "Consulta:\n" . $query . "\n\n";
+			$content .= Library_Manage_ResourceManager::getHostData()->getPrinter()->logPrint();
+				
 			$handler = fopen($this->dbErrorFile . '.' . date("d.m.Y"), 'a');
 			fwrite($handler, $content);
 			fclose($handler);

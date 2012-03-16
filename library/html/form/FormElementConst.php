@@ -2,8 +2,10 @@
 
 class Library_Html_Form_FormElementConst
 {
-	const FORM = "form";
-	const INPUT = "input";
-	const OPTION = "option";
-	const SELECT = "select";
+	const FORM = 'form';
+	const INPUT = 'input';
+	const OPTION = 'option';
+	const RADIO_GROUP = 'radio_group';
+	const SELECT = 'select';
+	const TEXT_AREA = 'textarea';
 }

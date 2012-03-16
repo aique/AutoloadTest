@@ -6,4 +6,9 @@ class Application_Controllers_ErrorController extends Library_Controller_BaseCon
 	{
 		
 	}
+	
+	public function pageNotFoundAction()
+	{
+		
+	}
 }

@@ -16,24 +16,16 @@ class Application_Model_User_Printer extends Library_Printer_BasePrinter
 	{
 		$output = '';
 		
-		$name = $this->element->getName();
-		$email = $this->element->getEmail();
-		$role = $this->element->getRole();
-		
-		if(empty($name) && empty($email) && empty($role))
-		{
-			$output .= '<p>No se han encontrado datos de este usuario.</p>';
-		}
-		else
-		{
-			$output .= '<dl class="dl-horizontal">';
+		$output .= '<dl class="dl-horizontal">';
 
-			$output .= $this->printAttribute('Nombre', $name);
-			$output .= $this->printAttribute('Email', $email);
-			$output .= $this->printAttribute('Rol', $role);
+		$output .= $this->printAttribute('Nombre', $this->element->getName());
+		$output .= $this->printAttribute('Email', $this->element->getEmail());
+		$output .= $this->printAttribute('Rol', $this->element->getRole());
+		$output .= $this->printAttribute('Está casado', $this->element->getMarried());
+		$output .= $this->printAttribute('Número de hijos', $this->element->getChildNum());
+		$output .= $this->printAttribute('Descripción de su trabajo', $this->element->getJobDesc());
 			
-			$output .= '</dl>';
-		}
+		$output .= '</dl>';
 		
 		return $output;
 	}

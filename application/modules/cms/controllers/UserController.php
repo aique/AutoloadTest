@@ -14,7 +14,7 @@ class Application_Modules_Cms_Controllers_UserController extends Library_Control
 		{
 			$this->addPlugin(new Application_Plugins_ACLPlugin());
 			
-			$this->addPlugin(new Application_Modules_Cms_Plugins_WellcomeMailPlugin());
+			// $this->addPlugin(new Application_Modules_Cms_Plugins_WellcomeMailPlugin());
 		}
 	}
 	
@@ -52,6 +52,10 @@ class Application_Modules_Cms_Controllers_UserController extends Library_Control
 					$form->setError("El usuario no se ha podido guardar.");
 				}
 			}
+			else
+			{
+				$form->setError("Los parámetros no son correctos.");
+			}
 		}
 		
 		$this->view["form"] = $form;
@@ -76,8 +80,32 @@ class Application_Modules_Cms_Controllers_UserController extends Library_Control
 				$form->setParams($user->getAttributesAsArray());
 					
 				$this->view["form"] = $form;
+				
+				if(Library_Manage_InputManager::isPost())
+				{
+					$params = Library_Manage_InputManager::getParams(Library_Manage_InputManager::POST);
+					
+					$form->setParams($params);
+					
+					$user->setAttributesFromArray($params);
+					
+					if($form->isValid())
+					{
+						if($userModel->updateUser($user))
+						{
+							$this->helper->redirect(new Library_Request_Request("cms", "user", "detail", array("id" => $user->getId())));
+						}
+						else
+						{
+							$form->setError("El usuario no se ha podido modificar.");
+						}
+					}
+					else
+					{
+						$form->setError("Los parámetros no son correctos.");
+					}
+				}
 			}
-		
 		}
 		else
 		{

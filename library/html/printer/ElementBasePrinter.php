@@ -4,7 +4,7 @@ abstract class Library_Html_Printer_ElementBasePrinter extends Library_Printer_B
 {
 	protected function printAttribute($name, $value)
 	{
-		if($name != 'label' && $name != 'display' && !empty($value))
+		if($name != 'label' && $name != 'display')
 		{
 			return ' '.$name.'="'.$value.'"';
 		}

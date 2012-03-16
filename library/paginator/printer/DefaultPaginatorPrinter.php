@@ -86,9 +86,9 @@ class Library_Paginator_Printer_DefaultPaginatorPrinter extends Library_Printer_
 			}
 			
 			$output .= '<li><a href="'.$request.'/page/'.$pagesNumber.'">Última</a></li>';
+			
+			$output .= '</ul></div>';
 		}
-		
-		$output .= '</ul></div>';
 		
 		return $output;
 	}

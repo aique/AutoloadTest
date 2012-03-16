@@ -2,6 +2,8 @@
 
 abstract class Library_Model_BaseItem
 {
+	protected $id;
+	
 	protected $printer;
 	
 	public function __construct(array $options = null, Library_Printer_BasePrinter $printer)
@@ -14,20 +16,40 @@ abstract class Library_Model_BaseItem
 		$this->printer = $printer;
 	}
 	
+	/**
+	* Returns the id value.
+	*
+	* @return int
+	*/
+	public function getId()
+	{
+		return $this->id;
+	}
+	
+	/**
+	 * Set the id value.
+	 *
+	 * @param int $id
+	 */
+	public function setId($id)
+	{
+		$this->id = $id;
+	}
+	
 	private function setOptions(array $options)
 	{
 		$methods = get_class_methods($this);
-	
+
 		foreach($options as $key => $value)
 		{
 			$method = 'set' . ucfirst($key);
-				
+
 			if(in_array($method, $methods))
 			{
 				$this->$method($value);
 			}
 		}
-			
+
 		return $this;
 	}
 	
@@ -37,7 +59,7 @@ abstract class Library_Model_BaseItem
 			
 		if(!method_exists($this, $method))
 		{
-			// throw new Exception('Se está accediendo a una propiedad no válida (' . $name . ') del objeto Application_Modules_Users_Model_User_Item.');
+			throw new Exception('Se está accediendo a una propiedad no válida (' . $name . ') del objeto Application_Modules_Users_Model_User_Item.');
 		}
 		else
 		{
@@ -51,7 +73,7 @@ abstract class Library_Model_BaseItem
 			
 		if(!method_exists($this, $method))
 		{
-			// throw new Exception('Se está accediendo a una propiedad no válida (' . $name . ') del objeto Application_Modules_Users_Model_User_Item.');
+			throw new Exception('Se está accediendo a una propiedad no válida (' . $name . ') del objeto Application_Modules_Users_Model_User_Item.');
 		}
 		else
 		{
@@ -80,6 +102,8 @@ abstract class Library_Model_BaseItem
 	}
 	
 	public abstract function getAttributesAsArray();
+	
+	public abstract function setAttributesFromArray(array $options);
 	
 	public function __toString()
 	{
