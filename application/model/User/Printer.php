@@ -4,16 +4,6 @@ class Application_Model_User_Printer extends Library_Printer_BasePrinter
 {
 	public function standardPrint()
 	{
-		return
-		
-	    $this->element->getId().' - '.
-	    '<a href="'.new Library_Request_Request("cms", "user", "detail", array("id" => $this->element->getId())).'">'.$this->element->getName().'</a> '.
-	    '<a class="action" href="'.new Library_Request_Request("cms", "user", "delete", array("id" => $this->element->getId())).'">'.Library_I18n_I18n::getText("screen_user_list_delete").'</a> '.
-	    '<a class="action" href="'.new Library_Request_Request("cms", "user", "update", array("id" => $this->element->getId())).'">'.Library_I18n_I18n::getText("screen_user_list_update").'</a>';
-	}
-	
-	public function profilePrint()
-	{
 		$output = '';
 		
 		$output .= '<dl class="dl-horizontal">';
@@ -40,6 +30,18 @@ class Application_Model_User_Printer extends Library_Printer_BasePrinter
 		{
 			return '';
 		}
+	}
+	
+	public function paginationPrint()
+	{
+		$output = '';
+		
+		$output .= $this->element->getId().' - ';
+		$output .= '<a href="'.new Library_Request_Request("cms", "user", "detail", array("id" => $this->element->getId())).'">'.$this->element->getName().'</a> ';
+		$output .= '<a class="action" href="'.new Library_Request_Request("cms", "user", "delete", array("id" => $this->element->getId())).'">'.Library_I18n_I18n::getText("screen_user_list_delete").'</a> ';
+		$output .= '<a class="action" href="'.new Library_Request_Request("cms", "user", "update", array("id" => $this->element->getId())).'">'.Library_I18n_I18n::getText("screen_user_list_update").'</a>';
+		
+		return $output;
 	}
 	
 }

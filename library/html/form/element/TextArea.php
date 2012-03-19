@@ -16,6 +16,11 @@ class Library_Html_Form_Element_TextArea extends Library_Html_Form_FormElement
 		parent::__construct(Library_Html_Form_FormElementConst::TEXT_AREA, $attributes, $validations, $printer);
 	}
 	
+	public function getValue()
+	{
+		return $this->getAttributeByName('display');
+	}
+	
 	public function setValue($value)
 	{
 		$this->addAttribute('display', $value);

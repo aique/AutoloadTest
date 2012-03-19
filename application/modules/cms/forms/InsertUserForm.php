@@ -67,7 +67,7 @@ class Application_Modules_Cms_Forms_InsertUserForm extends Library_Html_Form_Bas
 															  new Library_Html_Form_Printer_DefaultRadioPrinter());
 		
 		$jobDesc = new Library_Html_Form_Element_TextArea(array("id" => "jobDesc", "name" => "jobDesc", "rows" => "10", "cols" => "40", "label" => "Descripción de su empleo"),
-														  array());
+														  array(Library_Html_Form_ValidationRuleConst::REQUIRED => true));
 				
 		$submit = new Library_Html_Form_Element_Input(array("type" => "submit", "value" => Library_I18n_I18n::getText("screen_common_form_submit")));
 		

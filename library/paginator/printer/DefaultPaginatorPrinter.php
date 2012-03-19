@@ -50,7 +50,7 @@ class Library_Paginator_Printer_DefaultPaginatorPrinter extends Library_Printer_
 			{
 				$item = $collection[$i];
 				
-				$output .= '<li>' . $item . '</li>';
+				$output .= '<li>' . $item->getPrinter()->paginationPrint() . '</li>';
 			}
 		}
 			
