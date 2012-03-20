@@ -1,8 +1,6 @@
 
 <div class="content_form <?php echo $view['element']->getAttribute('contentClass'); ?>">
 
-	<p class="p_error <?php echo $view['element']->getAttribute('classLabelError'); ?>"><span></span></p>
-	
 	<form id="<?php echo $view['element']->getAttribute('id'); ?>"
 		  class="<?php echo $view['element']->getAttribute('class'); ?>"
 		  method="<?php echo $view['element']->getAttribute('method'); ?>"
@@ -12,6 +10,12 @@
 		<fieldset>
 		  
 			<legend><?php echo $view['element']->getLegend(); ?></legend>
+			
+			<p class="p_error <?php echo $view['element']->getAttribute('classLabelError'); ?>">
+			
+				<span><?php echo $view['element']->getError(); ?></span>
+					
+			</p>
 			  	
 			<?php
 			  	

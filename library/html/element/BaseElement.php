@@ -1,5 +1,17 @@
 <?php
 
+/**
+ * Clase de la que heredarán todos los elementos HTML soportados.
+ * 
+ * Contiene los atributos y el comportamiento común para todos estos elementos.
+ * 
+ * @package library
+ * 
+ * @subpackage html
+ * 
+ * @author qinteractiva
+ *
+ */
 abstract class Library_Html_Element_BaseElement
 {
 	protected $name;
@@ -54,11 +66,36 @@ abstract class Library_Html_Element_BaseElement
 		$this->attributes = $attributes;
 	}
 	
+	/**
+	 * Añade un atributo a la lista de los asociados al elemento.
+	 * 
+	 * @param string $attribute
+	 * 
+	 * 		Nombre del atributo que se añadirá.
+	 * 
+	 * @param string $value
+	 * 
+	 * 		Valor del atributo que se añadirá.
+	 */
 	public function addAttribute($attribute, $value)
 	{
 		$this->attributes[$attribute] = $value;
 	}
 	
+	/**
+	 * Devuelve el valor de un atributo asociado a este elemento en
+	 * función de su nombre.
+	 * 
+	 * @param string $name
+	 * 
+	 * 		Nombre del atributo del cual se va a devolver su valor
+	 * 
+	 * @return string
+	 * 
+	 * 		Cadena de texto con el valor del atributo cuyo nombre
+	 * 		coincide con el recibido como parámetro o null en caso
+	 * 		de que no se encuentre.
+	 */
 	public function getAttribute($name)
 	{
 		foreach($this->attributes as $attributeName => $attributeValue)
@@ -72,6 +109,23 @@ abstract class Library_Html_Element_BaseElement
 		return null;
 	}
 	
+	/**
+	 * Devuelve el valor del atributo value.
+	 * 
+	 * Es comúnmente utilizado para conocer el valor que el usuario
+	 * ha introducido en un campo. Sin embargo, no todos los elementos
+	 * HTML funcionan de esta manera.
+	 * 
+	 * Por ejemplo, un checkbox tendrá valor 1 si está marcado
+	 * y 0 si no lo está. Cada elemento específico por tanto deberá
+	 * sobreescribir este método para devolver su valor de la manera
+	 * oportuna.
+	 * 
+	 * @return string
+	 * 
+	 * 		Cadena de texto con el valor del atributo value. Si no se
+	 * 		ha establecido todavía, devolverá una cadena vacía.
+	 */
 	public function getValue()
 	{
 		if(isset($this->attributes["value"]))
@@ -84,11 +138,29 @@ abstract class Library_Html_Element_BaseElement
 		}
 	}
 	
+	/**
+	 * Establece el valor del atributo value.
+	 * 
+	 * @param string $value
+	 */
 	public function setValue($value)
 	{
 		$this->attributes["value"] = $value;
 	}
 	
+	/**
+	 * Devuelve el valor del atributo display.
+	 * 
+	 * Es comúnmente utilizado para mostrar un valor en pantalla
+	 * que el elemento ha de establecer entre sus etiquetas de
+	 * apertura y cierre.
+	 * 
+	 * @return string
+	 * 
+	 * 		Cadena de texto con el valor del atributo display.
+	 * 		Si no se ha establecido todavía, devolverá una cadena
+	 * 		vacía.
+	 */
 	public function getDisplay()
 	{
 		if(isset($this->attributes["display"]))
@@ -101,6 +173,11 @@ abstract class Library_Html_Element_BaseElement
 		}
 	}
 	
+	/**
+	 * Establece el valor del atributo display.
+	 * 
+	 * @param string $display
+	 */
 	public function setDisplay($display)
 	{
 		$this->attributes["display"] = $display;
@@ -126,6 +203,19 @@ abstract class Library_Html_Element_BaseElement
 		$this->printer = $printer;
 	}
 	
+	/**
+	 * Deriva la salida estándar de los elementos HTML soportados
+	 * a la salida estandar de la impresora establecida entre sus
+	 * atributos.
+	 * 
+	 * Esta salida estará determinada por el método standardPrint()
+	 * de la misma.
+	 * 
+	 * @return string
+	 * 
+	 * 		Cadena de texto con la representación estándar del
+	 * 		elemento en pantalla.
+	 */
 	public function __toString()
 	{
 		return $this->printer->standardPrint();

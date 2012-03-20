@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
   <html xmlns="http://www.w3.org/1999/xhtml">
 		<head>
 			<!-- template designed by Marco Von Ballmoos -->
 			<title>phpDocumentor Parser Errors and Warnings</title>
 			<link rel="stylesheet" href="media/stylesheet.css" />
-			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+			<meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
 		</head>
 		<body>
 						<a href="#Post-parsing">Post-parsing</a><br>
@@ -18,6 +18,9 @@
 <a href="#BasePlugin.php">BasePlugin.php</a><br>
 <a href="#BasePrinter.php">BasePrinter.php</a><br>
 <a href="#bootstrap.php">bootstrap.php</a><br>
+<a href="#Checkbox.php">Checkbox.php</a><br>
+<a href="#checkbox.php">checkbox.php</a><br>
+<a href="#CheckboxPrinter.php">CheckboxPrinter.php</a><br>
 <a href="#Config.php">Config.php</a><br>
 <a href="#ConfigFileParser.php">ConfigFileParser.php</a><br>
 <a href="#ControllerDispatcher.php">ControllerDispatcher.php</a><br>
@@ -28,35 +31,34 @@
 <a href="#DatePrinterEnUS.php">DatePrinterEnUS.php</a><br>
 <a href="#DatePrinterEsES.php">DatePrinterEsES.php</a><br>
 <a href="#DBManager.php">DBManager.php</a><br>
-<a href="#DefaultCheckboxPrinter.php">DefaultCheckboxPrinter.php</a><br>
-<a href="#DefaultFormElementPrinter.php">DefaultFormElementPrinter.php</a><br>
-<a href="#DefaultFormPrinter.php">DefaultFormPrinter.php</a><br>
-<a href="#DefaultInputPrinter.php">DefaultInputPrinter.php</a><br>
-<a href="#DefaultOptionPrinter.php">DefaultOptionPrinter.php</a><br>
 <a href="#DefaultPaginatorPrinter.php">DefaultPaginatorPrinter.php</a><br>
-<a href="#DefaultSelectPrinter.php">DefaultSelectPrinter.php</a><br>
 <a href="#detail.php">detail.php</a><br>
 <a href="#Dispatcher.php">Dispatcher.php</a><br>
 <a href="#ElementBasePrinter.php">ElementBasePrinter.php</a><br>
+<a href="#email.php">email.php</a><br>
 <a href="#Environment.php">Environment.php</a><br>
 <a href="#error.php">error.php</a><br>
 <a href="#ErrorController.php">ErrorController.php</a><br>
 <a href="#FileUtil.php">FileUtil.php</a><br>
 <a href="#footer.php">footer.php</a><br>
+<a href="#form.php">form.php</a><br>
 <a href="#FormElement.php">FormElement.php</a><br>
 <a href="#FormElementConst.php">FormElementConst.php</a><br>
+<a href="#FormElementPrinter.php">FormElementPrinter.php</a><br>
 <a href="#FormElementValidator.php">FormElementValidator.php</a><br>
+<a href="#FormPrinter.php">FormPrinter.php</a><br>
 <a href="#header.php">header.php</a><br>
 <a href="#Helper.php">Helper.php</a><br>
+<a href="#Host.php">Host.php</a><br>
 <a href="#I18n.php">I18n.php</a><br>
 <a href="#I18nData.php">I18nData.php</a><br>
-<a href="#I18nFileBuilder.php">I18nFileBuilder.php</a><br>
 <a href="#I18nFileManager.php">I18nFileManager.php</a><br>
 <a href="#index.php">index.php</a><br>
 <a href="#IndexController.php">IndexController.php</a><br>
 <a href="#IndexTest.php">IndexTest.php</a><br>
 <a href="#Input.php">Input.php</a><br>
 <a href="#InputManager.php">InputManager.php</a><br>
+<a href="#InputPrinter.php">InputPrinter.php</a><br>
 <a href="#insert.php">insert.php</a><br>
 <a href="#InsertUserForm.php">InsertUserForm.php</a><br>
 <a href="#Item.php">Item.php</a><br>
@@ -79,17 +81,35 @@
 <a href="#MoneyPrinterEnUS.php">MoneyPrinterEnUS.php</a><br>
 <a href="#MoneyPrinterEsES.php">MoneyPrinterEsES.php</a><br>
 <a href="#Option.php">Option.php</a><br>
+<a href="#option.php">option.php</a><br>
+<a href="#OptionPrinter.php">OptionPrinter.php</a><br>
+<a href="#pageNotFound.php">pageNotFound.php</a><br>
 <a href="#Paginator.php">Paginator.php</a><br>
+<a href="#password.php">password.php</a><br>
+<a href="#PasswordEncrypter.php">PasswordEncrypter.php</a><br>
 <a href="#PHPMailer.php">PHPMailer.php</a><br>
 <a href="#Printer.php">Printer.php</a><br>
 <a href="#PrinterClient.php">PrinterClient.php</a><br>
+<a href="#radio.php">radio.php</a><br>
+<a href="#Radio.php">Radio.php</a><br>
+<a href="#RadioGroup.php">RadioGroup.php</a><br>
+<a href="#radiogroup.php">radiogroup.php</a><br>
+<a href="#RadioGroupPrinter.php">RadioGroupPrinter.php</a><br>
+<a href="#RadioPrinter.php">RadioPrinter.php</a><br>
 <a href="#Request.php">Request.php</a><br>
 <a href="#ResourceManager.php">ResourceManager.php</a><br>
 <a href="#Resources.php">Resources.php</a><br>
 <a href="#Select.php">Select.php</a><br>
+<a href="#select.php">select.php</a><br>
+<a href="#SelectPrinter.php">SelectPrinter.php</a><br>
 <a href="#Session.php">Session.php</a><br>
 <a href="#SessionManager.php">SessionManager.php</a><br>
 <a href="#SMTP.php">SMTP.php</a><br>
+<a href="#submit.php">submit.php</a><br>
+<a href="#text.php">text.php</a><br>
+<a href="#TextArea.php">TextArea.php</a><br>
+<a href="#textarea.php">textarea.php</a><br>
+<a href="#TextAreaPrinter.php">TextAreaPrinter.php</a><br>
 <a href="#TextClient.php">TextClient.php</a><br>
 <a href="#TextIoood.php">TextIoood.php</a><br>
 <a href="#TextPrinter.php">TextPrinter.php</a><br>
@@ -110,10 +130,10 @@
 <b>Warning</b> - 
 duplicate define element "PROJECT_PATH" in file C:\wamp\www\git_test_1\tests\bootstrap.php will be ignored.
 Use an @ignore tag on the original if you want this case to be documented.<br>
+<b>Warning</b> - Class UserTest parent PHPUnit_Framework_TestCase not found<br>
 <b>Warning</b> - 
 duplicate define element "DEFAULT_ENVIRONMENT" in file C:\wamp\www\git_test_1\tests\bootstrap.php will be ignored.
 Use an @ignore tag on the original if you want this case to be documented.<br>
-<b>Warning</b> - Class UserTest parent PHPUnit_Framework_TestCase not found<br>
 <a name="ACL.php"></a>
 <h1>ACL.php</h1>
 <h2>Warnings:</h2><br>
@@ -134,18 +154,17 @@ Use an @ignore tag on the original if you want this case to be documented.<br>
 <a name="BaseElement.php"></a>
 <h1>BaseElement.php</h1>
 <h2>Warnings:</h2><br>
-<b>Warning on line 3</b> - no @package tag was used in a DocBlock for class Library_Html_BaseElement<br>
-<b>Warning on line 133</b> - File "C:\wamp\www\git_test_1\library\html\BaseElement.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 15</b> - DocBlock would be page-level, but precedes class "Library_Html_Element_BaseElement", use another DocBlock to document the file<br>
 <a name="BaseForm.php"></a>
 <h1>BaseForm.php</h1>
 <h2>Warnings:</h2><br>
-<b>Warning on line 3</b> - no @package tag was used in a DocBlock for class Library_Html_Form_BaseForm<br>
-<b>Warning on line 248</b> - File "C:\wamp\www\git_test_1\library\html\form\BaseForm.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 3</b> - no @package tag was used in a DocBlock for class Library_Html_Element_BaseForm<br>
+<b>Warning on line 230</b> - File "C:\wamp\www\git_test_1\library\html\element\BaseForm.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
 <a name="BaseItem.php"></a>
 <h1>BaseItem.php</h1>
 <h2>Warnings:</h2><br>
 <b>Warning on line 3</b> - no @package tag was used in a DocBlock for class Library_Model_BaseItem<br>
-<b>Warning on line 87</b> - File "C:\wamp\www\git_test_1\library\model\BaseItem.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 111</b> - File "C:\wamp\www\git_test_1\library\model\BaseItem.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
 <a name="BasePlugin.php"></a>
 <h1>BasePlugin.php</h1>
 <h2>Warnings:</h2><br>
@@ -161,6 +180,20 @@ Use an @ignore tag on the original if you want this case to be documented.<br>
 <h2>Warnings:</h2><br>
 <b>Warning on line 11</b> - File "C:\wamp\www\git_test_1\tests\bootstrap.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
 <b>Warning on line 13</b> - File "C:\wamp\www\git_test_1\public\bootstrap.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="Checkbox.php"></a>
+<h1>Checkbox.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 30</b> - File "C:\wamp\www\git_test_1\library\html\element\Checkbox.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 3</b> - no @package tag was used in a DocBlock for class Library_Html_Element_Checkbox<br>
+<a name="checkbox.php"></a>
+<h1>checkbox.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 37</b> - File "C:\wamp\www\git_test_1\templates\html\default\form\elements\input\checkbox.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="CheckboxPrinter.php"></a>
+<h1>CheckboxPrinter.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 3</b> - no @package tag was used in a DocBlock for class Library_Html_Printer_CheckboxPrinter<br>
+<b>Warning on line 5</b> - File "C:\wamp\www\git_test_1\library\html\printer\CheckboxPrinter.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
 <a name="Config.php"></a>
 <h1>Config.php</h1>
 <h2>Warnings:</h2><br>
@@ -206,43 +239,12 @@ Use an @ignore tag on the original if you want this case to be documented.<br>
 <a name="DBManager.php"></a>
 <h1>DBManager.php</h1>
 <h2>Warnings:</h2><br>
-<b>Warning on line 12</b> - no @package tag was used in a DocBlock for class Library_Manage_DBManager<br>
-<b>Warning on line 49</b> - File "C:\wamp\www\git_test_1\library\manage\DBManager.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
-<a name="DefaultCheckboxPrinter.php"></a>
-<h1>DefaultCheckboxPrinter.php</h1>
-<h2>Warnings:</h2><br>
-<b>Warning on line 3</b> - no @package tag was used in a DocBlock for class Library_Html_Form_Printer_DefaultCheckboxPrinter<br>
-<b>Warning on line 17</b> - File "C:\wamp\www\git_test_1\library\html\form\printer\DefaultCheckboxPrinter.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
-<a name="DefaultFormElementPrinter.php"></a>
-<h1>DefaultFormElementPrinter.php</h1>
-<h2>Warnings:</h2><br>
-<b>Warning on line 3</b> - no @package tag was used in a DocBlock for class Library_Html_Form_Printer_DefaultFormElementPrinter<br>
-<b>Warning on line 30</b> - File "C:\wamp\www\git_test_1\library\html\form\printer\DefaultFormElementPrinter.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
-<a name="DefaultFormPrinter.php"></a>
-<h1>DefaultFormPrinter.php</h1>
-<h2>Warnings:</h2><br>
-<b>Warning on line 3</b> - no @package tag was used in a DocBlock for class Library_Html_Form_Printer_DefaultFormPrinter<br>
-<b>Warning on line 81</b> - File "C:\wamp\www\git_test_1\library\html\form\printer\DefaultFormPrinter.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
-<a name="DefaultInputPrinter.php"></a>
-<h1>DefaultInputPrinter.php</h1>
-<h2>Warnings:</h2><br>
-<b>Warning on line 3</b> - no @package tag was used in a DocBlock for class Library_Html_Form_Printer_DefaultInputPrinter<br>
-<b>Warning on line 17</b> - File "C:\wamp\www\git_test_1\library\html\form\printer\DefaultInputPrinter.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
-<a name="DefaultOptionPrinter.php"></a>
-<h1>DefaultOptionPrinter.php</h1>
-<h2>Warnings:</h2><br>
-<b>Warning on line 3</b> - no @package tag was used in a DocBlock for class Library_Html_Form_Printer_DefaultOptionPrinter<br>
-<b>Warning on line 17</b> - File "C:\wamp\www\git_test_1\library\html\form\printer\DefaultOptionPrinter.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 16</b> - DocBlock would be page-level, but precedes class "Library_Manage_DBManager", use another DocBlock to document the file<br>
 <a name="DefaultPaginatorPrinter.php"></a>
 <h1>DefaultPaginatorPrinter.php</h1>
 <h2>Warnings:</h2><br>
 <b>Warning on line 9</b> - no @package tag was used in a DocBlock for class Library_Paginator_Printer_DefaultPaginatorPrinter<br>
 <b>Warning on line 94</b> - File "C:\wamp\www\git_test_1\library\paginator\printer\DefaultPaginatorPrinter.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
-<a name="DefaultSelectPrinter.php"></a>
-<h1>DefaultSelectPrinter.php</h1>
-<h2>Warnings:</h2><br>
-<b>Warning on line 3</b> - no @package tag was used in a DocBlock for class Library_Html_Form_Printer_DefaultSelectPrinter<br>
-<b>Warning on line 38</b> - File "C:\wamp\www\git_test_1\library\html\form\printer\DefaultSelectPrinter.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
 <a name="detail.php"></a>
 <h1>detail.php</h1>
 <h2>Warnings:</h2><br>
@@ -255,7 +257,11 @@ Use an @ignore tag on the original if you want this case to be documented.<br>
 <h1>ElementBasePrinter.php</h1>
 <h2>Warnings:</h2><br>
 <b>Warning on line 3</b> - no @package tag was used in a DocBlock for class Library_Html_Printer_ElementBasePrinter<br>
-<b>Warning on line 16</b> - File "C:\wamp\www\git_test_1\library\html\printer\ElementBasePrinter.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 5</b> - File "C:\wamp\www\git_test_1\library\html\printer\ElementBasePrinter.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="email.php"></a>
+<h1>email.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 32</b> - File "C:\wamp\www\git_test_1\templates\html\default\form\elements\input\email.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
 <a name="Environment.php"></a>
 <h1>Environment.php</h1>
 <h2>Warnings:</h2><br>
@@ -268,7 +274,7 @@ Use an @ignore tag on the original if you want this case to be documented.<br>
 <h1>ErrorController.php</h1>
 <h2>Warnings:</h2><br>
 <b>Warning on line 3</b> - no @package tag was used in a DocBlock for class Application_Controllers_ErrorController<br>
-<b>Warning on line 8</b> - File "C:\wamp\www\git_test_1\application\controllers\ErrorController.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 13</b> - File "C:\wamp\www\git_test_1\application\controllers\ErrorController.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
 <a name="FileUtil.php"></a>
 <h1>FileUtil.php</h1>
 <h2>Warnings:</h2><br>
@@ -278,21 +284,34 @@ Use an @ignore tag on the original if you want this case to be documented.<br>
 <h1>footer.php</h1>
 <h2>Warnings:</h2><br>
 <b>Warning on line 6</b> - File "C:\wamp\www\git_test_1\application\layouts\scripts\footer.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="form.php"></a>
+<h1>form.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 44</b> - File "C:\wamp\www\git_test_1\templates\html\default\form\form.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
 <a name="FormElement.php"></a>
 <h1>FormElement.php</h1>
 <h2>Warnings:</h2><br>
-<b>Warning on line 3</b> - no @package tag was used in a DocBlock for class Library_Html_Form_FormElement<br>
-<b>Warning on line 56</b> - File "C:\wamp\www\git_test_1\library\html\form\FormElement.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 3</b> - no @package tag was used in a DocBlock for class Library_Html_Element_FormElement<br>
+<b>Warning on line 67</b> - File "C:\wamp\www\git_test_1\library\html\element\FormElement.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
 <a name="FormElementConst.php"></a>
 <h1>FormElementConst.php</h1>
 <h2>Warnings:</h2><br>
-<b>Warning on line 3</b> - no @package tag was used in a DocBlock for class Library_Html_Form_FormElementConst<br>
-<b>Warning on line 8</b> - File "C:\wamp\www\git_test_1\library\html\form\FormElementConst.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 13</b> - DocBlock would be page-level, but precedes class "Library_Html_Const_FormElementConst", use another DocBlock to document the file<br>
+<a name="FormElementPrinter.php"></a>
+<h1>FormElementPrinter.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 3</b> - no @package tag was used in a DocBlock for class Library_Html_Printer_FormElementPrinter<br>
+<b>Warning on line 37</b> - File "C:\wamp\www\git_test_1\library\html\printer\FormElementPrinter.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
 <a name="FormElementValidator.php"></a>
 <h1>FormElementValidator.php</h1>
 <h2>Warnings:</h2><br>
-<b>Warning on line 3</b> - no @package tag was used in a DocBlock for class Library_Html_Form_FormElementValidator<br>
-<b>Warning on line 120</b> - File "C:\wamp\www\git_test_1\library\html\form\FormElementValidator.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 3</b> - no @package tag was used in a DocBlock for class Library_Html_Validation_FormElementValidator<br>
+<b>Warning on line 175</b> - File "C:\wamp\www\git_test_1\library\html\validation\FormElementValidator.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="FormPrinter.php"></a>
+<h1>FormPrinter.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 3</b> - no @package tag was used in a DocBlock for class Library_Html_Printer_FormPrinter<br>
+<b>Warning on line 5</b> - File "C:\wamp\www\git_test_1\library\html\printer\FormPrinter.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
 <a name="header.php"></a>
 <h1>header.php</h1>
 <h2>Warnings:</h2><br>
@@ -300,7 +319,12 @@ Use an @ignore tag on the original if you want this case to be documented.<br>
 <a name="Helper.php"></a>
 <h1>Helper.php</h1>
 <h2>Warnings:</h2><br>
-<b>Warning on line 13</b> - DocBlock would be page-level, but precedes class "Library_Request_Helper", use another DocBlock to document the file<br>
+<b>Warning on line 14</b> - DocBlock would be page-level, but precedes class "Library_App_Helper", use another DocBlock to document the file<br>
+<a name="Host.php"></a>
+<h1>Host.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 3</b> - no @package tag was used in a DocBlock for class Library_Host_Host<br>
+<b>Warning on line 115</b> - File "C:\wamp\www\git_test_1\library\host\Host.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
 <a name="I18n.php"></a>
 <h1>I18n.php</h1>
 <h2>Warnings:</h2><br>
@@ -311,16 +335,11 @@ Use an @ignore tag on the original if you want this case to be documented.<br>
 <h2>Warnings:</h2><br>
 <b>Warning on line 7</b> - no @package tag was used in a DocBlock for class Library_I18n_I18nData<br>
 <b>Warning on line 90</b> - File "C:\wamp\www\git_test_1\library\i18n\I18nData.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
-<a name="I18nFileBuilder.php"></a>
-<h1>I18nFileBuilder.php</h1>
-<h2>Warnings:</h2><br>
-<b>Warning on line 7</b> - no @package tag was used in a DocBlock for class I18nFileBuilder<br>
-<b>Warning on line 150</b> - File "C:\wamp\www\git_test_1\library\i18n\I18nFileBuilder.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
 <a name="I18nFileManager.php"></a>
 <h1>I18nFileManager.php</h1>
 <h2>Warnings:</h2><br>
-<b>Warning on line 6</b> - no @package tag was used in a DocBlock for class Library_I18n_I18nFileManager<br>
-<b>Warning on line 55</b> - File "C:\wamp\www\git_test_1\library\i18n\I18nFileManager.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 3</b> - no @package tag was used in a DocBlock for class Library_I18n_I18nFileManager<br>
+<b>Warning on line 50</b> - File "C:\wamp\www\git_test_1\library\i18n\I18nFileManager.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
 <a name="index.php"></a>
 <h1>index.php</h1>
 <h2>Warnings:</h2><br>
@@ -339,13 +358,17 @@ Use an @ignore tag on the original if you want this case to be documented.<br>
 <a name="Input.php"></a>
 <h1>Input.php</h1>
 <h2>Warnings:</h2><br>
-<b>Warning on line 3</b> - no @package tag was used in a DocBlock for class Library_Html_Form_Element_Input<br>
-<b>Warning on line 17</b> - File "C:\wamp\www\git_test_1\library\html\form\element\Input.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 3</b> - no @package tag was used in a DocBlock for class Library_Html_Element_Input<br>
+<b>Warning on line 10</b> - File "C:\wamp\www\git_test_1\library\html\element\Input.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
 <a name="InputManager.php"></a>
 <h1>InputManager.php</h1>
 <h2>Warnings:</h2><br>
-<b>Warning on line 16</b> - no @package tag was used in a DocBlock for class Library_Manage_InputManager<br>
-<b>Warning on line 143</b> - File "C:\wamp\www\git_test_1\library\manage\InputManager.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 20</b> - DocBlock would be page-level, but precedes class "Library_Manage_InputManager", use another DocBlock to document the file<br>
+<a name="InputPrinter.php"></a>
+<h1>InputPrinter.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 3</b> - no @package tag was used in a DocBlock for class Library_Html_Printer_InputPrinter<br>
+<b>Warning on line 5</b> - File "C:\wamp\www\git_test_1\library\html\printer\InputPrinter.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
 <a name="insert.php"></a>
 <h1>insert.php</h1>
 <h2>Warnings:</h2><br>
@@ -354,12 +377,12 @@ Use an @ignore tag on the original if you want this case to be documented.<br>
 <h1>InsertUserForm.php</h1>
 <h2>Warnings:</h2><br>
 <b>Warning on line 3</b> - no @package tag was used in a DocBlock for class Application_Modules_Cms_Forms_InsertUserForm<br>
-<b>Warning on line 46</b> - File "C:\wamp\www\git_test_1\application\modules\cms\forms\InsertUserForm.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 67</b> - File "C:\wamp\www\git_test_1\application\modules\cms\forms\InsertUserForm.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
 <a name="Item.php"></a>
 <h1>Item.php</h1>
 <h2>Warnings:</h2><br>
 <b>Warning on line 3</b> - no @package tag was used in a DocBlock for class Application_Model_User_Item<br>
-<b>Warning on line 174</b> - File "C:\wamp\www\git_test_1\application\model\User\Item.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 193</b> - File "C:\wamp\www\git_test_1\application\model\User\Item.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
 <a name="layout.php"></a>
 <h1>layout.php</h1>
 <h2>Warnings:</h2><br>
@@ -367,7 +390,7 @@ Use an @ignore tag on the original if you want this case to be documented.<br>
 <a name="list.php"></a>
 <h1>list.php</h1>
 <h2>Warnings:</h2><br>
-<b>Warning on line 6</b> - File "C:\wamp\www\git_test_1\application\modules\cms\views\scripts\user\list.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 2</b> - File "C:\wamp\www\git_test_1\application\modules\cms\views\scripts\user\list.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
 <a name="Loader.php"></a>
 <h1>Loader.php</h1>
 <h2>Warnings:</h2><br>
@@ -391,7 +414,7 @@ Use an @ignore tag on the original if you want this case to be documented.<br>
 <h1>Logger.php</h1>
 <h2>Warnings:</h2><br>
 <b>Warning on line 3</b> - no @package tag was used in a DocBlock for class Library_Log_Logger<br>
-<b>Warning on line 74</b> - File "C:\wamp\www\git_test_1\library\log\Logger.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 121</b> - File "C:\wamp\www\git_test_1\library\log\Logger.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
 <a name="LoginForm.php"></a>
 <h1>LoginForm.php</h1>
 <h2>Warnings:</h2><br>
@@ -415,8 +438,8 @@ Use an @ignore tag on the original if you want this case to be documented.<br>
 <a name="menu.php"></a>
 <h1>menu.php</h1>
 <h2>Warnings:</h2><br>
-<b>Warning on line 22</b> - File "C:\wamp\www\git_test_1\application\configs\locale\es\files\menu.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
 <b>Warning on line 22</b> - File "C:\wamp\www\git_test_1\application\configs\locale\en\files\menu.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 22</b> - File "C:\wamp\www\git_test_1\application\configs\locale\es\files\menu.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
 <a name="Money.php"></a>
 <h1>Money.php</h1>
 <h2>Warnings:</h2><br>
@@ -447,16 +470,38 @@ Use an @ignore tag on the original if you want this case to be documented.<br>
 <h2>Warnings:</h2><br>
 <b>Warning on line 3</b> - no @package tag was used in a DocBlock for class Library_I18n_Money_Printers_MoneyPrinterEsES<br>
 <b>Warning on line 41</b> - File "C:\wamp\www\git_test_1\library\i18n\money\printers\MoneyPrinterEsES.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="option.php"></a>
+<h1>option.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 8</b> - File "C:\wamp\www\git_test_1\templates\html\default\form\elements\option.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
 <a name="Option.php"></a>
 <h1>Option.php</h1>
 <h2>Warnings:</h2><br>
-<b>Warning on line 3</b> - no @package tag was used in a DocBlock for class Library_Html_Form_Element_Option<br>
-<b>Warning on line 18</b> - File "C:\wamp\www\git_test_1\library\html\form\element\Option.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 3</b> - no @package tag was used in a DocBlock for class Library_Html_Element_Option<br>
+<b>Warning on line 11</b> - File "C:\wamp\www\git_test_1\library\html\element\Option.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="OptionPrinter.php"></a>
+<h1>OptionPrinter.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 3</b> - no @package tag was used in a DocBlock for class Library_Html_Printer_OptionPrinter<br>
+<b>Warning on line 5</b> - File "C:\wamp\www\git_test_1\library\html\printer\OptionPrinter.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="pageNotFound.php"></a>
+<h1>pageNotFound.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 2</b> - File "C:\wamp\www\git_test_1\application\views\scripts\error\pageNotFound.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
 <a name="Paginator.php"></a>
 <h1>Paginator.php</h1>
 <h2>Warnings:</h2><br>
 <b>Warning on line 13</b> - no @package tag was used in a DocBlock for class Library_Paginator_Paginator<br>
 <b>Warning on line 194</b> - File "C:\wamp\www\git_test_1\library\paginator\Paginator.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="password.php"></a>
+<h1>password.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 32</b> - File "C:\wamp\www\git_test_1\templates\html\default\form\elements\input\password.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="PasswordEncrypter.php"></a>
+<h1>PasswordEncrypter.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 3</b> - no @package tag was used in a DocBlock for class Library_Encrypt_PasswordEncrypter<br>
+<b>Warning on line 15</b> - File "C:\wamp\www\git_test_1\library\encrypt\PasswordEncrypter.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
 <a name="PHPMailer.php"></a>
 <h1>PHPMailer.php</h1>
 <h2>Warnings:</h2><br>
@@ -466,14 +511,44 @@ Use an @ignore tag on the original if you want this case to be documented.<br>
 <h1>Printer.php</h1>
 <h2>Warnings:</h2><br>
 <b>Warning on line 3</b> - no @package tag was used in a DocBlock for class Application_Model_User_Printer<br>
+<b>Warning on line 3</b> - no @package tag was used in a DocBlock for class Library_Host_Printer<br>
 <b>Warning on line 9</b> - no @package tag was used in a DocBlock for class Library_Request_Printer<br>
-<b>Warning on line 52</b> - File "C:\wamp\www\git_test_1\application\model\User\Printer.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 21</b> - File "C:\wamp\www\git_test_1\library\host\Printer.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 44</b> - File "C:\wamp\www\git_test_1\application\model\User\Printer.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
 <b>Warning on line 112</b> - File "C:\wamp\www\git_test_1\library\request\Printer.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
 <a name="PrinterClient.php"></a>
 <h1>PrinterClient.php</h1>
 <h2>Warnings:</h2><br>
-<b>Warning on line 3</b> - no @package tag was used in a DocBlock for class Library_Html_Form_PrinterClient<br>
-<b>Warning on line 35</b> - File "C:\wamp\www\git_test_1\library\html\form\PrinterClient.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 3</b> - no @package tag was used in a DocBlock for class Library_Html_Printer_PrinterClient<br>
+<b>Warning on line 80</b> - File "C:\wamp\www\git_test_1\library\html\printer\PrinterClient.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="Radio.php"></a>
+<h1>Radio.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 3</b> - no @package tag was used in a DocBlock for class Library_Html_Element_Radio<br>
+<b>Warning on line 18</b> - File "C:\wamp\www\git_test_1\library\html\element\Radio.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="radio.php"></a>
+<h1>radio.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 25</b> - File "C:\wamp\www\git_test_1\templates\html\default\form\elements\input\radio.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="radiogroup.php"></a>
+<h1>radiogroup.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 25</b> - File "C:\wamp\www\git_test_1\templates\html\default\form\elements\radiogroup.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="RadioGroup.php"></a>
+<h1>RadioGroup.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 3</b> - no @package tag was used in a DocBlock for class Library_Html_Element_RadioGroup<br>
+<b>Warning on line 68</b> - File "C:\wamp\www\git_test_1\library\html\element\RadioGroup.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="RadioGroupPrinter.php"></a>
+<h1>RadioGroupPrinter.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 3</b> - no @package tag was used in a DocBlock for class Library_Html_Printer_RadioGroupPrinter<br>
+<b>Warning on line 18</b> - File "C:\wamp\www\git_test_1\library\html\printer\RadioGroupPrinter.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="RadioPrinter.php"></a>
+<h1>RadioPrinter.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 3</b> - no @package tag was used in a DocBlock for class Library_Html_Printer_RadioPrinter<br>
+<b>Warning on line 5</b> - File "C:\wamp\www\git_test_1\library\html\printer\RadioPrinter.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
 <a name="Request.php"></a>
 <h1>Request.php</h1>
 <h2>Warnings:</h2><br>
@@ -483,16 +558,25 @@ Use an @ignore tag on the original if you want this case to be documented.<br>
 <h1>ResourceManager.php</h1>
 <h2>Warnings:</h2><br>
 <b>Warning on line 11</b> - no @package tag was used in a DocBlock for class Library_Manage_ResourceManager<br>
-<b>Warning on line 77</b> - File "C:\wamp\www\git_test_1\library\manage\ResourceManager.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 82</b> - File "C:\wamp\www\git_test_1\library\manage\ResourceManager.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
 <a name="Resources.php"></a>
 <h1>Resources.php</h1>
 <h2>Warnings:</h2><br>
 <b>Warning on line 13</b> - DocBlock would be page-level, but precedes class "Library_Consts_Resources", use another DocBlock to document the file<br>
+<a name="select.php"></a>
+<h1>select.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 41</b> - File "C:\wamp\www\git_test_1\templates\html\default\form\elements\select.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
 <a name="Select.php"></a>
 <h1>Select.php</h1>
 <h2>Warnings:</h2><br>
-<b>Warning on line 3</b> - no @package tag was used in a DocBlock for class Library_Html_Form_Element_Select<br>
-<b>Warning on line 45</b> - File "C:\wamp\www\git_test_1\library\html\form\element\Select.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 3</b> - no @package tag was used in a DocBlock for class Library_Html_Element_Select<br>
+<b>Warning on line 49</b> - File "C:\wamp\www\git_test_1\library\html\element\Select.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="SelectPrinter.php"></a>
+<h1>SelectPrinter.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 3</b> - no @package tag was used in a DocBlock for class Library_Html_Printer_SelectPrinter<br>
+<b>Warning on line 5</b> - File "C:\wamp\www\git_test_1\library\html\printer\SelectPrinter.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
 <a name="Session.php"></a>
 <h1>Session.php</h1>
 <h2>Warnings:</h2><br>
@@ -506,6 +590,28 @@ Use an @ignore tag on the original if you want this case to be documented.<br>
 <h1>SMTP.php</h1>
 <h2>Warnings:</h2><br>
 <b>Warning on line 48</b> - no @package tag was used in a DocBlock for class Library_Mail_SMTP<br>
+<a name="submit.php"></a>
+<h1>submit.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 7</b> - File "C:\wamp\www\git_test_1\templates\html\default\form\elements\input\submit.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="text.php"></a>
+<h1>text.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 32</b> - File "C:\wamp\www\git_test_1\templates\html\default\form\elements\input\text.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="textarea.php"></a>
+<h1>textarea.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 32</b> - File "C:\wamp\www\git_test_1\templates\html\default\form\elements\textarea.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="TextArea.php"></a>
+<h1>TextArea.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 3</b> - no @package tag was used in a DocBlock for class Library_Html_Element_TextArea<br>
+<b>Warning on line 15</b> - File "C:\wamp\www\git_test_1\library\html\element\TextArea.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<a name="TextAreaPrinter.php"></a>
+<h1>TextAreaPrinter.php</h1>
+<h2>Warnings:</h2><br>
+<b>Warning on line 3</b> - no @package tag was used in a DocBlock for class Library_Html_Printer_TextAreaPrinter<br>
+<b>Warning on line 5</b> - File "C:\wamp\www\git_test_1\library\html\printer\TextAreaPrinter.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
 <a name="TextClient.php"></a>
 <h1>TextClient.php</h1>
 <h2>Warnings:</h2><br>
@@ -539,12 +645,12 @@ Use an @ignore tag on the original if you want this case to be documented.<br>
 <h1>User.php</h1>
 <h2>Warnings:</h2><br>
 <b>Warning on line 3</b> - no @package tag was used in a DocBlock for class Application_Model_User<br>
-<b>Warning on line 71</b> - File "C:\wamp\www\git_test_1\application\model\User.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 87</b> - File "C:\wamp\www\git_test_1\application\model\User.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
 <a name="UserController.php"></a>
 <h1>UserController.php</h1>
 <h2>Warnings:</h2><br>
 <b>Warning on line 3</b> - no @package tag was used in a DocBlock for class Application_Modules_Cms_Controllers_UserController<br>
-<b>Warning on line 124</b> - File "C:\wamp\www\git_test_1\application\modules\cms\controllers\UserController.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 152</b> - File "C:\wamp\www\git_test_1\application\modules\cms\controllers\UserController.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
 <a name="UserTest.php"></a>
 <h1>UserTest.php</h1>
 <h2>Warnings:</h2><br>
@@ -553,8 +659,7 @@ Use an @ignore tag on the original if you want this case to be documented.<br>
 <a name="ValidationRuleConst.php"></a>
 <h1>ValidationRuleConst.php</h1>
 <h2>Warnings:</h2><br>
-<b>Warning on line 3</b> - no @package tag was used in a DocBlock for class Library_Html_Form_ValidationRuleConst<br>
-<b>Warning on line 18</b> - File "C:\wamp\www\git_test_1\library\html\form\ValidationRuleConst.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
+<b>Warning on line 13</b> - DocBlock would be page-level, but precedes class "Library_Html_Const_ValidationRuleConst", use another DocBlock to document the file<br>
 <a name="Validator.php"></a>
 <h1>Validator.php</h1>
 <h2>Warnings:</h2><br>
@@ -570,7 +675,7 @@ Use an @ignore tag on the original if you want this case to be documented.<br>
 <b>Warning on line 3</b> - no @package tag was used in a DocBlock for class Application_Modules_Cms_Plugins_WellcomeMailPlugin<br>
 <b>Warning on line 8</b> - File "C:\wamp\www\git_test_1\application\modules\cms\plugins\WellcomeMailPlugin.php" has no page-level DocBlock, use @package in the first DocBlock to create one<br>
 	<p class="notes" id="credit">
-		Documentation generated on Thu, 15 Mar 2012 12:14:58 +0000 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.4</a>
+		Documentation generated on Tue, 20 Mar 2012 09:02:18 +0000 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
 	</p>
 	</body>
 </html>

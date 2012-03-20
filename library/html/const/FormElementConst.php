@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Constantes relacionadas con los elementos HTML soportados
+ * 
+ * @package library
+ * 
+ * @subpackage html
+ * 
+ * @author qinteractiva
+ *
+ */
 class Library_Html_Const_FormElementConst
 {
 	const FORM = 'form';

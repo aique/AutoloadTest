@@ -23,7 +23,11 @@
 				  id="<?php echo $view['element']->getAttribute('id'); ?>"
 				  class="<?php echo $view['element']->getAttribute('fieldClass'); ?>"><?php echo $view['element']->getDisplay(); ?></textarea>
 		
-		<p class="p_error <?php echo $view['element']->getAttribute('classLabelError'); ?>"><span></span></p>
+		<p class="p_error <?php echo $view['element']->getAttribute('classLabelError'); ?>">
+		
+			<span><?php echo $view['element']->getError(); ?></span>
+			
+		</p>
 	
 	</div>
 		

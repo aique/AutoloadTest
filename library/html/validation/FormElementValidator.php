@@ -13,8 +13,12 @@ class Library_Html_Validation_FormElementValidator
 	{
 		foreach($element->getValidations() as $ruleName => $ruleValue)
 		{
-			if(!Library_Html_Validation_FormElementValidator::validateRule($ruleName, $ruleValue, $element->getValue()))
+			$isValid = Library_Html_Validation_FormElementValidator::validateRule($ruleName, $ruleValue, $element->getValue());
+			  
+			if($isValid != 1)
 			{
+				$element->setError($isValid);
+				
 				return false;
 			}
 		}
@@ -39,6 +43,10 @@ class Library_Html_Validation_FormElementValidator
 			case(Library_Html_Const_ValidationRuleConst::FIELD_VALUE):
 				$isValid = self::validateFieldValue($ruleValue, $elementValue);
 				break;
+				
+			case(Library_Html_Const_ValidationRuleConst::REGEX):
+				$isValid = self::validateRegexExpression($ruleValue, $elementValue);
+				break;
 		}
 		
 		return $isValid;
@@ -48,7 +56,15 @@ class Library_Html_Validation_FormElementValidator
 	{
 		if($ruleValue == true)
 		{
-			return !empty($elementValue);
+			if(empty($elementValue))
+			{
+				// TODO internacionalizar
+				return 'Campo requerido.';
+			}
+			else
+			{
+				return true;
+			}
 		}
 		else
 		{
@@ -58,28 +74,49 @@ class Library_Html_Validation_FormElementValidator
 	
 	private function validateFormat($ruleValue, $elementValue)
 	{
-		$isValid = false;
+		$isValid = true;
 		
 		switch($ruleValue)
 		{
 			case(Library_Html_Const_ValidationRuleConst::NUMERIC_FORMAT):
-				$isValid = preg_match('/^[1-9]*$/', $elementValue);
+				
+				if(!preg_match('/^[1-9]*$/', $elementValue))
+				{
+					$isValid = 'Campo con formato numérico.';
+				}
+				
 				break;
 				
 			case(Library_Html_Const_ValidationRuleConst::ALPHABETICAL_FORMAT):
-				$isValid = preg_match('/^[A-Za-z]*$/', $elementValue);
+				
+				if(!preg_match('/^[A-Za-z]*$/', $elementValue))
+				{
+					$isValid = 'Campo con formato alfabético.';
+				}
+				
 				break;
 				
 			case(Library_Html_Const_ValidationRuleConst::ALPHANUMERIC_FORMAT):
-				$isValid = preg_match('/^[A-Za-z1-9]*$/', $elementValue);
+				
+				if(!$isValid = preg_match('/^[A-Za-z1-9]*$/', $elementValue))
+				{
+					$isValid = 'Campo con formato alfanumérico.';
+				}
+				
 				break;
 				
 			case(Library_Html_Const_ValidationRuleConst::EMAIL):
-				$isValid = preg_match('/^[a-z0-9]+([_\\.-][a-z0-9]+)*@([a-z0-9]+([\.-][a-z0-9]+)*)+\\.[a-z]{2,}$/', $elementValue);
+				
+				if(!preg_match('/^[a-z0-9]+([_\\.-][a-z0-9]+)*@([a-z0-9]+([\.-][a-z0-9]+)*)+\\.[a-z]{2,}$/', $elementValue))
+				{
+					$isValid = 'Formato de correo electrónico no válido.';
+				}
+				
 				break;
 				
 			default:
-				throw new Exception("Se está intentando validar un campo de formularion con una norma de formato no aceptada: " . $ruleValue . '.');
+				
+				throw new Exception('Se está intentando validar un campo de formularion con una norma de formato no aceptada: ' . $ruleValue . '.');
 		}
 		
 		return $isValid;
@@ -113,9 +150,27 @@ class Library_Html_Validation_FormElementValidator
 			{
 				return true;
 			}
+			else
+			{
+				return 'Campo con valor incorrecto.';
+			}
 		}
-		
-		return false;
+		else
+		{
+			return false;
+		}
+	}
+	
+	private function validateRegexExpression($ruleValue, $elementValue)
+	{
+		if(preg_match($ruleValue, $elementValue))
+		{
+			return true;
+		}
+		else
+		{
+			return 'Campo con valor incorrecto.';
+		}
 	}
 	
 }

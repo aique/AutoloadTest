@@ -30,7 +30,8 @@ class Application_Modules_Cms_Forms_InsertUserForm extends Library_Html_Element_
 		$role->addOption(new Library_Html_Element_Option(array("value" => "admin", "display" => "Administrador")));
 		$role->addOption(new Library_Html_Element_Option(array("value" => "guest", "display" => "Invitado")));
 		
-		$married = new Library_Html_Element_Checkbox(array("type" => "checkbox", "value" => "1", "id" => "married", "name" => "married", "label" => "Está casado"));
+		$married = new Library_Html_Element_Checkbox(array("type" => "checkbox", "value" => "1", "id" => "married", "name" => "married", "label" => "Está casado"),
+													 array(Library_Html_Const_ValidationRuleConst::REGEX => '/^1$/'));
 		
 		$radioNumChild1 = new Library_Html_Element_Radio(array("type" => "radio", "value" => "0", "id" => "childNum", "name" => "childNum", "label" => "Sin hijos"));
 		

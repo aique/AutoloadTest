@@ -1,0 +1,756 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class Library_Manage_DBManager</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class Library_Manage_DBManager</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Clase encargada de comunicar la aplicación con la base de datos.</p>
+<p class="description"><p>Hereda de la clase MySQLi, utilizando los métodos de la misma y  ampliando su funcionalidad si fuera necesario.</p></p>
+	<ul class="tags">
+				<li><span class="field">author:</span> qinteractiva</li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_library---manage---DBManager.php.html">/library/manage/DBManager.php</a> (line <span class="field">16</span>)
+		</p>
+		
+				
+		<pre>mysqli
+   |
+   --Library_Manage_DBManager</pre>
+	
+			</div>
+</div>
+
+
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																				<div class="var-title">
+					static <span class="var-type">mixed</span>
+					<a href="#$instance" title="details" class="var-name">$instance</a>
+				</div>
+																																												<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$dbName" title="details" class="var-name">$dbName</a>
+				</div>
+																								<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$pass" title="details" class="var-name">$pass</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$server" title="details" class="var-name">$server</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">mixed</span>
+					<a href="#$user" title="details" class="var-name">$user</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																												<div class="method-definition">
+					static 						<span class="method-result"><a href="../../library/manage/Library_Manage_DBManager.html">Library_Manage_DBManager</a></span>
+										<a href="#getInstance" title="details" class="method-name">getInstance</a>
+										()
+									</div>
+																																																																								
+												<div class="method-definition">
+											<span class="method-result">Library_Manage_DBManager</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#__destruct" title="details" class="method-name">__destruct</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#connect" title="details" class="method-name">connect</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getDbName" title="details" class="method-name">getDbName</a>
+										()
+									</div>
+																								<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getPass" title="details" class="method-name">getPass</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getServer" title="details" class="method-name">getServer</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getUser" title="details" class="method-name">getUser</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">Devuelve</span>
+										<a href="#query" title="details" class="method-name">query</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$query</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setDbName" title="details" class="method-name">setDbName</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$dbName</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setPass" title="details" class="method-name">setPass</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$pass</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setServer" title="details" class="method-name">setServer</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$server</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setUser" title="details" class="method-name">setUser</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$user</span>)
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="var$instance" id="$instance"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			static <span class="var-type">mixed</span>
+			<span class="var-name">$instance</span>
+						(line <span class="line-number">23</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> private</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$dbName" id="$dbName"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$dbName</span>
+						(line <span class="line-number">19</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> private</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$pass" id="$pass"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$pass</span>
+						(line <span class="line-number">21</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> private</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$server" id="$server"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$server</span>
+						(line <span class="line-number">18</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> private</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$user" id="$user"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$user</span>
+						(line <span class="line-number">20</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> private</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+							<h4>Inherited Variables</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname">mysqli (Internal Class)</span></p>
+					<blockquote>
+													<span class="var-title">
+								<span class="var-name">$affected_rows</span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name">$client_info</span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name">$client_version</span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name">$connect_errno</span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name">$connect_error</span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name">$errno</span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name">$error</span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name">$field_count</span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name">$host_info</span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name">$info</span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name">$insert_id</span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name">$protocol_version</span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name">$server_info</span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name">$server_version</span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name">$sqlstate</span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name">$thread_id</span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name">$warning_count</span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodgetInstance" id="getInstance"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method getInstance</span> (line <span class="line-number">49</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Devuelve una instancia de la clase.</p>
+<p class="description"><p>De esta manera se impide que exista más de una conexión  abierta de manera simultánea para un mismo usuario.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result"><a href="../../library/manage/Library_Manage_DBManager.html">Library_Manage_DBManager</a></span>
+		<span class="method-name">
+			getInstance
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">25</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> private</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">Library_Manage_DBManager</span>
+		<span class="method-name">
+			__construct
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="method__destruct" id="__destruct"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">Destructor __destruct</span> (line <span class="line-number">35</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			__destruct
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodconnect" id="connect"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">connect</span> (line <span class="line-number">173</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Establece una conexión con la base de datos en función de los  parámetros a tal efecto que se han establecido en el fichero de  configuración de la aplicación.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			connect
+		</span>
+				()
+			</div>
+	
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt>mysqli::connect ( [$host = ], [$user = ], [$password = ], [$database = ], [$port = ], [$socket = ] )</dt>
+					</dl>
+			
+	</div>
+<a name="methodgetDbName" id="getDbName"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getDbName</span> (line <span class="line-number">84</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Devuelve el valor del atributo dbName.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getDbName
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetPass" id="getPass"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getPass</span> (line <span class="line-number">124</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Devuelve el valor del atributo pass.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getPass
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetServer" id="getServer"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getServer</span> (line <span class="line-number">64</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Devuelve el valor del atributo server.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getServer
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetUser" id="getUser"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getUser</span> (line <span class="line-number">104</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Devuelve el valor del atributo user.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getUser
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodquery" id="query"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">query</span> (line <span class="line-number">152</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Ejecuta una sentencia SQL sobre la base de datos cuya conexión  se ha establecido en el método connect().</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> el resultado de la consulta realizada en el formato          determinado por la clase MySQLi.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">Devuelve</span>
+		<span class="method-name">
+			query
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$query</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$query</span><span class="var-description">: <p>query</p><p>Cadena de texto con la consulta SQL que se ejecutará.</p></span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt>mysqli::query ( $query )</dt>
+					</dl>
+			
+	</div>
+<a name="methodsetDbName" id="setDbName"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setDbName</span> (line <span class="line-number">94</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Establece el valor del atributo dbName.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setDbName
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$dbName</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$dbName</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetPass" id="setPass"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setPass</span> (line <span class="line-number">134</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Establece el valor del atributo pass.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setPass
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$pass</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$pass</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetServer" id="setServer"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setServer</span> (line <span class="line-number">74</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Establece el valor del atributo server.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setServer
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$server</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$server</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetUser" id="setUser"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setUser</span> (line <span class="line-number">114</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Establece el valor del atributo user.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setUser
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$user</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$user</span>			</li>
+				</ul>
+		
+			
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname">mysqli (Internal Class)</span></p>
+					<blockquote>
+													<span class="method-name">constructor mysqli ( [$host = ], [$user = ], [$password = ], [$database = ], [$port = ], [$socket = ] )</span><br>
+													<span class="method-name">autocommit ( $mode )</span><br>
+													<span class="method-name">change_user ( $user, $password, $database )</span><br>
+													<span class="method-name">character_set_name (  )</span><br>
+													<span class="method-name">client_encoding (  )</span><br>
+													<span class="method-name">close (  )</span><br>
+													<span class="method-name">commit (  )</span><br>
+													<span class="method-name">connect ( [$host = ], [$user = ], [$password = ], [$database = ], [$port = ], [$socket = ] )</span><br>
+													<span class="method-name">debug ( $debug_options )</span><br>
+													<span class="method-name">dump_debug_info (  )</span><br>
+													<span class="method-name">escape_string ( $string_to_escape )</span><br>
+													<span class="method-name">get_charset (  )</span><br>
+													<span class="method-name">get_client_info (  )</span><br>
+													<span class="method-name">get_connection_stats (  )</span><br>
+													<span class="method-name">get_server_info (  )</span><br>
+													<span class="method-name">get_warnings (  )</span><br>
+													<span class="method-name">init (  )</span><br>
+													<span class="method-name">kill ( $connection_id )</span><br>
+													<span class="method-name">more_results (  )</span><br>
+													<span class="method-name">multi_query ( $query )</span><br>
+													<span class="method-name">next_result (  )</span><br>
+													<span class="method-name">options ( $option, $value )</span><br>
+													<span class="method-name">ping (  )</span><br>
+													<span class="method-name">poll ( &$read, &$write, &$error, $sec, [$usec = ] )</span><br>
+													<span class="method-name">prepare ( $query )</span><br>
+													<span class="method-name">query ( $query )</span><br>
+													<span class="method-name">real_connect ( [$host = ], [$user = ], [$password = ], [$database = ], [$port = ], [$socket = ], [$flags = ] )</span><br>
+													<span class="method-name">real_escape_string ( $string_to_escape )</span><br>
+													<span class="method-name">real_query ( $query )</span><br>
+													<span class="method-name">reap_async_query (  )</span><br>
+													<span class="method-name">refresh ( $options )</span><br>
+													<span class="method-name">rollback (  )</span><br>
+													<span class="method-name">select_db ( $database )</span><br>
+													<span class="method-name">set_charset ( $charset )</span><br>
+													<span class="method-name">set_opt ( $option, $value )</span><br>
+													<span class="method-name">ssl_set ( $key, $cert, $certificate_authority, $certificate_authority_path, $cipher )</span><br>
+													<span class="method-name">stat (  )</span><br>
+													<span class="method-name">stmt_init (  )</span><br>
+													<span class="method-name">store_result (  )</span><br>
+													<span class="method-name">thread_safe (  )</span><br>
+													<span class="method-name">use_result (  )</span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+
+	<p class="notes" id="credit">
+		Documentation generated on Tue, 20 Mar 2012 09:02:07 +0000 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

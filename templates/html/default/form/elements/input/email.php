@@ -23,7 +23,11 @@
 			   class="<?php echo $view['element']->getAttribute('fieldClass'); ?>" 
 			   value="<?php echo $view['element']->getValue(); ?>" />
 		
-		<p class="p_error <?php echo $view['element']->getAttribute('classLabelError'); ?>"><span></span></p>	
+		<p class="p_error <?php echo $view['element']->getAttribute('classLabelError'); ?>">
+		
+			<span><?php echo $view['element']->getError(); ?></span>
+			
+		</p>	
 						
 	</div>
 	
