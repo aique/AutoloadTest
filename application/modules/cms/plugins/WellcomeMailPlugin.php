@@ -1,9 +1,9 @@
 <?php
 
-class Application_Modules_Cms_Plugins_WellcomeMailPlugin extends Library_Plugin_BasePlugin
+class Application_Modules_Cms_Plugins_WellcomeMailPlugin extends Library_Qframe_Plugin_BasePlugin
 {
-	public function postDispatch(Library_Request_Request $request)
+	public function postDispatch(Library_Qframe_Request_Request $request)
 	{
-		Application_Model_Services_MailService::sendWellcomeMail(Library_Manage_SessionManager::getVar(Library_Consts_Session::LOGGED_USER));
+		Application_Model_Services_MailService::sendWellcomeMail(Library_Qframe_Manage_SessionManager::getVar(Library_Qframe_Consts_Session::LOGGED_USER));
 	}
 }

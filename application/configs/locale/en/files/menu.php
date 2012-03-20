@@ -15,6 +15,26 @@
 				</ul>
 			
 			</div>
+			
+			<?php if(isset($view['logged_user']) && $view['logged_user'] != null) : ?>
+			
+				<div class="user_menu">
+			
+					<p class="user_name">
+					
+						<?php echo 'Hellow ' . $view['logged_user']->getName(); ?>
+					
+					</p>
+				
+					<ul class="nav">
+						
+						<li><a href="/logout">Logout</a></li>
+							
+					</ul>
+					
+				</div>
+				
+			<?php endif; ?>
 		
 		</div>
 	

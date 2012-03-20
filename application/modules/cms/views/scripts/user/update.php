@@ -1,4 +1,4 @@
-<h2><?php echo Library_I18n_I18n::getText("screen_user_update_title", array($view["user"]->getName())); ?></h2>
+<h2><?php echo Library_Qframe_I18n_I18n::getText("screen_user_update_title", array($view["user"]->getName())); ?></h2>
 
 <div class="row">
 

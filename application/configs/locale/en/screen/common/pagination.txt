@@ -1,0 +1,4 @@
+screen_common_pagination_noresults = "There are no results"
+screen_common_pagination_first = "First"
+screen_common_pagination_last = "Last"
+

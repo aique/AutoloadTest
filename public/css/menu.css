@@ -1,0 +1,16 @@
+@CHARSET "UTF-8";
+
+.navbar .user_menu
+{
+	float: right !important;
+}
+
+.navbar .user_name
+{
+	float: left;
+	
+	margin: 0;
+	padding: 10px;
+	
+	display: inline-block;
+}

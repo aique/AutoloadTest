@@ -1,6 +1,6 @@
 <?php
 
-class Application_Model_User_Item extends Library_Model_BaseItem
+class Application_Model_User_Item extends Library_Qframe_Model_BaseItem
 {
 	private $name;
 	private $password;

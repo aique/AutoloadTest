@@ -1,1 +1,14 @@
+// elementos
+
 screen_common_form_submit = "Submit"
+
+// errores
+
+screen_common_error_validation = "Invalid parameters";
+
+screen_common_error_required = "Required"
+screen_common_error_numeric_required = "Required numeric format"
+screen_common_error_alphabetical_required = "Required alphabetical format"
+screen_common_error_alphanumeric_required = "Required alphanumeric format"
+screen_common_error_email_required = "Email format not valid"
+screen_common_error_invalid_value = "Value not valid"

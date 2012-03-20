@@ -16,13 +16,13 @@
 
 	<body>
 	
-		<?php echo Library_I18n_I18n::getFileContent("menu.php"); ?>
+		<?php echo Library_Qframe_I18n_I18n::getFileContent("menu.php", null, $view); ?>
 	
 		<div class="container">
 	
 			<?php include PROJECT_PATH . "/application/layouts/scripts/header.php"; ?>
 				
-			<?php echo $content; ?>
+			<?php echo $view['content']; ?>
 				
 			<?php include PROJECT_PATH . "/application/layouts/scripts/footer.php"; ?>
 		

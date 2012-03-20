@@ -20,7 +20,7 @@
 	   
 <label for="<?php echo $view['element']->getAttribute('name'); ?>" class="label_multioptions">
 
-	<img src="<?php echo Library_Manage_ResourceManager::getConfig()->getVar("resources.path"); ?>/img/icons/ico_help.png" title="<?php echo $view['element']->getAttribute('description'); ?>" />
+	<img src="<?php echo Library_Qframe_Manage_ResourceManager::getConfig()->getVar("resources.path"); ?>/img/icons/ico_help.png" title="<?php echo $view['element']->getAttribute('description'); ?>" />
 
 	<?php echo $view['element']->getAttribute('label'); ?>
 

@@ -1,1 +1,14 @@
+// elementos
+
 screen_common_form_submit = "Enviar"
+
+// errores
+
+screen_common_error_validation = "Los parámetros no son correctos";
+
+screen_common_error_required = "Campo requerido"
+screen_common_error_numeric_required = "Debe tener formato numérico"
+screen_common_error_alphabetical_required = "Debe tener formato alfabético"
+screen_common_error_alphanumeric_required = "Debe tener formato alfanumérico"
+screen_common_error_email_required = "Formato de correo electrónico no válido"
+screen_common_error_invalid_value = "Valor no permitido"

@@ -1,15 +1,15 @@
 <?php
 
-class Application_Model_User_Printer extends Library_Printer_BasePrinter
+class Application_Model_User_Printer extends Library_Qframe_Printer_BasePrinter
 {
 	public function standardPrint()
 	{
 		return
 		
 	    $this->element->getId().' - '.
-	    '<a href="'.new Library_Request_Request("cms", "user", "detail", array("id" => $this->element->getId())).'">'.$this->element->getName().'</a> '.
-	    '<a class="action" href="'.new Library_Request_Request("cms", "user", "delete", array("id" => $this->element->getId())).'">'.Library_I18n_I18n::getText("screen_user_list_delete").'</a> '.
-	    '<a class="action" href="'.new Library_Request_Request("cms", "user", "update", array("id" => $this->element->getId())).'">'.Library_I18n_I18n::getText("screen_user_list_update").'</a>';
+	    '<a href="'.new Library_Qframe_Request_Request("cms", "user", "detail", array("id" => $this->element->getId())).'">'.$this->element->getName().'</a> '.
+	    '<a class="action" id="delete_action_'.$this->element->getId().'" href="'.new Library_Qframe_Request_Request("cms", "user", "delete", array("id" => $this->element->getId())).'">'.Library_Qframe_I18n_I18n::getText("screen_user_list_delete").'</a> '.
+	    '<a class="action" id="update_action_'.$this->element->getId().'" href="'.new Library_Qframe_Request_Request("cms", "user", "update", array("id" => $this->element->getId())).'">'.Library_Qframe_I18n_I18n::getText("screen_user_list_update").'</a>';
 	}
 	
 	public function profilePrint()

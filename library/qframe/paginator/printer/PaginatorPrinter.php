@@ -1,0 +1,108 @@
+<?php
+
+/**
+ * Clase que imprime por pantalla la información contenida en el paginador.
+ *  
+ * @author qinteractiva
+ *
+ */
+class Library_Qframe_Paginator_Printer_PaginatorPrinter extends Library_Qframe_Printer_BasePrinter
+{
+	/**
+	 * Devuelve una cadena de texto con la salida en pantalla por defecto
+	 * del paginador.
+	 * 
+	 * Los elementos que componen la colección serán impresos en formato
+	 * de lista, utilizando su salida estándar devuelta por su método
+	 * __toString.
+	 * 
+	 * También se imprimirán las distintas páginas que componen el sistema
+	 * de paginación en formato de enlace para poder navegar a través de
+	 * ellas.
+	 * 
+	 * @param string $paginator
+	 */
+	public function standardPrint()
+	{
+		$collection = $this->element->getCollection();
+		
+		if(count($collection > 0))
+		{
+			$output = self::printCollection($this->element, $collection);
+			
+			$output = self::printPagination($this->element, $output);
+		}
+		else
+		{
+			$output = Library_Qframe_I18n_I18n::getText('screen_common_pagination_noresults');
+		}
+		
+		return $output;
+	}
+	
+	private function printCollection(Library_Qframe_Paginator_Paginator $paginator, $collection)
+	{
+		$output = '<div id="users"><ul>';
+		
+		for($i = $paginator->getFirstItemPosOnPage() - 1 ; $i < $paginator->getLastItemPosOnPage() ; $i++)
+		{
+			if(isset($collection[$i]))
+			{
+				$item = $collection[$i];
+				
+				$output .= '<li>' . $item . '</li>';
+			}
+		}
+			
+		$output .= '</ul></div>';
+		
+		return $output;
+	}
+	
+	private function printPagination(Library_Qframe_Paginator_Paginator $paginator, $output)
+	{
+		$request = Library_Qframe_Manage_ResourceManager::getRequestData();
+		
+		$request->setParams(array());
+		
+		$pagesNumber = $paginator->getPagesNumber();
+		$visiblePages = $paginator->getVisiblePages();
+		$currentPage = $paginator->getCurrentPage();
+		$printedPages = 0;
+		
+		if($pagesNumber > 1)
+		{
+			$output .= '<div class="pagination"><ul>';
+			
+			$output .= '<li><a href="'.$request.'/page/1">'.Library_Qframe_I18n_I18n::getText("screen_common_pagination_first").'</a></li>';
+			
+			for($i = $currentPage - 1 ; $i > 0 && $i > $currentPage - floor($visiblePages / 2) ; $i--)
+			{
+				$output .= '<li><a href="'.$request.'/page/'.$i.'">'.$i.'</a></li>';
+			}
+			
+			if($i > 0)
+			{
+				$output .= '<li><a href="'.$request.'/page/'.$i.'">&larr;</a></li>';
+			}
+			
+			$output .= '<li class="active"><a href="'.$request.'/page/'.$currentPage.'">'.$currentPage.'</a></li>';
+			
+			for($i = $currentPage + 1 ; $i < $pagesNumber && $i < $currentPage + floor($visiblePages / 2) ; $i++)
+			{
+				$output .= '<li><a href="'.$request.'/page/'.$i.'">'.$i.'</a></li>';
+			}
+			
+			if($i < $pagesNumber)
+			{
+				$output .= '<li><a href="'.$request.'/page/'.$i.'">&rarr;</a></li>';
+			}
+			
+			$output .= '<li><a href="'.$request.'/page/'.$pagesNumber.'">'.Library_Qframe_I18n_I18n::getText("screen_common_pagination_last").'</a></li>';
+			
+			$output .= '</ul></div>';
+		}
+		
+		return $output;
+	}
+}
