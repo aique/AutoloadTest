@@ -68,32 +68,48 @@ class Library_Qframe_Paginator_Printer_PaginatorPrinter extends Library_Qframe_P
 		$pagesNumber = $paginator->getPagesNumber();
 		$visiblePages = $paginator->getVisiblePages();
 		$currentPage = $paginator->getCurrentPage();
-		$printedPages = 0;
+		
+		$printedPages = 1;
+		
+		if($currentPage + floor($visiblePages / 2) > $pagesNumber)
+		{
+			$pagesToPrint = $pagesNumber + $visiblePages - $currentPage - 1;
+		}
+		else
+		{
+			$pagesToPrint = floor($visiblePages / 2);
+		}
 		
 		if($pagesNumber > 1)
 		{
+			$leftPages = '';
+			
 			$output .= '<div class="pagination"><ul>';
 			
 			$output .= '<li><a href="'.$request.'/page/1">'.Library_Qframe_I18n_I18n::getText("screen_common_pagination_first").'</a></li>';
 			
-			for($i = $currentPage - 1 ; $i > 0 && $i > $currentPage - floor($visiblePages / 2) ; $i--)
+			for($i = $currentPage - $pagesToPrint , $j = 0 ; $i > 0 && $j < $pagesToPrint ; $i++ , $j++ , $printedPages++)
 			{
-				$output .= '<li><a href="'.$request.'/page/'.$i.'">'.$i.'</a></li>';
+				$leftPages .= '<li><a href="'.$request.'/page/'.$i.'">'.$i.'</a></li>';
 			}
 			
-			if($i > 0)
+			if($currentPage - $j > 1)
 			{
-				$output .= '<li><a href="'.$request.'/page/'.$i.'">&larr;</a></li>';
+				$pageNum = $currentPage - $printedPages;
+				
+				$output .= '<li><a href="'.$request.'/page/'.$pageNum.'">&larr;</a></li>';
 			}
+			
+			$output .= $leftPages;
 			
 			$output .= '<li class="active"><a href="'.$request.'/page/'.$currentPage.'">'.$currentPage.'</a></li>';
 			
-			for($i = $currentPage + 1 ; $i < $pagesNumber && $i < $currentPage + floor($visiblePages / 2) ; $i++)
+			for($i = $currentPage + 1 ; $i <= $pagesNumber && $printedPages < $visiblePages ; $i++ , $printedPages++)
 			{
 				$output .= '<li><a href="'.$request.'/page/'.$i.'">'.$i.'</a></li>';
 			}
 			
-			if($i < $pagesNumber)
+			if($i <= $pagesNumber)
 			{
 				$output .= '<li><a href="'.$request.'/page/'.$i.'">&rarr;</a></li>';
 			}
