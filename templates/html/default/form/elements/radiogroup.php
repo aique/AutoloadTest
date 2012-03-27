@@ -1,5 +1,5 @@
 
-<div class="content_field <?php echo $view['element']->getAttribute('contentClass'); ?>">
+<div class="content_field radio_group <?php echo $view['element']->getAttribute('contentClass'); ?>">
 
 	<p class="p_error <?php echo $view['element']->getAttribute('classLabelError'); ?>">
 	

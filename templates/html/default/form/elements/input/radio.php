@@ -18,10 +18,12 @@
 
 <?php endif; ?>
 	   
-<label for="<?php echo $view['element']->getAttribute('name'); ?>" class="label_multioptions">
+<label for="<?php echo $view['element']->getAttribute('name'); ?>" class="radio_label">
 
 	<img src="<?php echo Library_Qframe_Manage_ResourceManager::getConfig()->getVar("resources.path"); ?>/img/icons/ico_help.png" title="<?php echo $view['element']->getAttribute('description'); ?>" />
 
 	<?php echo $view['element']->getAttribute('label'); ?>
 
 </label>
+
+<br />

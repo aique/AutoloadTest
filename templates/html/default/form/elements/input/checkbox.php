@@ -9,7 +9,7 @@
 		   checked="checked"
 		   name="<?php echo $view['element']->getAttribute('name'); ?>" 
 		   id="<?php echo $view['element']->getAttribute('id'); ?>"
-		   class="<?php echo $view['element']->getAttribute('fieldClass'); ?>"
+		   class="checkbox <?php echo $view['element']->getAttribute('fieldClass'); ?>"
 		   value="1" />
 		   
 	<?php else : ?>
@@ -17,12 +17,12 @@
 	<input type="checkbox"
 		   name="<?php echo $view['element']->getAttribute('name'); ?>"
 		   id="<?php echo $view['element']->getAttribute('id'); ?>"
-		   class="<?php echo $view['element']->getAttribute('fieldClass'); ?>"
+		   class="checkbox <?php echo $view['element']->getAttribute('fieldClass'); ?>"
 		   value="1" />
 	
 	<?php endif; ?>
 		   
-	<label for="<?php echo $view['element']->getAttribute('name'); ?>" class="label_field <?php echo $view['element']->getAttribute('classLabel'); ?>" >
+	<label for="<?php echo $view['element']->getAttribute('name'); ?>" class="label_field checkbox_label <?php echo $view['element']->getAttribute('classLabel'); ?>" >
 
 		<img src="<?php echo Library_Qframe_Manage_ResourceManager::getConfig()->getVar("resources.path"); ?>/img/icons/ico_help.png" title="<?php echo $view['element']->getAttribute('description'); ?>" />
 

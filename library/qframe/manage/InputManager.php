@@ -22,6 +22,13 @@ class Library_Qframe_Manage_InputManager
 	const GET = "GET";
 	const POST = "POST";
 	
+	const INTEGER = "int";
+	const FLOAT = "float";
+	const STRING = "string";
+	
+	const LOW_CLEAN = 'low_clean';
+	const HIGH_CLEAN = 'high_clean';
+	
 	/**
 	 * Devuelve el valor de un parámetro enviado a la aplicación a
 	 * partir de su nombre y del método utilizado para realizar este
@@ -45,7 +52,7 @@ class Library_Qframe_Manage_InputManager
 	 * 		que identifica el medio por el que se le ha enviado el
 	 * 		parámetro no sea ni GET ni POST.
 	 */
-	public static function getParam($name, $method = self::POST)
+	public static function getParam($name, $method = self::POST, $restrictionDegree = self::HIGH_CLEAN)
 	{
 		$param = false;
 		
@@ -53,14 +60,14 @@ class Library_Qframe_Manage_InputManager
 		{
 			if(isset($_GET[$name]))
 			{
-				$param = self::clean($_GET[$name]);
+				$param = self::clean($_GET[$name], $restrictionDegree);
 			}
 		}
 		elseif($method == self::POST)
 		{
 			if(isset($_POST[$name]))
 			{
-				$param = self::clean($_POST[$name]);
+				$param = self::clean($_POST[$name], $restrictionDegree);
 			}
 		}
 		else
@@ -89,17 +96,23 @@ class Library_Qframe_Manage_InputManager
 	 * 		que identifica el medio por el que se le ha enviado el
 	 * 		parámetro no sea ni GET ni POST.
 	 */
-	public static function getParams($method = self::POST)
+	public static function getParams($method = self::POST, $restrictionDegree = self::HIGH_CLEAN)
 	{
 		$params = array();
 		
 		if($method == self::GET)
 		{
-			$params = $_GET;
+			foreach($_GET as $key => $value)
+			{
+				$params[$key] = self::clean($value, $restrictionDegree);
+			}
 		}
 		elseif($method == self::POST)
 		{
-			$params = $_POST;
+			foreach($_POST as $key => $value)
+			{
+				$params[$key] = self::clean($value, $restrictionDegree);
+			}
 		}
 		else
 		{
@@ -135,10 +148,62 @@ class Library_Qframe_Manage_InputManager
 		return count($_POST) > 0;
 	}
 	
-	private static function clean($param)
+	public static function cleanQueryParam($param, $type)
+	{
+		switch($type)
+		{
+			case self::INTEGER:
+				$param = mysql_real_escape_string(intval($param));
+				break;
+		
+			case self::FLOAT:
+				$param = mysql_real_escape_string(floatval($param));
+				break;
+				
+			case self::STRING:
+				$param = mysql_real_escape_string(strval($param));
+				break;
+		
+			default:
+				throw new Exception('Tipo de parámetro no permitido al realizar la limpieza de la consulta, recibido ' . $type . '.');
+				break;
+		}
+		
+		return $param;
+	}
+	
+	private static function clean($param, $restrictionDegree = self::HIGH_CLEAN)
+	{
+		switch($restrictionDegree)
+		{
+			case self::LOW_CLEAN:
+				$param = self::lowDegreeClean($param);
+				break;
+				
+			case self::HIGH_CLEAN:
+				$param = self::highDegreeClean($param);
+				break;
+				
+			default:
+				$param = self::highDegreeClean($param);
+				break;
+		}
+		
+		return $param;
+	}
+	
+	private static function lowDegreeClean($param)
 	{
 		$param = utf8_decode($param);
 		$param = strip_tags($param);
+		$param = stripslashes($param);
+		
+		return $param;
+	}
+	
+	private static function highDegreeClean($param)
+	{
+		$param = utf8_decode($param);
 		$param = htmlentities($param, ENT_COMPAT, 'UTF-8');
 		$param = stripslashes($param);
 		

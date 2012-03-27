@@ -4,7 +4,7 @@ class Application_Model_User
 {
 	public function getUser($id)
 	{
-		$query = "SELECT id, name, role, email, married, childNum, jobDesc FROM user WHERE id = '" . mysql_real_escape_string($id) . "'";
+		$query = "SELECT id, name, role, email, married, childNum, jobDesc FROM user WHERE id = " . Library_Qframe_Manage_InputManager::cleanQueryParam($id, Library_Qframe_Manage_InputManager::INTEGER);
 		
 		$result = Library_Qframe_Manage_DBManager::getInstance()->query($query);
 		
@@ -20,7 +20,7 @@ class Application_Model_User
 	
 	public function getUserByEmail($email)
 	{
-		$query = "SELECT id, name, role, email, married, childNum, jobDesc FROM user WHERE email = '" . mysql_real_escape_string($email) . "'";
+		$query = "SELECT id, name, role, email, married, childNum, jobDesc FROM user WHERE email = '" . Library_Qframe_Manage_InputManager::cleanQueryParam($email, Library_Qframe_Manage_InputManager::STRING) . "'";
 		
 		$result = Library_Qframe_Manage_DBManager::getInstance()->query($query);
 	
@@ -52,8 +52,8 @@ class Application_Model_User
 	
 	public function loginUser($name, $pass)
 	{
-		$query = "SELECT id, name, role, email, married, childNum, jobDesc FROM user WHERE name = '" . mysql_real_escape_string($name) . "' AND ".
-															  		   			 		  "pass = '" . Library_Qframe_Encrypt_PasswordEncrypter::encrypt(mysql_real_escape_string($pass)) . "'";
+		$query = "SELECT id, name, role, email, married, childNum, jobDesc FROM user WHERE name = '" . Library_Qframe_Manage_InputManager::cleanQueryParam($name, Library_Qframe_Manage_InputManager::STRING) . "' AND ".
+															  		   			 		  "pass = '" . Library_Qframe_Encrypt_PasswordEncrypter::encrypt(Library_Qframe_Manage_InputManager::cleanQueryParam($pass, Library_Qframe_Manage_InputManager::STRING)) . "'";
 		
 		$result = Library_Qframe_Manage_DBManager::getInstance()->query($query);
 		
@@ -69,34 +69,34 @@ class Application_Model_User
 	
 	public function insertUser(Application_Model_User_Item $user)
 	{
-		$query = "INSERT INTO user(name, pass, role, email, married, childNum, jobDesc) VALUES ('".mysql_real_escape_string($user->getName())."',".
-																					  		   "'".Library_Qframe_Encrypt_PasswordEncrypter::encrypt(mysql_real_escape_string($user->getPassword()))."',".
-																					  		   "'".mysql_real_escape_string($user->getRole())."',".
-																					  		   "'".mysql_real_escape_string($user->getEmail())."',".
-																							   "'".mysql_real_escape_string($user->getMarried())."',".
-																							   "'".mysql_real_escape_string($user->getChildNum())."',".
-																					  		   "'".mysql_real_escape_string($user->getJobDesc())."')";
+		$query = "INSERT INTO user(name, pass, role, email, married, childNum, jobDesc) VALUES ('".Library_Qframe_Manage_InputManager::cleanQueryParam($user->getName(), Library_Qframe_Manage_InputManager::STRING)."',".
+																					  		   "'".Library_Qframe_Encrypt_PasswordEncrypter::encrypt(Library_Qframe_Manage_InputManager::cleanQueryParam($user->getPassword(), Library_Qframe_Manage_InputManager::STRING))."',".
+																					  		   "'".Library_Qframe_Manage_InputManager::cleanQueryParam($user->getRole(), Library_Qframe_Manage_InputManager::STRING)."',".
+																					  		   "'".Library_Qframe_Manage_InputManager::cleanQueryParam($user->getEmail(), Library_Qframe_Manage_InputManager::STRING)."',".
+																							   Library_Qframe_Manage_InputManager::cleanQueryParam($user->getMarried(), Library_Qframe_Manage_InputManager::INTEGER).",".
+																							   "'".Library_Qframe_Manage_InputManager::cleanQueryParam($user->getChildNum(), Library_Qframe_Manage_InputManager::INTEGER)."',".
+																					  		   "'".Library_Qframe_Manage_InputManager::cleanQueryParam($user->getJobDesc(), Library_Qframe_Manage_InputManager::STRING)."')";
 		
 		return Library_Qframe_Manage_DBManager::getInstance()->query($query);
 	}
 	
 	public function updateUser(Application_Model_User_Item $user)
 	{
-		$query = "UPDATE user SET name = '".mysql_real_escape_string($user->getName())."',".
-								 "pass = '".Library_Qframe_Encrypt_PasswordEncrypter::encrypt(mysql_real_escape_string($user->getPassword()))."',".
-								 "role = '".mysql_real_escape_string($user->getRole())."',".
-								 "email = '".mysql_real_escape_string($user->getEmail())."',".
-								 "married = '".mysql_real_escape_string($user->getMarried())."',".
-								 "childNum = '".mysql_real_escape_string($user->getChildNum())."',".
-								 "jobDesc = '".mysql_real_escape_string($user->getJobDesc())."' ".
-						 	  "WHERE id = '" . mysql_real_escape_string($user->getId()) . "'";
+		$query = "UPDATE user SET name = '".Library_Qframe_Manage_InputManager::cleanQueryParam($user->getName(), Library_Qframe_Manage_InputManager::STRING)."',".
+								 "pass = '".Library_Qframe_Encrypt_PasswordEncrypter::encrypt(Library_Qframe_Manage_InputManager::cleanQueryParam($user->getPassword(), Library_Qframe_Manage_InputManager::STRING))."',".
+								 "role = '".Library_Qframe_Manage_InputManager::cleanQueryParam($user->getRole(), Library_Qframe_Manage_InputManager::STRING)."',".
+								 "email = '".Library_Qframe_Manage_InputManager::cleanQueryParam($user->getEmail(), Library_Qframe_Manage_InputManager::STRING)."',".
+								 "married = ".Library_Qframe_Manage_InputManager::cleanQueryParam($user->getMarried(), Library_Qframe_Manage_InputManager::INTEGER).",".
+								 "childNum = '".Library_Qframe_Manage_InputManager::cleanQueryParam($user->getChildNum(), Library_Qframe_Manage_InputManager::INTEGER)."',".
+								 "jobDesc = '".Library_Qframe_Manage_InputManager::cleanQueryParam($user->getJobDesc(), Library_Qframe_Manage_InputManager::STRING)."' ".
+						 	  "WHERE id = '" . Library_Qframe_Manage_InputManager::cleanQueryParam($id, Library_Qframe_Manage_InputManager::ID) . "'";
 		
 		return Library_Qframe_Manage_DBManager::getInstance()->query($query);
 	}
 	
 	public function deleteUser($id)
 	{
-		$query = "DELETE FROM user WHERE id = '" . mysql_real_escape_string($id) . "'";
+		$query = "DELETE FROM user WHERE id = " . Library_Qframe_Manage_InputManager::cleanQueryParam($id, Library_Qframe_Manage_InputManager::ID);
 		
 		return Library_Qframe_Manage_DBManager::getInstance()->query($query);
 	}
