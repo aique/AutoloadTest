@@ -71,9 +71,22 @@ class Library_Qframe_Paginator_Printer_PaginatorPrinter extends Library_Qframe_P
 		
 		$printedPages = 1;
 		
-		if($currentPage + floor($visiblePages / 2) > $pagesNumber)
+		// Cálculo de páginas que se imprimirán a la izquierda de la actual
+		
+		if($visiblePages > $pagesNumber)
 		{
-			$pagesToPrint = $pagesNumber + $visiblePages - $currentPage - 1;
+			$pagesToPrint = $visiblePages - $pagesNumber;
+		}
+		elseif($currentPage + floor($visiblePages / 2) > $pagesNumber)
+		{
+			$pagesOnRightSide = ($pagesNumber - $currentPage - floor($visiblePages / 2));
+			
+			if($pagesOnRightSide < 0)
+			{
+				$pagesOnRightSide = 0;
+			}
+			
+			$pagesToPrint = $pagesNumber - $visiblePages - $pagesOnRightSide - 1;
 		}
 		else
 		{
@@ -82,6 +95,8 @@ class Library_Qframe_Paginator_Printer_PaginatorPrinter extends Library_Qframe_P
 		
 		if($pagesNumber > 1)
 		{
+			// Impersión de páginas a la izquierda
+			
 			$leftPages = '';
 			
 			$output .= '<div class="pagination"><ul>';
@@ -102,7 +117,11 @@ class Library_Qframe_Paginator_Printer_PaginatorPrinter extends Library_Qframe_P
 			
 			$output .= $leftPages;
 			
+			// Impresión de la página actual
+			
 			$output .= '<li class="active"><a href="'.$request.'/page/'.$currentPage.'">'.$currentPage.'</a></li>';
+			
+			// Impresión de páginas a la derecha
 			
 			for($i = $currentPage + 1 ; $i <= $pagesNumber && $printedPages < $visiblePages ; $i++ , $printedPages++)
 			{

@@ -33,7 +33,7 @@ class Application_Modules_Cms_Forms_InsertUserForm extends Library_Qframe_Html_E
 		$role->addOption(new Library_Qframe_Html_Element_Option(array("value" => "guest", "display" => "Invitado")));
 		
 		$married = new Library_Qframe_Html_Element_Checkbox(array("type" => "checkbox", "value" => "1", "id" => "married", "name" => "married", "label" => "Está casado"),
-													 		array(Library_Qframe_Html_Const_ValidationRuleConst::REGEX => '/^0|1$/'));
+													 array(Library_Qframe_Html_Const_ValidationRuleConst::REGEX => '/^1$/'));
 		
 		$radioNumChild1 = new Library_Qframe_Html_Element_Radio(array("type" => "radio", "value" => "0", "id" => "childNum1", "name" => "childNum", "label" => "Sin hijos"));
 		

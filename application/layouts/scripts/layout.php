@@ -8,17 +8,14 @@
 		
 		<title>Autoload Test</title>
 		
-		<!-- <link rel="stylesheet" type="text/css" media="screen" href="/css/master.css" /> -->
+		<link rel="stylesheet/less" type="text/css" media="all" href="/css/layout.less" />
+		<link rel="stylesheet/less" type="text/css" media="all" href="/css/menu.less" />
 		
-		<link rel="stylesheet/less" type="text/css" media="screen" href="/lib/bootstrap/css/bootstrap.css" />
-		<link rel="stylesheet/less" type="text/css" media="screen" href="/lib/bootstrap/css/bootstrap-responsive.css" />
+		<link rel="stylesheet/less" type="text/css" media="all" href="/lib/qframe/lists.less" />
+		<link rel="stylesheet/less" type="text/css" media="all" href="/lib/qframe/forms.less" />
+		<link rel="stylesheet/less" type="text/css" media="all" href="/lib/qframe/pagination.less" />
 		
-		<link rel="stylesheet/less" type="text/css" media="screen" href="/css/qframe/lists.less" />
-		<link rel="stylesheet/less" type="text/css" media="screen" href="/css/qframe/forms.less" />
-		<link rel="stylesheet/less" type="text/css" media="screen" href="/css/qframe/pagination.less" />
-		
-		<link rel="stylesheet/less" type="text/css" media="screen" href="/css/layout.less" />
-		<link rel="stylesheet/less" type="text/css" media="screen" href="/css/menu.less" />
+		<link rel="stylesheet" type="text/css" media="screen" href="/css/master.css" />
 		
 		<script type="text/javascript" src="/lib/less/less-1.3.0.js"></script>
 		
