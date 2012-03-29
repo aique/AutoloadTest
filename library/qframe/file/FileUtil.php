@@ -58,11 +58,11 @@ class Library_Qframe_File_FileUtil
 	 * 		Array que contiene variables que serán utilizadas dentro
 	 * 		del código PHP que alberga la plantilla.
 	 * 
-	 * @return
+	 * @return string
 	 * 
 	 * 		Si el proceso es correcto, devuelve el contenido de la
 	 * 		plantilla con el código PHP procesado. Si existe algún
-	 * 		error devolverá false.
+	 * 		error devolverá null.
 	 */
 	public static function getFileContent($template, $view)
 	{
@@ -76,7 +76,7 @@ class Library_Qframe_File_FileUtil
 		}
 		else
 		{
-			return false;
+			return null;
 		}
 	}
 	

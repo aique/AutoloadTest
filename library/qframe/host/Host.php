@@ -1,5 +1,16 @@
 <?php
 
+/**
+ * Clase que obtiene y almacena la información relacionada con la
+ * máquina física que está accediendo a la aplicación.
+ * 
+ * @package qframe
+ * 
+ * @subpackage host
+ * 
+ * @author qinteractiva
+ *
+ */
 class Library_Qframe_Host_Host
 {
 	private $ip;
@@ -100,6 +111,14 @@ class Library_Qframe_Host_Host
 	    $this->printer = $printer;
 	}
 	
+	/**
+	 * Método privado llamado desde el contructor que establece
+	 * los valores de la clase.
+	 * 
+	 * Estos valores rescatados hacen referencia a la IP, el HOST
+	 * y el PROXY del cliente físico que está accediendo a la
+	 * aplicación.
+	 */
 	private function getHostData()
 	{
 		// acceso por proxy

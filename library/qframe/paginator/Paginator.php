@@ -1,11 +1,38 @@
 <?php
 
 /**
- * Clase que gestiona visualmente una colección de elementos.
+ * Pagina una colección de elementos ofreciendo los controles necesarios
+ * para navegar entre ella.
  * 
- * Representa la información de los elementos de la colección
- * de manera visual en un formato de lista, paginando los resultados
- * según las preferencias establecidas en el fichero de configuración.
+ * Es recomendable establecer las características del paginador en el
+ * fichero de configuración, pasando los valores definidos en la llamada
+ * al constructor. De esta manera se puede editar de manera rápida e
+ * intuitiva.
+ * 
+ * Existen los siguientes parámetros configurables:
+ * 
+ * <ul>
+ * <li>ItemsPorPagina: Número de elementos en cada página.</li>
+ * <li>PaginasVisibles: Número de páginas accesibles de manera directa.</li>
+ * </ul>
+ * 
+ * Así en una colección que consta de 30 elementos a la que se le ha
+ * aplicado un paginador con 5 ítems por página y 3 páginas visibles,
+ * al situarse en la página 3 puede verse lo siguiente:
+ * 
+ * <ul>
+ * <li>Elemento 11</li>
+ * <li>Elemento 12</li>
+ * <li>Elemento 13</li>
+ * <li>Elemento 14</li>
+ * <li>Elemento 15</li>
+ * </ul>
+ * 
+ * <- ... 2 3 4 ... ->
+ * 
+ * @package qframe
+ * 
+ * @subpackage paginator
  * 
  * @author qinteractiva
  *
@@ -13,10 +40,27 @@
 class Library_Qframe_Paginator_Paginator
 {
 	private $collection;
-	private $itemsNumber;
+	/**
+	 * Número de elementos por página
+	 * @var int
+	 */
 	private $itemsPerPage;
+	/**
+	 * Número de páginas accesibles de manera directa.
+	 * @var int
+	 */
 	private $visiblePages;
+	/**
+	 * Número de páginas totales.
+	 * 
+	 * @var int
+	 */
 	private $pagesNumber;
+	/**
+	 * Página actual.
+	 * 
+	 * @var int
+	 */
 	private $currentPage;
 	
 	private $printer;
@@ -24,7 +68,6 @@ class Library_Qframe_Paginator_Paginator
 	public function __construct($collection, $itemsPerPage, $visiblePages, $printer = null)
 	{
 		$this->collection = $collection;
-		$this->itemsNumber = count($collection);
 		$this->itemsPerPage = $itemsPerPage;
 		$this->visiblePages = $visiblePages;
 		$this->pagesNumber = $this->calculatePagesNumber();
@@ -182,9 +225,11 @@ class Library_Qframe_Paginator_Paginator
 	{
 		$pagesNumber = 0;
 		
-		$pagesNumber = floor($this->itemsNumber / $this->itemsPerPage);
+		$itemsNumber = count($this->collection);
 		
-		if($this->itemsNumber % $this->itemsPerPage > 0)
+		$pagesNumber = floor($itemsNumber / $this->itemsPerPage);
+		
+		if($itemsNumber % $this->itemsPerPage > 0)
 		{
 			$pagesNumber = $pagesNumber + 1;
 		}
@@ -199,7 +244,7 @@ class Library_Qframe_Paginator_Paginator
 	 * 
 	 * 		Número de página actual.
 	 * 
-	 * @return
+	 * @return string
 	 * 
 	 * 		Cadena de texto que se mostrará en pantalla.
 	 * 

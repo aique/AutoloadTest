@@ -36,7 +36,7 @@ abstract class Library_Qframe_Model_BaseItem
 	 */
 	protected $printer;
 	
-	public function __construct(array $options = null, Library_Qframe_Printer_BasePrinter $printer)
+	public function __construct(array $options = null, Library_Qframe_Model_ItemPrinter $printer)
 	{
 		if(is_array($options))
 		{
@@ -213,7 +213,7 @@ abstract class Library_Qframe_Model_BaseItem
 	 * idéntico para todas ellas, por lo que simplemente será necesario
 	 * un copy-paste del mismo.
 	 * 
-	 * @return
+	 * @return array
 	 * 
 	 * 		Array asociativo con los atributos del Item y sus valores.
 	 * 
@@ -261,7 +261,7 @@ abstract class Library_Qframe_Model_BaseItem
 	 * Desvía la salida estándar del objeto a la salida
 	 * estándar definida en su atributo printer.
 	 * 
-	 * @return
+	 * @return string
 	 * 
 	 * 		Representación base del objeto, definida por
 	 * 		su atributo printer.

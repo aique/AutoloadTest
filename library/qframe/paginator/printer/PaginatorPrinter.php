@@ -1,26 +1,28 @@
 <?php
 
 /**
- * Clase que imprime por pantalla la información contenida en el paginador.
- *  
+ * Obtiene la representación visual del paginador.
+ * 
+ * @package qframe
+ * 
+ * @subpackage paginator
+ * 
  * @author qinteractiva
  *
  */
 class Library_Qframe_Paginator_Printer_PaginatorPrinter extends Library_Qframe_Printer_BasePrinter
 {
 	/**
-	 * Devuelve una cadena de texto con la salida en pantalla por defecto
-	 * del paginador.
+	 * Devuelve una cadena de texto con la salida en pantalla por
+	 * defecto del paginador, compuesta por la colección de elementos
+	 * y los controles de navegación.
 	 * 
-	 * Los elementos que componen la colección serán impresos en formato
-	 * de lista, utilizando su salida estándar devuelta por su método
-	 * __toString.
+	 * Los elementos que componen la colección serán impresos en
+	 * forma de lista, llamando cada uno al método paginationPrint()
+	 * de su atributo printer.
 	 * 
-	 * También se imprimirán las distintas páginas que componen el sistema
-	 * de paginación en formato de enlace para poder navegar a través de
-	 * ellas.
+	 * @return string
 	 * 
-	 * @param string $paginator
 	 */
 	public function standardPrint()
 	{
@@ -50,7 +52,7 @@ class Library_Qframe_Paginator_Printer_PaginatorPrinter extends Library_Qframe_P
 			{
 				$item = $collection[$i];
 				
-				$output .= '<li>' . $item . '</li>';
+				$output .= '<li>' . $item->getPrinter()->paginationPrint() . '</li>';
 			}
 		}
 			

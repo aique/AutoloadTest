@@ -1,8 +1,13 @@
 <?php
 
-class Application_Model_User_Printer extends Library_Qframe_Printer_BasePrinter
+class Application_Model_User_Printer extends Library_Qframe_Model_ItemPrinter
 {
 	public function standardPrint()
+	{
+		
+	}
+	
+	public function paginationPrint()
 	{
 		return
 		

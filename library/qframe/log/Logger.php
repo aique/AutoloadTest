@@ -1,5 +1,16 @@
 <?php
 
+/**
+ * Clase que se encarga de imprimir los diferentes mensajes
+ * de log en los ficheros correspondientes.
+ * 
+ * @package qframe
+ * 
+ * @subpackage log
+ * 
+ * @author qinteractiva
+ *
+ */
 class Library_Qframe_Log_Logger
 {
 	// Archivos
@@ -20,6 +31,22 @@ class Library_Qframe_Log_Logger
 		$this->mailPath = PROJECT_PATH . '/data/mail/';
 	}
 	
+	/**
+	 * Imprime el mensaje recibido como parámetro en el 
+	 * formato y fichero correspondiente a la traza de
+	 * ejecución de la aplicación.
+	 * 
+	 * El objetivo de este log es fundamentalmente registrar
+	 * el recorrido que sigue el usuario por los diferentes
+	 * apartados de la aplicación.
+	 * 
+	 * El fichero que contiene estos mensajes se encuentra
+	 * en la ruta data/logs/trace.
+	 * 
+	 * @param string $message
+	 * 
+	 * 		Cadena de texto con el mensaje que se imprimirá.
+	 */
 	public function logTrace($message)
 	{
 		if(Library_Qframe_Manage_ResourceManager::getConfig()->getCurrentEnvironment() != Library_Qframe_Consts_Environment::PRODUCTION_ENV)
@@ -32,6 +59,19 @@ class Library_Qframe_Log_Logger
 		}
 	}
 	
+	/**
+	 * Imprime los datos de una nueva conexión abierta con
+	 * la base de datos y la información de la máquina que
+	 * la ha realizado.
+	 * 
+	 * El fichero que contiene estos mensajes se encuentra
+	 * en la ruta data/logs/db/trace.
+	 * 
+	 * @param Library_Qframe_Manage_DBManager $dbManager
+	 * 
+	 * 		Objeto que contiene los datos de la nueva
+	 * 		conexión establecida.
+	 */
 	public function logDBConnection(Library_Qframe_Manage_DBManager $dbManager)
 	{
 		if(Library_Qframe_Manage_ResourceManager::getConfig()->getCurrentEnvironment() != Library_Qframe_Consts_Environment::PRODUCTION_ENV)
@@ -50,6 +90,18 @@ class Library_Qframe_Log_Logger
 		}
 	}
 	
+	/**
+	 * Imprime los datos de una consulta realizada sobre
+	 * la base de datos y la información de la máquina que
+	 * la ha realizado.
+	 * 
+	 * El fichero que contiene estos mensajes se encuentra
+	 * en la ruta data/logs/db/trace.
+	 * 
+	 * @param string $query
+	 * 
+	 * 		Cadena de texto con la consulta realizada.
+	 */
 	public function logDBQuery($query)
 	{
 		if(Library_Qframe_Manage_ResourceManager::getConfig()->getCurrentEnvironment() != Library_Qframe_Consts_Environment::PRODUCTION_ENV)
@@ -65,6 +117,20 @@ class Library_Qframe_Log_Logger
 		}
 	}
 	
+	/**
+	 * Imprime el mensaje de error fruto de un intento
+	 * de conexión erróneo sobre la base de datos, así
+	 * como la información del equipo que ha intentado
+	 * realizar esta conexión.
+	 * 
+	 * El fichero que contiene estos mensajes se encuentra
+	 * en la ruta data/logs/db/error.
+	 * 
+	 * @param string $error
+	 * 
+	 * 		Mensaje de error lanzado durante el proceso
+	 * 		de conexión a la base de datos.
+	 */
 	public function logDBConnectionError($error)
 	{
 		if(Library_Qframe_Manage_ResourceManager::getConfig()->getCurrentEnvironment() != Library_Qframe_Consts_Environment::PRODUCTION_ENV)
@@ -81,6 +147,20 @@ class Library_Qframe_Log_Logger
 		}
 	}
 	
+	/**
+	 * Imprime el mensaje de error fruto de una ejecución
+	 * errónea de una sentencia SQL sobre la base de datos,
+	 * así como la información del equipo que ha ejecutado
+	 * dicha sentencia.
+	 * 
+	 * El fichero que contiene estos mensajes se encuentra
+	 * en la ruta data/logs/db/error.
+	 * 
+	 * @param string $query
+	 * 
+	 * 		Cadena de texto con la consulta SQL que ha
+	 * 		provocado un error de ejecución.
+	 */
 	public function logDBQueryError($query)
 	{
 		if(Library_Qframe_Manage_ResourceManager::getConfig()->getCurrentEnvironment() != Library_Qframe_Consts_Environment::PRODUCTION_ENV)
@@ -98,7 +178,19 @@ class Library_Qframe_Log_Logger
 		}
 	}
 	
-	public function logError($exception)
+	/**
+	 * Imprime una excepción lanzada por la aplicación en
+	 * su log de errores.
+	 * 
+	 * El fichero que contiene estos mensajes se encuentra
+	 * en la ruta data/logs/error.
+	 * 
+	 * @param Exception $exception
+	 * 
+	 * 		Objeto de tipo Exception con los datos del error
+	 * 		producido.
+	 */
+	public function logError(Exception $exception)
 	{
 		$content = "Error\n-----\n\n";
 		$content .= "Hora: " . date("H:i:s\n");
@@ -106,12 +198,32 @@ class Library_Qframe_Log_Logger
 		$content .= "Línea: " . $exception->getLine()."\n";
 		$content .= "Mensaje: " . $exception->getMessage()."\n";
 		$content .= "Traza de ejecución:\n" . $exception->getTraceAsString()."\n\n";
+		$content .= Library_Qframe_Manage_ResourceManager::getHostData()->getPrinter()->logPrint();
 		
 		$handler = fopen($this->errorFile . '.' . date("d.m.Y"), 'a');
 		fwrite($handler, $content);
 		fclose($handler);
 	}
 	
+	/**
+	 * Imprime el contenido de un correo enviado por la
+	 * aplicación en un fichero local.
+	 * 
+	 * Se utiliza para comprobar que el contenido de un
+	 * correo cuyo envío se está desarrollando es el
+	 * correcto sin necesidad de realizar un envío real.
+	 * 
+	 * El fichero que contiene estos mensajes se encuentra
+	 * en la ruta data/mail.
+	 *
+	 * @param string $html
+	 * 
+	 * 		Cadena de texto con el contenido del correo.
+	 * 
+	 * @param string $name
+	 * 
+	 * 		Nombre con el que se identifica el correo.
+	 */
 	public function logMail($html, $name)
 	{
 		$handler = fopen($this->mailPath . $name, 'w');
