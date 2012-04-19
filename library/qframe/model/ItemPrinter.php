@@ -22,4 +22,6 @@ abstract class Library_Qframe_Model_ItemPrinter extends Library_Qframe_Printer_B
 	 * Representación visual del Item dentro del paginador.
 	 */
 	public abstract function paginationPrint();
+	
+	public abstract function JSONPrint();
 }

@@ -25,6 +25,25 @@ class Library_Qframe_Controller_BaseController
 	protected $layout;
 	protected $helper;
 	
+	/**
+	 * Variable que indica el contexto de la llamada al action y por tanto la manera
+	 * en la que se devolverá la respuesta. Actualmente existen los siguientes valores:
+	 * 
+	 * <ul>
+	 * <li>
+	 * HTML (html): La respuesta del action se retornará en formato HTML,
+	 * aplicando la vista y el layout sobre los datos obtenidos.
+	 * </li>
+	 * <li>
+	 * JSON (json): La respuesta del action se retornará en formato JSON
+	 * sobre los datos obtenidos.
+	 * </li>
+	 * </ul>
+	 * 
+	 * @var string
+	 */
+	protected $context;
+	
 	private $plugins;
 	
 	/**
@@ -34,9 +53,7 @@ class Library_Qframe_Controller_BaseController
 	 */
 	private $dispatcher;
 	
-	const DEFAULT_LAYOUT = "layout";
-	
-	public function __construct(Library_Qframe_Request_Request $request, $layout = self::DEFAULT_LAYOUT)
+	public function __construct(Library_Qframe_Request_Request $request, $layout = Library_Qframe_Controller_ControllerConsts::DEFAULT_LAYOUT)
 	{
 		$this->request = $request;
 		$this->layout = $layout;
@@ -45,6 +62,7 @@ class Library_Qframe_Controller_BaseController
 		$this->plugins = array();
 		
 		$this->helper = new Library_Qframe_Controller_ControllerHelper();
+		$this->context = new Library_Qframe_Controller_Helper_ContextHelper(Library_Qframe_Controller_ControllerConsts::HTML_ACTION_CONTEXT);
 		$this->dispatcher = new Library_Qframe_Controller_ControllerDispatcher($this);
 	}
 	
@@ -126,6 +144,26 @@ class Library_Qframe_Controller_BaseController
 	public function setHelper($helper)
 	{
 	    $this->helper = $helper;
+	}
+	
+	/**
+	 * Devuelve el valor del atributo context.
+	 *
+	 * @return Library_Qframe_Controller_Helper_ContextHelper
+	 */
+	public function getContext()
+	{
+	    return $this->context;
+	}
+	 
+	/**
+	 * Establece el valor del atributo context.
+	 *
+	 * @param Library_Qframe_Controller_Helper_ContextHelper $context
+	 */
+	public function setContext($context)
+	{
+	    $this->context->setContext($context);
 	}
 	
 	/**

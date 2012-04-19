@@ -43,6 +43,9 @@ class Application_Plugins_ACLPlugin extends Library_Qframe_Plugin_BasePlugin
 		$request = new Library_Qframe_Request_Request("cms", "user", "detail");
 		$acl->addResource($request->getResource(), "admin");
 		
+		$request = new Library_Qframe_Request_Request("cms", "user", "detailJSON");
+		$acl->addResource($request->getResource(), "admin");
+		
 		$request = new Library_Qframe_Request_Request("cms", "user", "delete");
 		$acl->addResource($request->getResource(), "admin");
 		

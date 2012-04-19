@@ -7,8 +7,8 @@ class Application_Modules_Cms_Controllers_UserController extends Library_Qframe_
 		if(!Library_Qframe_Manage_SessionManager::getVar(Library_Qframe_Consts_Session::LOGGED_USER))
 		{
 			$this->helper->redirect(new Library_Qframe_Request_Request(Library_Qframe_Request_Request::MODULE_DEFAULT_VALUE,
- 													    		Library_Qframe_Request_Request::CONTROLLER_DEFAULT_VALUE,
- 																Library_Qframe_Request_Request::ACTION_DEFAULT_VALUE));
+ 																	   Library_Qframe_Request_Request::CONTROLLER_DEFAULT_VALUE,
+ 																	   Library_Qframe_Request_Request::ACTION_DEFAULT_VALUE));
 		}
 		else
 		{
@@ -130,6 +130,33 @@ class Application_Modules_Cms_Controllers_UserController extends Library_Qframe_
 		}
 	}
 	
+	/**
+	 * Action que devuelve los datos asociados a la vista en formato JSON
+	 */
+	public function detailJSONAction()
+	{
+		// establecemos el contexto de respuesta como JSON
+		$this->setContext(Library_Qframe_Controller_ControllerConsts::JSON_ACTION_CONTEXT);
+		
+		$id = $this->getRequest()->getParam("id");
+		
+		if(Application_Model_User_Validator::validateUserId($id))
+		{
+			$userModel = new Application_Model_User();
+				
+			$user = $userModel->getUser($id);
+				
+			if($user)
+			{
+				$this->view[Library_Qframe_Controller_ControllerConsts::JSON_ACTION_CONTEXT]["user"] = $user;
+			}
+			else
+			{
+				$this->helper->redirect(new Library_Qframe_Request_Request("cms", "user", "list"));
+			}
+		}
+	}
+	
 	public function deleteAction()
 	{
 		$id = $this->getRequest()->getParam("id");
@@ -145,5 +172,4 @@ class Application_Modules_Cms_Controllers_UserController extends Library_Qframe_
 		
 		$this->helper->redirect(new Library_Qframe_Request_Request("cms", "user", "list"));
 	}
-	
 }

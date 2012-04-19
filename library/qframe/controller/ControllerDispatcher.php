@@ -42,7 +42,7 @@ class Library_Qframe_Controller_ControllerDispatcher
 			$this->postDispatch($this->controller->getRequest());
 			$this->controller->end();
 			
-			$this->applyLayout($this->applyView());
+			echo $this->controller->getContext()->applyContext($this->controller);
 		}
 		catch(Exception $exception)
 		{
@@ -148,82 +148,6 @@ class Library_Qframe_Controller_ControllerDispatcher
 		else
 		{
 			throw new Exception('No se ha encontrado el método ' . $method . ' dentro del controlador ' . get_class($this->controller) . '.');
-		}
-	}
-	
-	/**
-	 * Aplica el fichero que renderiza la capa de la vista y devuelve su
-	 * contenido.
-	 * 
-	 * @return string
-	 * 
-	 * 		Cadena de texto con el código HTML que se mostrará en el navegador,
-	 * 		a falta de aplicar el layout sobre él.
-	 *
-	 * @throws Exception
-	 * 
-	 * 		Lanza una excepción cuando no encuentra el fichero que renderiza
-	 * 		la capa de la vista.
-	 */
-	private function applyView()
-	{
-		$request = $this->controller->getRequest();
-		
-		$module = $request->getModule();
-		$controller = $request->getController();
-		$action = $request->getAction();
-	
-		if(empty($module))
-		{
-			$viewPath = PROJECT_PATH . "/application/views/scripts/" . $controller . "/" . $action . ".php";
-		}
-		else
-		{
-			$viewPath = PROJECT_PATH . "/application/modules/" . $module . "/views/scripts/" . $controller . "/" . $action . ".php";
-		}
-	
-		if(file_exists($viewPath))
-		{
-			return Library_Qframe_File_FileUtil::getFileContent($viewPath, $this->controller->getView());
-		}
-		else
-		{
-			return "";
-		}
-	}
-	
-	/**
-	 * Aplica el layout definido para el controlador.
-	 * 
-	 * Si no se ha especificado ninguno, se aplicará el layout por defecto,
-	 * el cual se encuentra dentro del directorio de layouts bajo el nombre
-	 * de layout.
-	 *
-	 * @param string $content
-	 * 
-	 * 		Cadena de texto con el código HTML que se mostrará en el navegador,
-	 * 		a falta de aplicar el layout sobre él.
-	 */
-	private function applyLayout($content)
-	{
-		$view = $this->controller->getView();
-		
-		$view['content'] = $content;
-		
-		$layout = PROJECT_PATH . "/application/layouts/scripts/" . $this->controller->getLayout() . ".php";
-	
-		if(file_exists($layout))
-		{
-			echo Library_Qframe_File_FileUtil::getFileContent($layout, $view);
-		}
-		else
-		{
-			$layout = include PROJECT_PATH . "/application/layouts/scripts/" . self::DEFAULT_LAYOUT . ".php";
-				
-			if(file_exists($layout))
-			{
-				echo Library_Qframe_File_FileUtil::getFileContent($layout, $view);
-			}
 		}
 	}
 }

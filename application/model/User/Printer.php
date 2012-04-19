@@ -17,6 +17,11 @@ class Application_Model_User_Printer extends Library_Qframe_Model_ItemPrinter
 	    '<a class="action" id="update_action_'.$this->element->getId().'" href="'.new Library_Qframe_Request_Request("cms", "user", "update", array("id" => $this->element->getId())).'">'.Library_Qframe_I18n_I18n::getText("screen_user_list_update").'</a>';
 	}
 	
+	public function JSONPrint()
+	{
+		return array("name" => $this->element->getName(), "role" => $this->element->getRole());
+	}
+	
 	public function profilePrint()
 	{
 		$output = '';
