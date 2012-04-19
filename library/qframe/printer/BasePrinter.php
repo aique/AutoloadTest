@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Contiene los atributos y método base comunes a todos los
- * objetos que encapsulan la representación visual de un
- * determinado elemento, de la cual heredarán de manera
+ * Contiene los atributos y métodos base comunes a todos
+ * los objetos que encapsulan la representación visual de
+ * un determinado elemento, de la cual heredarán de manera
  * directa o indirecta.
  * 
  * @package qframe
