@@ -11,8 +11,8 @@ class Library_Qframe_View_View
 	{
 		$this->content = new Library_Qframe_View_Content();
 		
-		$jsFileCollection = array();
-		$cssFileCollection = array();
+		$this->jsFileCollection = array();
+		$this->cssFileCollection = array();
 	}
 	
 	/**

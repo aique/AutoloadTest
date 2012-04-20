@@ -85,14 +85,7 @@ class Library_Qframe_Request_Printer extends Library_Qframe_Printer_BasePrinter
 	
 		if($this->element->getAction() != Library_Qframe_Request_Request::ACTION_DEFAULT_VALUE)
 		{
-			if($this->element->getController() != Library_Qframe_Request_Request::CONTROLLER_DEFAULT_VALUE)
-			{
-				$output = "/" . $this->element->getAction();
-			}
-			else
-			{
-				$output = $this->element->getAction();
-			}
+			$output = "/" . $this->element->getAction();
 		}
 	
 		return $output;

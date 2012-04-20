@@ -77,15 +77,31 @@ class Library_Qframe_ACL_ACL
 	 */
 	public function isAllowed($role, $resource)
 	{
+		$controller = substr($resource, 0, strrpos($resource, '/') + 1);
+		$action = substr($resource, strrpos($resource, '/') +1, strlen($resource) - strrpos($resource, '/'));
+		
 		foreach($this->resources as $resourceAllowed => $rolesAllowed)
 		{
-			if($resourceAllowed == $resource)
+			$controllerAllowed = substr($resourceAllowed, 0, strrpos($resourceAllowed, '/') + 1);
+			$actionAllowed = substr($resourceAllowed, strrpos($resourceAllowed, '/') + 1, strlen($resourceAllowed) - strrpos($resourceAllowed, '/'));
+			
+			if($controllerAllowed == $controller)
 			{
-				foreach($rolesAllowed as $roleAllowed)
+				if($actionAllowed == Library_Qframe_ACL_Consts::ALL_ACTIONS_ALLOWED)
 				{
-					if($roleAllowed == $role)
+					return true;
+				}
+				else	
+				{
+					if($actionAllowed == $action)
 					{
-						return true;
+						foreach($rolesAllowed as $roleAllowed)
+						{
+							if($roleAllowed == $role)
+							{
+								return true;
+							}
+						}
 					}
 				}
 			}
