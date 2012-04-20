@@ -15,9 +15,9 @@
 class Library_Qframe_Controller_BaseController
 {
 	/**
-	 * Array que contendrá todos los elementos a los que accederá la capa de la vista.
+	 * Objeto que contendrá todos los elementos a los que accederá la capa de la vista.
 	 * 
-	 * @var array
+	 * @var Library_Qframe_View_View
 	 */
 	protected $view;
 	
@@ -58,12 +58,13 @@ class Library_Qframe_Controller_BaseController
 		$this->request = $request;
 		$this->layout = $layout;
 		
-		$this->view = array();
-		$this->plugins = array();
+		$this->view = new Library_Qframe_View_View();
 		
 		$this->helper = new Library_Qframe_Controller_ControllerHelper();
 		$this->context = new Library_Qframe_Controller_Helper_ContextHelper(Library_Qframe_Controller_ControllerConsts::HTML_ACTION_CONTEXT);
 		$this->dispatcher = new Library_Qframe_Controller_ControllerDispatcher($this);
+		
+		$this->plugins = array();
 	}
 	
 	/**
@@ -79,9 +80,9 @@ class Library_Qframe_Controller_BaseController
 	/**
 	 * Establece el valor del atributo view.
 	 *
-	 * @param array $view
+	 * @param Library_Qframe_View_View $view
 	 */
-	public function setView($view)
+	public function setView(Library_Qframe_View_View $view)
 	{
 	    $this->view = $view;
 	}
@@ -101,7 +102,7 @@ class Library_Qframe_Controller_BaseController
 	 *
 	 * @param Library_Qframe_Request_Request $request
 	 */
-	public function setRequest($request)
+	public function setRequest(Library_Qframe_Request_Request $request)
 	{
 	    $this->request = $request;
 	}
@@ -141,7 +142,7 @@ class Library_Qframe_Controller_BaseController
 	 *
 	 * @param Library_Qframe_Controller_ControllerHelper $helper
 	 */
-	public function setHelper($helper)
+	public function setHelper(Library_Qframe_Controller_ControllerHelper $helper)
 	{
 	    $this->helper = $helper;
 	}
@@ -211,7 +212,7 @@ class Library_Qframe_Controller_BaseController
 	 *
 	 * @param Library_Qframe_Controller_ControllerDispatcher $dispatcher
 	 */
-	public function setDispatcher($dispatcher)
+	public function setDispatcher(Library_Qframe_Controller_ControllerDispatcher $dispatcher)
 	{
 	    $this->dispatcher = $dispatcher;
 	}
@@ -249,5 +250,4 @@ class Library_Qframe_Controller_BaseController
 	{
 	
 	}
-	
 }

@@ -4,7 +4,14 @@ class Application_Controllers_IndexController extends Library_Qframe_Controller_
 {
 	public function init()
 	{
-		$this->view['logged_user'] = Library_Qframe_Manage_SessionManager::getVar(Library_Qframe_Consts_Session::LOGGED_USER);
+		// se añaden los ficheros JS específicos de la vista devuelta por los action de este controlador
+		$this->view->addJsFile(new Library_Qframe_View_Element_JS_File("text/javascript", "/js/master.js"));
+		$this->view->addJsFile(new Library_Qframe_View_Element_JS_File("text/javascript", "/js/test.js"));
+		
+		// se añaden los ficheros CSS específicos de la vista devuelta por los action de este controlador
+		$this->view->addCssFile(new Library_Qframe_View_Element_CSS_File("text/css", "/css/test.css", "stylesheet", "all"));
+		
+		$this->view->addContent('logged_user', Library_Qframe_Manage_SessionManager::getVar(Library_Qframe_Consts_Session::LOGGED_USER));
 		
 		$this->addPlugin(new Application_Plugins_ACLPlugin());
 	}
@@ -38,7 +45,7 @@ class Application_Controllers_IndexController extends Library_Qframe_Controller_
 			}
 		}
 		
-		$this->view["form"] = $form;
+		$this->view->addContent("form", $form);
 		
 		// throw new Exception("Error previsto.");
 	}

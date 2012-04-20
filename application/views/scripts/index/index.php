@@ -16,7 +16,7 @@
 
 	<div class="span4">
 
-		<?php echo $view["form"]; ?>
+		<?php echo $view->getContent("form"); ?>
 	
 	</div>
 	

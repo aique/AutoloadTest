@@ -16,13 +16,13 @@
 			
 			</div>
 			
-			<?php if(isset($view['logged_user']) && $view['logged_user'] != null) : ?>
+			<?php if($view->getContent('logged_user') != null) : ?>
 			
 				<div class="user_menu">
 			
 					<p class="user_name">
 					
-						<?php echo 'Hellow ' . $view['logged_user']->getName(); ?>
+						<?php echo 'Hellow ' . $view->getContent('logged_user')->getName(); ?>
 					
 					</p>
 				

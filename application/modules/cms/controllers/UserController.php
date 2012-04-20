@@ -14,7 +14,7 @@ class Application_Modules_Cms_Controllers_UserController extends Library_Qframe_
 		{
 			$this->addPlugin(new Application_Plugins_ACLPlugin());
 			
-			$this->view['logged_user'] = Library_Qframe_Manage_SessionManager::getVar(Library_Qframe_Consts_Session::LOGGED_USER);
+			$this->view->addContent('logged_user', Library_Qframe_Manage_SessionManager::getVar(Library_Qframe_Consts_Session::LOGGED_USER));
 			
 			// $this->addPlugin(new Application_Modules_Cms_Plugins_WellcomeMailPlugin());
 		}
@@ -26,11 +26,11 @@ class Application_Modules_Cms_Controllers_UserController extends Library_Qframe_
 	
 		$users = $userModel->getAllUsers();
 	
-		$this->view["users"] = $users;
+		$this->view->addContent("users", $users);
 		
-		$this->view["paginator"] = new Library_Qframe_Paginator_Paginator($users,
-																		  Library_Qframe_Manage_ResourceManager::getConfig()->getVar("users.paginator.itemsPerPage"),
-																		  Library_Qframe_Manage_ResourceManager::getConfig()->getVar("users.paginator.visiblePages"));
+		$this->view->addContent("paginator", new Library_Qframe_Paginator_Paginator($users,
+																		  			Library_Qframe_Manage_ResourceManager::getConfig()->getVar("users.paginator.itemsPerPage"),
+																		  			Library_Qframe_Manage_ResourceManager::getConfig()->getVar("users.paginator.visiblePages")));
 	}
 	
 	public function insertAction()
@@ -58,7 +58,7 @@ class Application_Modules_Cms_Controllers_UserController extends Library_Qframe_
 			}
 		}
 		
-		$this->view["form"] = $form;
+		$this->view->addContent("form", $form);
 	}
 	
 	public function updateAction()
@@ -73,13 +73,13 @@ class Application_Modules_Cms_Controllers_UserController extends Library_Qframe_
 			
 			if($user)
 			{
-				$this->view["user"] = $user;
+				$this->view->addContent("user", $user);
 				
 				$form = new Application_Modules_Cms_Forms_InsertUserForm();
 				
 				$form->setParams($user->getAttributesAsArray());
 					
-				$this->view["form"] = $form;
+				$this->view->addContent("form", $form);
 				
 				if(Library_Qframe_Manage_InputManager::isPost())
 				{
@@ -121,7 +121,7 @@ class Application_Modules_Cms_Controllers_UserController extends Library_Qframe_
 			
 			if($user)
 			{
-				$this->view["user"] = $user;
+				$this->view->addContent("user", $user);
 			}
 			else
 			{
@@ -148,7 +148,7 @@ class Application_Modules_Cms_Controllers_UserController extends Library_Qframe_
 				
 			if($user)
 			{
-				$this->view[Library_Qframe_Controller_ControllerConsts::JSON_ACTION_CONTEXT]["user"] = $user;
+				$this->view->addJsonContent("user", $user);
 			}
 			else
 			{

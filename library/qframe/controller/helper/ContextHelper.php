@@ -95,7 +95,7 @@ class Library_Qframe_Controller_Helper_ContextHelper
 	{
 		$view = $controller->getView();
 	
-		$view['content'] = $content;
+		$view->addContent('content', $content);
 	
 		$layout = PROJECT_PATH . "/application/layouts/scripts/" . $controller->getLayout() . ".php";
 	
@@ -186,7 +186,7 @@ class Library_Qframe_Controller_Helper_ContextHelper
 	{
 		$view = $controller->getView();
 		
-		$jsonView = $view[Library_Qframe_Controller_ControllerConsts::JSON_ACTION_CONTEXT];
+		$jsonView = $view->getJsonContent();
 		
 		foreach($jsonView as $key => $value)
 		{
