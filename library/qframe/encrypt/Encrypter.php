@@ -37,8 +37,8 @@ class Library_Qframe_Encrypt_Encrypter
 	 */
 	public static function passwordEncrypt($password)
 	{
-		$password_0 = substr($password, 0, 1);
-		$password_1 = substr($password, 1);
+		$password_0 = substr($password, 0, 2);
+		$password_1 = substr($password, 2);
 			
 		return md5(self::STEP_FIRST.$password_0.self::STEP_SECOND.$password_1.self::STEP_THIRD);
 	}
