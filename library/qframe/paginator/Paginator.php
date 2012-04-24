@@ -39,7 +39,7 @@
  */
 class Library_Qframe_Paginator_Paginator
 {
-	private $collection;
+	private $collectionItemsNumber;
 	/**
 	 * Número de elementos por página
 	 * @var int
@@ -65,9 +65,11 @@ class Library_Qframe_Paginator_Paginator
 	
 	private $printer;
 	
-	public function __construct($collection, $itemsPerPage, $visiblePages, $printer = null)
+	private $template;
+	
+	public function __construct($collectionItemsNumber, $itemsPerPage, $visiblePages, $printer = null)
 	{
-		$this->collection = $collection;
+		$this->collectionItemsNumber = $collectionItemsNumber;
 		$this->itemsPerPage = $itemsPerPage;
 		$this->visiblePages = $visiblePages;
 		$this->pagesNumber = $this->calculatePagesNumber();
@@ -83,33 +85,35 @@ class Library_Qframe_Paginator_Paginator
 		}
 		
 		$this->printer->setElement($this);
+		
+		$this->template = Library_Qframe_Manage_ResourceManager::getConfig()->getVar("html.templatesPath") . 'default/paginator/paginator.php';
 	}
 	
 	/**
-	 * Devuelve el valor del atributo collection.
+	 * Devuelve el valor del atributo collectionItemsNumber.
 	 *
-	 * @return array
+	 * @return int
 	 */
-	public function getCollection()
+	public function getCollectionItemsNumber()
 	{
-	    return $this->collection;
+	    return $this->collectionItemsNumber;
 	}
 	 
 	/**
-	 * Establece el valor del atributo collection.
+	 * Establece el valor del atributo collectionItemsNumber.
 	 *
-	 * @param array $collection
+	 * @param int $collectionItemsNumber
 	 */
-	public function setCollection($collection)
+	public function setCollectionItemsNumber($collectionItemsNumber)
 	{
-	    $this->collection = $collection;
+	    $this->collectionItemsNumber = $collectionItemsNumber;
 	}
 	
 	/**
-	* Devuelve el valor del atributo pageNum.
-	*
-	* @return int
-	*/
+	 * Devuelve el valor del atributo pageNum.
+	 *
+	 * @return int
+	 */
 	public function getPagesNumber()
 	{
 		return $this->pagesNumber;
@@ -174,6 +178,26 @@ class Library_Qframe_Paginator_Paginator
 	{
 	    return $this->currentPage;
 	}
+	
+	/**
+	 * Devuelve el valor del atributo template.
+	 *
+	 * @return string
+	 */
+	public function getTemplate()
+	{
+	    return $this->template;
+	}
+	 
+	/**
+	 * Establece el valor del atributo template.
+	 *
+	 * @param string $template
+	 */
+	public function setTemplate($template)
+	{
+	    $this->template = $template;
+	}
 	 
 	/**
 	 * Establece el valor del atributo currentPage.
@@ -225,11 +249,9 @@ class Library_Qframe_Paginator_Paginator
 	{
 		$pagesNumber = 0;
 		
-		$itemsNumber = count($this->collection);
+		$pagesNumber = floor($this->collectionItemsNumber / $this->itemsPerPage);
 		
-		$pagesNumber = floor($itemsNumber / $this->itemsPerPage);
-		
-		if($itemsNumber % $this->itemsPerPage > 0)
+		if($this->collectionItemsNumber % $this->itemsPerPage > 0)
 		{
 			$pagesNumber = $pagesNumber + 1;
 		}

@@ -95,14 +95,32 @@ class Library_Qframe_Html_Validation_FormElementValidator
 				
 				break;
 				
+			case(Library_Qframe_Html_Const_ValidationRuleConst::ALPHABETICAL_FORMAT_WITH_SPACES):
+				
+				if(!preg_match('/^[A-Za-z ]*$/', $elementValue))
+				{
+					$isValid = Library_Qframe_I18n_I18n::getText('screen_common_error_alphabetical_required');
+				}
+				
+				break;
+				
 			case(Library_Qframe_Html_Const_ValidationRuleConst::ALPHANUMERIC_FORMAT):
 				
-				if(!$isValid = preg_match('/^[A-Za-z1-9]*$/', $elementValue))
+				if(!$isValid = preg_match('/^[A-Za-z0-9]*$/', $elementValue))
 				{
 					$isValid = Library_Qframe_I18n_I18n::getText('screen_common_error_alphanumeric_required');
 				}
 				
 				break;
+				
+			case(Library_Qframe_Html_Const_ValidationRuleConst::ALPHANUMERIC_FORMAT_WITH_SPACES):
+				
+					if(!$isValid = preg_match('/^[A-Za-z0-9 ]*$/', $elementValue))
+					{
+						$isValid = Library_Qframe_I18n_I18n::getText('screen_common_error_alphanumeric_required');
+					}
+				
+					break;
 				
 			case(Library_Qframe_Html_Const_ValidationRuleConst::EMAIL):
 				

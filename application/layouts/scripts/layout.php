@@ -16,6 +16,8 @@
 		<link rel="stylesheet/less" type="text/css" media="all" href="/css/layout.less" />
 		<link rel="stylesheet/less" type="text/css" media="all" href="/css/menu.less" />
 		
+		<link rel="stylesheet" type="text/css" media="screen" href="/css/paginator.css" />
+		
 		<!-- Ficheros JS específicos del action -->
 		
 		<?php foreach($view->getCssFileCollection() as $cssFile): ?>

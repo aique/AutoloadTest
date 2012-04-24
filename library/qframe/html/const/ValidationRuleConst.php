@@ -21,7 +21,9 @@ class Library_Qframe_Html_Const_ValidationRuleConst
 	// Posibles formatos soportados
 	const NUMERIC_FORMAT = "numeric";
 	const ALPHABETICAL_FORMAT = "alphabetical";
+	const ALPHABETICAL_FORMAT_WITH_SPACES = "alphabetical&spaces";
 	const ALPHANUMERIC_FORMAT = "alphanumeric";
+	const ALPHANUMERIC_FORMAT_WITH_SPACES = "alphanumeric&spaces";
 	const EMAIL = "email";
 	
 	// Constantes para la validación del contenido

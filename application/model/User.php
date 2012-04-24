@@ -34,9 +34,9 @@ class Application_Model_User
 		return $user;
 	}
 	
-	public function getAllUsers()
+	public function getAllUsers($startIndex, $numElements)
 	{
-		$query = "SELECT id, name, role, email, married, childNum, jobDesc FROM user";
+		$query = "SELECT id, name, role, email, married, childNum, jobDesc FROM user LIMIT ".$startIndex.",".$numElements;
 		
 		$result = Library_Qframe_Manage_DBManager::getInstance()->query($query);
 		
@@ -48,6 +48,22 @@ class Application_Model_User
 		}
 		
 		return $users;
+	}
+	
+	public function getNumUsers()
+	{
+		$query = "SELECT COUNT(id) num_users FROM user";
+		
+		$result = Library_Qframe_Manage_DBManager::getInstance()->query($query);
+		
+		$numUsers = 0;
+		
+		while($data = $result->fetch_assoc())
+		{
+			$numUsers = $data["num_users"];
+		}
+		
+		return $numUsers;
 	}
 	
 	public function loginUser($name, $pass)

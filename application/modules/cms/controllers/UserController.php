@@ -22,15 +22,38 @@ class Application_Modules_Cms_Controllers_UserController extends Library_Qframe_
 	
 	public function listAction()
 	{
+		$itemsPerPage = Library_Qframe_Manage_InputManager::getParam("items_per_page");
+		
+		if($itemsPerPage)
+		{
+			Library_Qframe_Manage_SessionManager::setVar("items_per_page", $itemsPerPage);
+		}
+		else
+		{
+			$itemsPerPage = Library_Qframe_Manage_SessionManager::getVar("items_per_page");
+			
+			if(!$itemsPerPage)
+			{
+				$itemsPerPage = Library_Qframe_Manage_ResourceManager::getConfig()->getVar("users.paginator.itemsPerPage");
+			}
+		}
+		
+		$visiblePages = Library_Qframe_Manage_ResourceManager::getConfig()->getVar("users.paginator.visiblePages");
+		
+		$currentPage = $this->getRequest()->getParam("page");
+		
+		if(!$currentPage)
+		{
+			$currentPage = 0;
+		}
+		
 		$userModel = new Application_Model_User();
 	
-		$users = $userModel->getAllUsers();
+		$users = $userModel->getAllUsers(($currentPage - 1) * $itemsPerPage, $itemsPerPage);
 	
 		$this->view->addContent("users", $users);
 		
-		$this->view->addContent("paginator", new Library_Qframe_Paginator_Paginator($users,
-																		  			Library_Qframe_Manage_ResourceManager::getConfig()->getVar("users.paginator.itemsPerPage"),
-																		  			Library_Qframe_Manage_ResourceManager::getConfig()->getVar("users.paginator.visiblePages")));
+		$this->view->addContent("paginator", new Library_Qframe_Paginator_Paginator($userModel->getNumUsers(), $itemsPerPage, $visiblePages));
 	}
 	
 	public function insertAction()

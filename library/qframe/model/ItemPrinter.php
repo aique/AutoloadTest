@@ -23,5 +23,9 @@ abstract class Library_Qframe_Model_ItemPrinter extends Library_Qframe_Printer_B
 	 */
 	public abstract function paginationPrint();
 	
+	/**
+	 * Conjunto de atributos del Item que se mostrarán en
+	 * el contexto JSON.
+	 */
 	public abstract function JSONPrint();
 }

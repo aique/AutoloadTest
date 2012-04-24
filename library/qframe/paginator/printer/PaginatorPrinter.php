@@ -14,55 +14,24 @@ class Library_Qframe_Paginator_Printer_PaginatorPrinter extends Library_Qframe_P
 {
 	/**
 	 * Devuelve una cadena de texto con la salida en pantalla por
-	 * defecto del paginador, compuesta por la colección de elementos
-	 * y los controles de navegación.
-	 * 
-	 * Los elementos que componen la colección serán impresos en
-	 * forma de lista, llamando cada uno al método paginationPrint()
-	 * de su atributo printer.
+	 * defecto del paginador, compuesta por los controles de navegación.
 	 * 
 	 * @return string
 	 * 
 	 */
 	public function standardPrint()
 	{
-		$collection = $this->element->getCollection();
+		$paginationHelper = self::getHelperData($this->getElement());
 		
-		if(count($collection > 0))
-		{
-			$output = self::printCollection($this->element, $collection);
-			
-			$output = self::printPagination($this->element, $output);
-		}
-		else
-		{
-			$output = Library_Qframe_I18n_I18n::getText('screen_common_pagination_noresults');
-		}
-		
-		return $output;
+		return Library_Qframe_File_FileUtil::getFileContent($this->getElement()->getTemplate(),
+															array('helper' => $paginationHelper,
+																  'paginator' => $this->getElement()));
 	}
 	
-	private function printCollection(Library_Qframe_Paginator_Paginator $paginator, $collection)
+	private function getHelperData(Library_Qframe_Paginator_Paginator $paginator)
 	{
-		$output = '<div id="users"><ul>';
+		$paginatorHelper = new Library_Qframe_Paginator_Helper_PaginatorHelper();
 		
-		for($i = $paginator->getFirstItemPosOnPage() - 1 ; $i < $paginator->getLastItemPosOnPage() ; $i++)
-		{
-			if(isset($collection[$i]))
-			{
-				$item = $collection[$i];
-				
-				$output .= '<li>' . $item->getPrinter()->paginationPrint() . '</li>';
-			}
-		}
-			
-		$output .= '</ul></div>';
-		
-		return $output;
-	}
-	
-	private function printPagination(Library_Qframe_Paginator_Paginator $paginator, $output)
-	{
 		$request = Library_Qframe_Manage_ResourceManager::getRequestData();
 		
 		$request->setParams(array());
@@ -78,6 +47,10 @@ class Library_Qframe_Paginator_Printer_PaginatorPrinter extends Library_Qframe_P
 		if($visiblePages > $pagesNumber)
 		{
 			$pagesToPrint = $visiblePages - $pagesNumber;
+		}
+		elseif($currentPage == $pagesNumber)
+		{
+			$pagesToPrint = $visiblePages - 1;
 		}
 		elseif($currentPage + floor($visiblePages / 2) > $pagesNumber)
 		{
@@ -97,49 +70,33 @@ class Library_Qframe_Paginator_Printer_PaginatorPrinter extends Library_Qframe_P
 		
 		if($pagesNumber > 1)
 		{
-			// Impersión de páginas a la izquierda
-			
-			$leftPages = '';
-			
-			$output .= '<div class="pagination"><ul>';
-			
-			$output .= '<li><a href="'.$request.'/page/1">'.Library_Qframe_I18n_I18n::getText("screen_common_pagination_first").'</a></li>';
+			// Cálculo de las páginas a la izquierda de la actual
 			
 			for($i = $currentPage - $pagesToPrint , $j = 0 ; $i > 0 && $j < $pagesToPrint ; $i++ , $j++ , $printedPages++)
 			{
-				$leftPages .= '<li><a href="'.$request.'/page/'.$i.'">'.$i.'</a></li>';
+				$paginatorHelper->addLeftPage($i);
 			}
 			
 			if($currentPage - $j > 1)
 			{
-				$pageNum = $currentPage - $printedPages;
-				
-				$output .= '<li><a href="'.$request.'/page/'.$pageNum.'">&larr;</a></li>';
+				$paginatorHelper->setLeftArrowPage($currentPage - $printedPages);
 			}
+						
+			$paginatorHelper->setCurrentPage($currentPage);
 			
-			$output .= $leftPages;
-			
-			// Impresión de la página actual
-			
-			$output .= '<li class="active"><a href="'.$request.'/page/'.$currentPage.'">'.$currentPage.'</a></li>';
-			
-			// Impresión de páginas a la derecha
+			// Cálculo de las páginas a la izquierda de la actual
 			
 			for($i = $currentPage + 1 ; $i <= $pagesNumber && $printedPages < $visiblePages ; $i++ , $printedPages++)
 			{
-				$output .= '<li><a href="'.$request.'/page/'.$i.'">'.$i.'</a></li>';
+				$paginatorHelper->addRightPage($i);
 			}
 			
 			if($i <= $pagesNumber)
 			{
-				$output .= '<li><a href="'.$request.'/page/'.$i.'">&rarr;</a></li>';
+				$paginatorHelper->setRightArrowPage($i);
 			}
-			
-			$output .= '<li><a href="'.$request.'/page/'.$pagesNumber.'">'.Library_Qframe_I18n_I18n::getText("screen_common_pagination_last").'</a></li>';
-			
-			$output .= '</ul></div>';
 		}
 		
-		return $output;
+		return $paginatorHelper;
 	}
 }
