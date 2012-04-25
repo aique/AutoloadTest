@@ -34,7 +34,23 @@ class Application_Model_User
 		return $user;
 	}
 	
-	public function getAllUsers($startIndex, $numElements)
+	public function getAllUsers()
+	{
+		$query = "SELECT id, name, role, email, married, childNum, jobDesc FROM user";
+	
+		$result = Library_Qframe_Manage_DBManager::getInstance()->query($query);
+	
+		$users = array();
+	
+		while($userData = $result->fetch_assoc())
+		{
+			$users[] = new Application_Model_User_Item($userData);
+		}
+	
+		return $users;
+	}
+	
+	public function getSpecificUsers($startIndex, $numElements)
 	{
 		$query = "SELECT id, name, role, email, married, childNum, jobDesc FROM user LIMIT ".$startIndex.",".$numElements;
 		

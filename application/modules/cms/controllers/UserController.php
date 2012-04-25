@@ -44,12 +44,12 @@ class Application_Modules_Cms_Controllers_UserController extends Library_Qframe_
 		
 		if(!$currentPage)
 		{
-			$currentPage = 0;
+			$currentPage = 1;
 		}
 		
 		$userModel = new Application_Model_User();
 	
-		$users = $userModel->getAllUsers(($currentPage - 1) * $itemsPerPage, $itemsPerPage);
+		$users = $userModel->getSpecificUsers(($currentPage - 1) * $itemsPerPage, $itemsPerPage);
 	
 		$this->view->addContent("users", $users);
 		
