@@ -84,13 +84,6 @@ class Library_Qframe_Html_Validation_FormElementValidator
 					$isValid = Library_Qframe_I18n_I18n::getText('screen_common_error_numeric_required');
 				}
 				
-			case(Library_Qframe_Html_Const_ValidationRuleConst::DECIMAL_FORMAT):
-				
-				if(!preg_match('/^[1-9][0-9]*(\.|,)?[0-9]*$/', $elementValue))
-				{
-					$isValid = Library_Qframe_I18n_I18n::getText('screen_common_error_numeric_required');
-				}
-				
 				break;
 				
 			case(Library_Qframe_Html_Const_ValidationRuleConst::ALPHABETICAL_FORMAT):

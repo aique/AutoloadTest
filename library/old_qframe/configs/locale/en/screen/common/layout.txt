@@ -1,0 +1,2 @@
+screen_common_layout_title = ""
+screen_common_layout_subtitle = ""
